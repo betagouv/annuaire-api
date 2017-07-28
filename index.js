@@ -49,7 +49,7 @@ function parsePointGeoJson (localisation, properties) {
     type: 'Feature',
     geometry: {
       type: 'Point',
-      coordinates: [localisation.Longitude, localisation.Latitude]
+      coordinates: [parseFloat(localisation.Longitude), parseFloat(localisation.Latitude)]
     },
     properties
   }
