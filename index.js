@@ -90,17 +90,35 @@ function parse (files) {
   return withGeoJson
 }
 
-function writeOut (files) {
-  const logPath = path.join(__dirname, 'tmp', path.parse(files[0].path).dir)
-  process.stdout.write(`Writing ${files.length} to ${logPath}...\n`)
+function group (files) {
+  process.stdout.write(`Grouping ${files.length} files by type...`)
 
-  return Promise.map(files, file => {
+  const grouped = files.reduce((grouped, file) => {
     const { dir, name } = path.parse(file.path)
+    const pivot = name.split('-')[0]
+    const key = `${dir}-${pivot}`
+
+    if (!Array.isArray(grouped[key])) {
+      grouped[key] = []
+    }
+
+    grouped[key].push(file.json)
+
+    return grouped
+  }, {})
+
+  process.stdout.write(`\t✓ Successfull.\n`)
+  return grouped
+}
+
+function writeOut (groups) {
+  return Promise.map(Object.keys(groups), groupKey => {
+    const [ dir, name ] = groupKey.split('-');
     const newPath = path.join(__dirname, 'tmp', dir, `${name}.json`)
 
     mkdirp.sync(path.dirname(newPath))
 
-    return fs.writeFileAsync(newPath, JSON.stringify(file.json, null, 2), 'utf-8')
+    return fs.writeFileAsync(newPath, JSON.stringify(groups[groupKey], null, 2), 'utf-8')
   }, { concurrency: 5 })
 }
 
@@ -108,12 +126,9 @@ download(url)
   .then(decompressWithlogs)
   .then(filter)
   .then(parse)
+  .then(group)
   .then(writeOut)
-  .then((files, outputDir) => {
-    console.log(`✓ Successfully wrote ${files.length} files.`)
-    process.exit(0)
-  })
   .catch(err => {
-    process.stderr.write(err)
-    process.exit(1)
+    console.error(err)
+    process.exitCode = 1
   })
