@@ -5,7 +5,7 @@ const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
 const Promise = require('bluebird')
-const fs = Promise.promisifyAll(require("fs"));
+const fs = Promise.promisifyAll(require('fs'))
 
 const fileName = 'all_latest.tar.bz2'
 const filePath = path.join(__dirname, 'tmp', fileName)
@@ -100,7 +100,7 @@ function writeOut (files) {
 
     mkdirp.sync(path.dirname(newPath))
 
-    return fs.writeFileAsync(newPath, JSON.stringify(file.json, null, 2), 'utf-8');
+    return fs.writeFileAsync(newPath, JSON.stringify(file.json, null, 2), 'utf-8')
   }, { concurrency: 5 })
 }
 
