@@ -30,8 +30,6 @@ function decompressWithlogs (filePath) {
   return decompress(filePath).then(files => {
     process.stdout.write(`\t✓ ${files.length} extracted.\n`)
     return files
-  }).catch(err => {
-    console.log(err)
   })
 }
 
