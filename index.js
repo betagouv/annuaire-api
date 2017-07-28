@@ -113,12 +113,17 @@ function group (files) {
 
 function writeOut (groups) {
   return Promise.map(Object.keys(groups), groupKey => {
-    const [ dir, name ] = groupKey.split('-');
+    const [ dir, name ] = groupKey.split('-')
     const newPath = path.join(__dirname, 'tmp', dir, `${name}.json`)
 
     mkdirp.sync(path.dirname(newPath))
 
-    return fs.writeFileAsync(newPath, JSON.stringify(groups[groupKey], null, 2), 'utf-8')
+    const asFeatureCollection = {
+      type: 'FeatureCollection',
+      features: groups[groupKey]
+    }
+
+    return fs.writeFileAsync(newPath, JSON.stringify(asFeatureCollection, null, 2), 'utf-8')
   }, { concurrency: 5 })
 }
 
