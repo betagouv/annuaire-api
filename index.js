@@ -57,23 +57,31 @@ function parsePointGeoJson (localisation, properties) {
   }
 }
 
-function toGeoJson (file) {
-  let physicalLocalisation
+function hasPhysicalCoordinates (address) {
+  return address.type === 'physique' && hasCoordinates(address)
+}
 
-  // Keep only the physical localisation, ignore every other type of adress
+function hasCoordinates (address) {
+  return typeof address.Localisation !== 'undefined'
+}
+
+function toGeoJson (file) {
+  let addressWithLocalisation
+
+  // Keep only the physical localisation, ignore every other type of address
   if (Array.isArray(file.json.Organisme.Adresse)) {
-    physicalLocalisation = file.json.Organisme.Adresse.find(localisation => localisation.type === 'physique')
-  } else if (typeof file.json.Organisme.Adresse.Localisation !== 'undefined') {
-    physicalLocalisation = file.json.Organisme.Adresse.Localisation
+    addressWithLocalisation = file.json.Organisme.Adresse.find(hasPhysicalCoordinates) || file.json.Organisme.Adresse.find(hasCoordinates)
+  } else if (hasCoordinates(file.json.Organisme.Adresse)) {
+    addressWithLocalisation = file.json.Organisme.Adresse
   }
 
-  if (typeof physicalLocalisation === 'undefined') {
+  if (typeof addressWithLocalisation === 'undefined') {
     return undefined
   }
 
   return {
     path: file.path,
-    json: parsePointGeoJson(physicalLocalisation, file.json)
+    json: parsePointGeoJson(addressWithLocalisation.Localisation, file.json)
   }
 }
 
