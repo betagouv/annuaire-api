@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "node index.js",
-    "lint": "eslint index.js"
+    "lint": "eslint index.js",
+    "test": "yarn lint"
   }
 }
