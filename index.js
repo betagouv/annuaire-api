@@ -1,9 +1,11 @@
-const fs = require('fs')
 const path = require('path')
 const http = require('http')
 const parser = require('xml2json')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
+
+const Promise = require('bluebird')
+const fs = Promise.promisifyAll(require("fs"));
 
 const fileName = 'all_latest.tar.bz2'
 const filePath = path.join(__dirname, 'tmp', fileName)
@@ -83,19 +85,17 @@ function parse (files) {
 }
 
 function writeOut (files) {
-  process.stdout.write(`Writing ${files.length} to ${__dirname}...\n`)
+  const logPath = path.join(__dirname, 'tmp', path.parse(files[0].path).dir)
+  process.stdout.write(`Writing ${files.length} to ${logPath}...\n`)
 
-  files.map(file => {
+  return Promise.map(files, file => {
     const { dir, name } = path.parse(file.path)
     const newPath = path.join(__dirname, 'tmp', dir, `${name}.json`)
 
     mkdirp.sync(path.dirname(newPath))
 
-    fs.writeFileSync(newPath, JSON.stringify(file.json, null, 2), 'utf-8')
-    return file
-  })
-
-  return files
+    return fs.writeFileAsync(newPath, JSON.stringify(file.json, null, 2), 'utf-8');
+  }, { concurrency: 5 })
 }
 
 download(url)
