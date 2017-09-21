@@ -41,7 +41,7 @@ function filter (files) {
 }
 
 function toJson (file) {
-  return { path: file.path, json: parser.toJson(file.data, { object: true, sanitize: true }) }
+  return { path: file.path, json: parser.toJson(file.data, { object: true, sanitize: true }).Organisme }
 }
 
 function parsePointGeoJson (localisation, properties) {
@@ -67,10 +67,10 @@ function toGeoJson (file) {
   let addressWithLocalisation
 
   // Keep only the physical localisation, ignore every other type of address
-  if (Array.isArray(file.json.Organisme.Adresse)) {
-    addressWithLocalisation = file.json.Organisme.Adresse.find(hasPhysicalCoordinates) || file.json.Organisme.Adresse.find(hasCoordinates)
-  } else if (hasCoordinates(file.json.Organisme.Adresse)) {
-    addressWithLocalisation = file.json.Organisme.Adresse
+  if (Array.isArray(file.json.Adresse)) {
+    addressWithLocalisation = file.json.Adresse.find(hasPhysicalCoordinates) || file.json.Adresse.find(hasCoordinates)
+  } else if (hasCoordinates(file.json.Adresse)) {
+    addressWithLocalisation = file.json.Adresse
   }
 
   if (typeof addressWithLocalisation === 'undefined') {
