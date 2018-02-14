@@ -3,13 +3,11 @@ const http = require('http')
 const parser = require('xml2json')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
-const rp = require('request-promise');
 
 const Promise = require('bluebird')
 const fs = Promise.promisifyAll(require('fs'))
 
 function download (url, fileName) {
-
   const filePath = path.join(__dirname, 'tmp', fileName)
 
   process.stdout.write(`Downloading ${url}...`)
@@ -149,7 +147,7 @@ function writeOut (groups) {
   }, { concurrency: 5 })
 }
 
-function run(url, fileName) {
+function run (url, fileName) {
   return download(url, fileName)
     .then(decompressWithlogs)
     .then(filter)
