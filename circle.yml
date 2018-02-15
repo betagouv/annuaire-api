@@ -4,4 +4,4 @@ machine:
 
 test:
   post:
-    - node index.js
+    - node build.js

@@ -35,7 +35,7 @@ function decompressWithlogs (filePath) {
 
 function filter (files) {
   process.stdout.write(`Filtering ${files.length} files...`)
-  const filtered = files.filter(file => file.type === 'file')
+  const filtered = files.filter(file => file.type === 'file' && file.path.indexOf('.DS_Store') < 0)
   process.stdout.write(`\t✓ ${filtered.length} remaining.\n`)
   return filtered
 }
@@ -62,7 +62,7 @@ function writeOut (file) {
   })
 }
 
-function run (url, fileName) {
+function build (url, fileName) {
   return Promise.map(
     download(url, fileName)
       .then(decompressWithlogs)
@@ -75,6 +75,6 @@ function run (url, fileName) {
 }
 
 module.exports = {
-  run,
+  build,
   toJson
 }
