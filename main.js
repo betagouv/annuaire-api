@@ -74,7 +74,53 @@ function build (url, fileName) {
   })
 }
 
+function prepareDataset () {
+  const folder = 'tmp/cache'
+  let dataset = {
+    communes: {},
+    organismes: {},
+    departements: {}
+  }
+
+  let entityFolder = path.join(folder, 'communes')
+  fs.readdirSync(entityFolder).forEach(regionId => {
+    const regionFolder = path.join(entityFolder, regionId)
+    dataset.departements[regionId] = {
+      communes: {},
+      organismes: {}
+    }
+
+    fs.readdirSync(regionFolder).forEach(entityFile => {
+      const entityPath = path.join(regionFolder, entityFile)
+      const { name } = path.parse(entityFile)
+
+      const entityData = require('./' + entityPath)
+      dataset.departements[regionId].communes[name] = entityData
+      dataset.communes[name] = entityData
+    })
+  })
+
+  entityFolder = path.join(folder, 'organismes')
+  fs.readdirSync(entityFolder).forEach(regionId => {
+    const regionFolder = path.join(entityFolder, regionId)
+
+    fs.readdirSync(regionFolder).forEach(entityFile => {
+      const entityPath = path.join(regionFolder, entityFile)
+      const { name } = path.parse(entityFile)
+
+      const entityData = require('./' + entityPath)
+      const pivot = entityData.properties.pivotLocal
+      dataset.departements[regionId].organismes[pivot] = dataset.departements[regionId].organismes[pivot] || []
+      dataset.departements[regionId].organismes[pivot].push(entityData)
+      dataset.organismes[name] = entityData
+    })
+  })
+
+  return dataset
+}
+
 module.exports = {
   build,
+  prepareDataset,
   toJson
 }
