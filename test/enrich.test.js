@@ -1,7 +1,7 @@
 const assert = require('assert')
 const enrich = require('../enrich')
 
-describe('enrich', function() {
+describe('enrich', function () {
   let dataset
 
   before(() => {
