@@ -40,6 +40,26 @@ function filter (files) {
   return filtered
 }
 
+function group (files) {
+  process.stdout.write(`Grouping ${files.length} files by departement...`)
+
+  const grouped = files.reduce((grouped, file) => {
+    const { dir } = path.parse(file.path)
+    grouped[dir] = grouped[dir] || []
+    grouped[dir].push(file)
+
+    return grouped
+  }, {})
+
+  process.stdout.write(`\t✓ Successfull.\n`)
+  return Object.keys(grouped).map((dir) => {
+    return {
+      path: dir,
+      files: grouped[dir]
+    }
+  })
+}
+
 function toJson (file) {
   return xml2js.parseStringAsync(file.data).then(content => {
     const normalizeEntity = file.path.indexOf('organismes') >= 0 ? normalize.organisme : normalize.commune
@@ -50,14 +70,13 @@ function toJson (file) {
   })
 }
 
-function writeOut (file) {
-  return toJson(file).then(file => {
-    const details = path.parse(file.path)
-    const newPath = path.join('tmp', 'cache', details.dir, details.name + '.json')
+function writeOut (group) {
+  return Promise.map(group.files, toJson).then(files => {
+    const newPath = path.join('tmp', 'cache', group.path + '.json')
     mkdirp.sync(path.dirname(newPath))
-    return fs.writeFileAsync(newPath, JSON.stringify(file.json, null, 2), 'utf-8')
+    return fs.writeFileAsync(newPath, JSON.stringify(files.map(f => f.json), null, 2), 'utf-8')
   }).catch(error => {
-    console.error(`The following error occured while processing ${file.path}:`)
+    console.error(`The following error occured while processing ${group.path}:`)
     console.error(error)
   })
 }
@@ -66,8 +85,9 @@ function build (url, fileName) {
   return Promise.map(
     download(url, fileName)
       .then(decompressWithlogs)
-      .then(filter),
-    writeOut, { concurrency: 25 }
+      .then(filter)
+      .then(group),
+    writeOut, { concurrency: 5 }
   ).catch(err => {
     console.error(err)
     process.exitCode = 1
@@ -78,41 +98,42 @@ function prepareDataset () {
   const folder = 'tmp/cache'
   let dataset = {
     communes: {},
-    organismes: {},
-    departements: {}
+    departements: {},
+    organismes: {}
   }
 
   let entityFolder = path.join(folder, 'communes')
-  fs.readdirSync(entityFolder).forEach(regionId => {
-    const regionFolder = path.join(entityFolder, regionId)
-    dataset.departements[regionId] = {
+  fs.readdirSync(entityFolder).forEach(departementFile => {
+    const { name } = path.parse(departementFile)
+    const communesPath = path.join(entityFolder, departementFile)
+    const communes = require('./' + communesPath)
+
+    let departement = {
       communes: {},
       organismes: {}
     }
 
-    fs.readdirSync(regionFolder).forEach(entityFile => {
-      const entityPath = path.join(regionFolder, entityFile)
-      const { name } = path.parse(entityFile)
-
-      const entityData = require('./' + entityPath)
-      dataset.departements[regionId].communes[name] = entityData
-      dataset.communes[name] = entityData
+    communes.forEach(commune => {
+      dataset.communes[commune.codeInsee] = commune
+      departement.communes[commune.codeInsee] = commune
     })
+
+    dataset.departements[name] = departement
   })
 
   entityFolder = path.join(folder, 'organismes')
-  fs.readdirSync(entityFolder).forEach(regionId => {
-    const regionFolder = path.join(entityFolder, regionId)
+  fs.readdirSync(entityFolder).forEach(departementFile => {
+    const { name } = path.parse(departementFile)
+    const organismesPath = path.join(entityFolder, departementFile)
+    const organismes = require('./' + organismesPath)
 
-    fs.readdirSync(regionFolder).forEach(entityFile => {
-      const entityPath = path.join(regionFolder, entityFile)
-      const { name } = path.parse(entityFile)
+    let departement = dataset.departements[name]
 
-      const entityData = require('./' + entityPath)
-      const pivot = entityData.properties.pivotLocal
-      dataset.departements[regionId].organismes[pivot] = dataset.departements[regionId].organismes[pivot] || []
-      dataset.departements[regionId].organismes[pivot].push(entityData)
-      dataset.organismes[name] = entityData
+    organismes.forEach(organisme => {
+      departement.organismes[organisme.properties.pivotLocal] = departement.organismes[organisme.properties.pivotLocal] || []
+      departement.organismes[organisme.properties.pivotLocal].push(organisme)
+
+      dataset.organismes[organisme.properties.id] = organisme
     })
   })
 
