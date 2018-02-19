@@ -1,10 +1,11 @@
 {
-  "name": "annuaire-import",
-  "version": "1.0.0",
-  "description": "Import GeoJSON de Annuaire de l’administration",
-  "main": "index.js",
-  "author": "Florian Delezenne <del.florian@gmail.com>",
+  "name": "annuaire-api",
+  "version": "3.0.0",
+  "description": "Create basic GeoJSON API - l'annuaire de l’administration",
+  "main": "server.js",
+  "author": "Thomas Guillet <guillet.thomas@gmail.com>",
   "license": "MIT",
+  "repository": "git@github.com:betagouv/annuaire-api.git",
   "dependencies": {
     "bluebird": "^3.5.0",
     "decompress": "^4.2.0",
