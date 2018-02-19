@@ -1,15 +1,15 @@
 const path = require('path')
 const http = require('http')
-const parser = require('xml2json')
-const decompress = require('decompress')
-const mkdirp = require('mkdirp')
-const rp = require('request-promise');
 
 const Promise = require('bluebird')
+const xml2js = Promise.promisifyAll(require('xml2js'))
+const decompress = require('decompress')
+const mkdirp = require('mkdirp')
+
 const fs = Promise.promisifyAll(require('fs'))
+const normalize = require('./normalize')
 
 function download (url, fileName) {
-
   const filePath = path.join(__dirname, 'tmp', fileName)
 
   process.stdout.write(`Downloading ${url}...`)
@@ -27,7 +27,7 @@ function download (url, fileName) {
 
 function decompressWithlogs (filePath) {
   process.stdout.write(`Decompressing ${path.relative(__dirname, filePath)}, (${fs.statSync(filePath).size} bytes)...`)
-  return decompress(filePath).then(files => {
+  return decompress(filePath, { strip: 1 }).then(files => {
     process.stdout.write(`\t✓ ${files.length} extracted.\n`)
     return files
   })
@@ -35,134 +35,115 @@ function decompressWithlogs (filePath) {
 
 function filter (files) {
   process.stdout.write(`Filtering ${files.length} files...`)
-  const filtered = files.filter(file => file.path.indexOf('/organismes/') >= 0 && file.type === 'file')
+  const filtered = files.filter(file => file.type === 'file' && file.path.indexOf('.DS_Store') < 0)
   process.stdout.write(`\t✓ ${filtered.length} remaining.\n`)
   return filtered
 }
 
-function toJson (file) {
-  return { path: file.path, json: parser.toJson(file.data, { object: true, sanitize: true }).Organisme }
-}
-
-function parsePointGeoJson (localisation, properties) {
-  // return rp(`https://api-adresse.data.gouv.fr/search/?q=${properties.Adresse.ligne} ${properties.Adresse.CodePostal} ${properties.Adresse.NomCommune}`)
-  //   .then(response => {
-  //     if (!response.features) {
-  //       return Promise.resolve();
-  //     }
-  //
-  //     const feature = response.features[0]
-  //     feature.properties = properties
-  //     return feature
-  //   });
-
-  if (!localisation) {
-    return {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [undefined, undefined]
-      },
-      properties
-    }
-  } else {
-    return {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [parseFloat(localisation.Longitude), parseFloat(localisation.Latitude)]
-      },
-      properties
-    }
-  }
-}
-
-function hasPhysicalCoordinates (address) {
-  return address.type === 'physique' && hasCoordinates(address)
-}
-
-function hasCoordinates (address) {
-  return typeof address.Localisation !== 'undefined'
-}
-
-function toGeoJson (file) {
-  let adresse
-
-  // Keep only the physical localisation, ignore every other type of address
-  if (Array.isArray(file.json.Adresse)) {
-    adresse = file.json.Adresse.find(hasPhysicalCoordinates) || file.json.Adresse.find(hasCoordinates)
-  } else {
-    adresse = file.json.Adresse
-  }
-
-  if (typeof adresse === 'undefined') {
-    return undefined
-  }
-
-  return {
-    path: file.path,
-    json: parsePointGeoJson(adresse.Localisation, file.json)
-  }
-}
-
-function parse (files) {
-  process.stdout.write(`Parsing ${files.length} files to GeoJSON...`)
-  const withGeoJson = files.map(file => toGeoJson(toJson(file))).filter(file => typeof file !== 'undefined')
-  process.stdout.write(`\t✓ ${withGeoJson.length} Successfull.\n`)
-  return withGeoJson
-}
-
 function group (files) {
-  process.stdout.write(`Grouping ${files.length} files by type...`)
+  process.stdout.write(`Grouping ${files.length} files by departement...`)
 
   const grouped = files.reduce((grouped, file) => {
-    const { dir, name } = path.parse(file.path)
-    const pivot = name.split('-')[0]
-    const key = `${dir}-${pivot}`
-
-    if (!Array.isArray(grouped[key])) {
-      grouped[key] = []
-    }
-
-    grouped[key].push(file.json)
+    const entityPathDetails = path.parse(file.path)
+    const departementPathDetails = path.parse(entityPathDetails.dir)
+    grouped[departementPathDetails.name] = grouped[departementPathDetails.name] || []
+    grouped[departementPathDetails.name].push(file)
 
     return grouped
   }, {})
 
   process.stdout.write(`\t✓ Successfull.\n`)
-  return grouped
+  return Object.keys(grouped).map((dir) => {
+    return {
+      path: dir,
+      files: grouped[dir]
+    }
+  })
 }
 
-function writeOut (groups) {
-  return Promise.map(Object.keys(groups), groupKey => {
-    const [ dir, name ] = groupKey.split('-')
-    const newPath = path.join(__dirname, 'tmp', dir, `${name}.json`)
+function toJson (file) {
+  return xml2js.parseStringAsync(file.data).then(content => {
+    const type = content.Organisme ? 'organisme' : 'commune'
+    const normalizeFunction = normalize[type]
+    return {
+      path: file.path,
+      type: type,
+      json: normalizeFunction(content)
+    }
+  })
+}
 
+function writeOut (group) {
+  return Promise.map(group.files, toJson, { concurrency: 1 }).then(files => {
+    const newPath = path.join('tmp', 'cache', group.path + '.json')
     mkdirp.sync(path.dirname(newPath))
 
-    const asFeatureCollection = {
-      type: 'FeatureCollection',
-      features: groups[groupKey]
-    }
+    const content = files.reduce((content, entityFile) => {
+      content[entityFile.type + 's'].push(entityFile.json)
+      return content
+    }, {
+      communes: [],
+      organismes: []
+    })
 
-    return fs.writeFileAsync(newPath, JSON.stringify(asFeatureCollection, null, 2), 'utf-8')
-  }, { concurrency: 5 })
+    return fs.writeFileAsync(newPath, JSON.stringify(content, null, 2), 'utf-8')
+  }).catch(error => {
+    console.error(`The following error occured while processing ${group.path}:`)
+    console.error(error)
+  })
 }
 
-function run(url, fileName) {
-  return download(url, fileName)
-    .then(decompressWithlogs)
-    .then(filter)
-    .then(parse)
-    .then(group)
-    .then(writeOut)
-    .catch(err => {
-      console.error(err)
-      process.exitCode = 1
+function build (url, fileName) {
+  return Promise.map(
+    download(url, fileName)
+      .then(decompressWithlogs)
+      .then(filter)
+      .then(group),
+    writeOut, { concurrency: 1 }
+  ).catch(err => {
+    console.error(err)
+    process.exitCode = 1
+  })
+}
+
+function prepareDataset () {
+  const folder = 'tmp/cache'
+  let dataset = {
+    communes: {},
+    departements: {},
+    organismes: {}
+  }
+
+  fs.readdirSync(folder).forEach(departementFile => {
+    const { name } = path.parse(departementFile)
+    const departementPath = path.join(folder, departementFile)
+    const departementData = require('./' + departementPath)
+
+    let departement = {
+      communes: {},
+      organismes: {}
+    }
+
+    departementData.communes.forEach(commune => {
+      dataset.communes[commune.codeInsee] = commune
+      departement.communes[commune.codeInsee] = commune
     })
+
+    departementData.organismes.forEach(organisme => {
+      departement.organismes[organisme.properties.pivotLocal] = departement.organismes[organisme.properties.pivotLocal] || []
+      departement.organismes[organisme.properties.pivotLocal].push(organisme)
+
+      dataset.organismes[organisme.properties.id] = organisme
+    })
+
+    dataset.departements[name] = departement
+  })
+
+  return dataset
 }
 
 module.exports = {
-  parse,
-  run
+  build,
+  prepareDataset,
+  toJson
 }

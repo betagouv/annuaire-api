@@ -8,11 +8,12 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "decompress": "^4.2.0",
+    "express": "^4.16.2",
     "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "xml2json": "^0.11.0"
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "eslint": "^4.3.0",
@@ -23,9 +24,10 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "scripts": {
-    "build": "node index.js",
-    "lint": "eslint index.js main.js",
+    "build": "node build.js",
+    "lint": "eslint build.js main.js normalize.js",
     "test": "yarn lint && yarn mocha",
-    "mocha": "mocha"
+    "mocha": "mocha",
+    "serve": "node server.js"
   }
 }
