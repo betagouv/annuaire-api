@@ -1,14 +1,16 @@
 {
-  "name": "annuaire-import",
-  "version": "1.0.0",
-  "description": "Import GeoJSON de Annuaire de l’administration",
-  "main": "index.js",
-  "author": "Florian Delezenne <del.florian@gmail.com>",
+  "name": "annuaire-api",
+  "version": "3.0.0",
+  "description": "Create basic GeoJSON API - l'annuaire de l’administration",
+  "main": "server.js",
+  "author": "Thomas Guillet <guillet.thomas@gmail.com>",
   "license": "MIT",
+  "repository": "git@github.com:betagouv/annuaire-api.git",
   "dependencies": {
     "bluebird": "^3.5.0",
     "decompress": "^4.2.0",
     "express": "^4.16.2",
+    "js-yaml": "^3.8.4",
     "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
     "request": "^2.83.0",
@@ -25,7 +27,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "lint": "eslint build.js main.js normalize.js",
+    "lint": "eslint *.js **/*.js",
     "test": "yarn lint && yarn mocha",
     "mocha": "mocha",
     "serve": "node server.js"

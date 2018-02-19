@@ -5,11 +5,11 @@ const path = require('path')
 const assert = require('assert')
 const { toJson } = require('../main')
 
-describe('toJson', function() {
+describe('toJson', function () {
   let file
 
   before((done) => {
-    filePath = path.join(__dirname, 'files', 'organismes-msa.xml')
+    const filePath = path.join(__dirname, 'files', 'organismes-msa.xml')
 
     fs.readFileAsync(filePath).then(content => {
       file = {
@@ -19,7 +19,7 @@ describe('toJson', function() {
     }).then(done)
   })
 
-  it('should work', function(done) {
+  it('should work', function (done) {
     toJson(file).then(result => {
       assert.equal(result.json.geometry.coordinates[0], 5.2306651)
       assert.equal(result.json.geometry.coordinates[1], 46.2069614)

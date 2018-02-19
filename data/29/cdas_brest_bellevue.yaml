@@ -1,0 +1,42 @@
+---
+nom: Centre Départemental d'Action Sociale de Brest Bellevue
+pivotLocal: cdas
+id: cdas_brest_bellevue
+adresses:
+  - lignes:
+    - Le Grand Pavois
+    - 13 place Napoléon III
+    codePostal: 29200
+    commune: Brest
+    type: physique
+url: https://www.finistere.fr/Les-services-pres-de-chez-vous/Les-Centres-departementaux-d-action-sociale-CDAS-du-Finistere/CDAS-de-Brest-Bellevue
+téléphone: 02 98 47 08 09
+fax: 02 98 47 78 40
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h40
+          a: 17h
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h45
+          a: 12h15
+        - de: 13h40
+          a: 17h
+zonage:
+  communes:
+    - 29011 Bohars
+    - 29019 Brest
+    - 29061 Gouesnou
+    - 29069 Guilers
+    - 29075 Guipavas
+    - 29235 Le Relecq-Kerhuon
+    - 29189 Plougastel-Daoulas
+    - 29212 Plouzané
