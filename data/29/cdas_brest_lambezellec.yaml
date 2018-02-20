@@ -1,0 +1,37 @@
+---
+nom: Centre Départemental d'Action Sociale de Brest Lambézellec
+pivotLocal: cdas
+id: cdas_brest_lambezellec
+adresses:
+  - lignes:
+    - rue Pen Ar Pavé
+    - Place de Bretagne
+    codePostal: 29200
+    commune: Brest
+    type: physique
+url: https://www.finistere.fr/Les-services-pres-de-chez-vous/Les-Centres-departementaux-d-action-sociale-CDAS-du-Finistere/CDAS-de-Brest-Lambezellec
+téléphone: 02 98 03 39 52
+fax: 02 98 47 78 43
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h45
+          a: 12h15
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 29019 Brest
+    - 29011 Bohars
+    - 29061 Gouesnou
