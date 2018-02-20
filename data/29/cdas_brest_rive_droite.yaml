@@ -1,0 +1,35 @@
+---
+nom: Centre Départemental d'Action Sociale de Brest Rive droite
+pivotLocal: cdas
+id: cdas_brest_rive_droite
+adresses:
+  - lignes:
+    - 25 rue Anatole France
+    codePostal: 29200
+    commune: Brest
+    type: physique
+url: https://www.finistere.fr/Les-services-pres-de-chez-vous/Les-Centres-departementaux-d-action-sociale-CDAS-du-Finistere/CDAS-de-Brest-Rive-droite
+téléphone: 02 98 45 16 54
+fax: 02 98 05 56 92
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h45
+          a: 12h15
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 29019 Brest
+    - 29212 Plouzané
