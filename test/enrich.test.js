@@ -29,7 +29,7 @@ describe('enrich', function () {
   it('adds the organisme ID in commune', () => {
     assert.ok(Object.keys(dataset.communes['29011'].organismes).length >= 1)
     assert.ok(dataset.communes['29011'].organismes.cdas.length >= 1)
-    assert.ok(dataset.communes['29011'].organismes.cdas.indexOf('cdas_brest_bellevue') >= 0)
+    assert.ok(dataset.communes['29011'].organismes.cdas.indexOf('cdas_brest_lambezellec') >= 0)
   })
 
   it('adds an organisme in departement', () => {
