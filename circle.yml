@@ -12,4 +12,4 @@ deployment:
     owner: betagouv
     commands:
       # CircleCI relies on a private key that triggers /home/cloud/annuaire-v3/deploy.sh
-      - ssh root@etablissements-publics.api.gouv.fr
+      - ssh cloud@etablissements-publics.api.gouv.fr
