@@ -1,0 +1,49 @@
+---
+nom: Centre Départemental d'Action Sociale de Douarnenez
+pivotLocal: cdas
+id: cdas_douarnenez
+adresses:
+  - lignes:
+    - 27 rue Maréchal Leclerc
+    codePostal: 29100
+    commune: Douarnenez
+    type: physique
+url: https://www.finistere.fr/Les-services-pres-de-chez-vous/Les-Centres-departementaux-d-action-sociale-CDAS-du-Finistere/CDAS-de-Douarnenez
+téléphone: 02 98 92 01 93
+fax: 02 98 92 42 90
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h30
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 29003 Audierne
+    - 29008 Beuzec-Cap-Sizun
+    - 29028 Cléden-Cap-Sizun
+    - 29145 Confort-Meilars
+    - 29046 Douarnenez  
+    - 29063 Goulien   
+    - 29083 Ile de Sein 
+    - 29090 Kerlaz 
+    - 29087 Le Juch 
+    - 29143 Mahalon 
+    - 29168 Plogoff   
+    - 29197 Plouhinec 
+    - 29218 Pont-Croix
+    - 29224 Poudergat 
+    - 29226 Poullan-sur-Mer 
+    - 29228 Primelin
