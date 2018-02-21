@@ -5,3 +5,11 @@ machine:
 test:
   post:
     - node build.js
+deployment:
+  # Continuous deployment is done on a dedicated instance in CloudWatt datacenter
+  annuaire_v3:
+    branch: master
+    owner: betagouv
+    commands:
+      # CircleCI relies on a private key that triggers /home/cloud/annuaire-v3/deploy.sh
+      - ssh root@etablissements-publics.api.gouv.fr
