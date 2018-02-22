@@ -14,13 +14,26 @@ fax: 02 98 21 07 81
 accueil physique:
   horaires:
     - du: lundi
+      au: mercredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+    - du: jeudi
+      au: jeudi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 14h30
+          a: 17h
+    - du: vendredi
       au: vendredi
       heures:
         - de: 9h
           a: 12h
         - de: 13h30
           a: 17h
-        - le jeudi de 9h à 12h et de 14h30 à 17h
 permanence téléphonique:
   horaires:
     - du: lundi
