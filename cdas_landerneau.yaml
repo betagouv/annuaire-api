@@ -13,14 +13,18 @@ téléphone: 02 98 85 35 33
 fax: 02 98 85 95 65
 accueil physique:
   horaires:
-    - le lundi de 13h30 à 17h
-      du : Mardi
-      au: vendredi
+    - du: lundi
+      au: lundi
       heures:
-        - de: 9h
-          a: 12h
         - de: 13h30
           a: 17h
+    - du: mardi
+      au: vendredi
+      heures
+        - de: 9h
+           a: 12h
+        - de: 13h30
+           a: 17h         
 permanence téléphonique:
   horaires:
     - du: lundi
