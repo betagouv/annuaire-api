@@ -1,0 +1,97 @@
+$id: 'http://etablissements-publics.api.gouv.fr/v3/definitions.json'
+definitions:
+  adresse:
+    type: object
+    properties:
+      lignes:
+        items:
+          type: string
+      codePostal:
+        type: integer
+      commune:
+        type: string
+      type:
+        enum:
+          - physique
+          - géopostale
+          - postale
+    required:
+      - lignes
+      - codePostal
+      - commune
+  jour:
+    type: string
+    enum:
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
+      - dimanche
+  horaires:
+    type: object
+    properties:
+      du:
+        $ref: 'definitions.json#/definitions/jour'
+      au:
+        $ref: 'definitions.json#/definitions/jour'
+      heures:
+        items:
+          $ref: 'definitions.json#/definitions/heures'
+    required:
+      - du
+      - au
+      - heures
+  heure:
+    pattern: '^\d{1,2}h\d{0,2}$'
+  heures:
+    type: object
+    properties:
+      de:
+        $ref: 'definitions.json#/definitions/heure'
+      a:
+        $ref: 'definitions.json#/definitions/heure'
+    required:
+      - de
+      - a
+  accueil:
+    properties:
+      horaires:
+        items:
+          $ref: 'definitions.json#/definitions/horaires'
+    required:
+      - horaires
+  etablissement:
+    type: object
+    properties:
+      nom:
+        type: string
+      id:
+        type: string
+      pivotLocal:
+        type: string
+        enum:
+          - cdas
+      adresses:
+        type: array
+        items:
+          $ref: 'definitions.json#/definitions/adresse'
+      accueil physique:
+        $ref: 'definitions.json#/definitions/accueil'
+      permanence téléphonique:
+        $ref: 'definitions.json#/definitions/accueil'
+      zonage:
+        $ref: 'definitions.json#/definitions/zonage'
+    required:
+      - nom
+      - id
+      - pivotLocal
+      - zonage
+  zonage:
+    type: object
+    properties:
+      communes:
+        pattern: '^d{4} .*$'
+    required:
+      - communes
