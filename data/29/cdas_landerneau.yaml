@@ -20,11 +20,11 @@ accueil physique:
           a: 17h
     - du: mardi
       au: vendredi
-      heures
+      heures:
         - de: 9h
-           a: 12h
+          a: 12h
         - de: 13h30
-           a: 17h         
+          a: 17h
 permanence téléphonique:
   horaires:
     - du: lundi

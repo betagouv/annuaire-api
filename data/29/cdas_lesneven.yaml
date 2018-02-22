@@ -20,19 +20,20 @@ accueil physique:
           a: 12h
         - de: 13h30
           a: 17h
-     - du: jeudi
-       au: jeudi
-       heures:
-         - de: 9h
-           a: 12h
-         - de: 14h30
+    - du: jeudi
+      au: jeudi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 14h30
           a: 17h
-      - du: vendredi
-        au: vendredi
-         - de: 9h
-            a: 12h
-         - de: 13h30
-            a: 17h
+    - du: vendredi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
 permanence téléphonique:
   horaires:
     - du: lundi

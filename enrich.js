@@ -6,22 +6,30 @@ const fs = Promise.promisifyAll(require('fs'))
 const yaml = require('js-yaml')
 
 function YAMLtoJSON (p) {
-  const content = fs.readFileSync(p)
-  let organisme = yaml.safeLoad(content)
-  organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
+  try {
+    const content = fs.readFileSync(p)
+    let organisme = yaml.safeLoad(content)
+    organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
 
-  const geoJson = {
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [null, null]
-    },
-    properties: organisme
-  }
+    const geoJson = {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [null, null]
+      },
+      properties: organisme
+    }
 
-  return {
-    path: p,
-    json: geoJson
+    return {
+      path: p,
+      json: geoJson
+    }
+  } catch (error) {
+    const obj = {
+      message: `Error converting to JSON: ${p}`,
+      error: error
+    }
+    throw obj
   }
 }
 
