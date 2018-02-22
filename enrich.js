@@ -5,31 +5,36 @@ const Promise = require('bluebird')
 const fs = Promise.promisifyAll(require('fs'))
 const yaml = require('js-yaml')
 
+const validate = require('./validate')
+
 function YAMLtoJSON (p) {
+  let organisme
   try {
     const content = fs.readFileSync(p)
-    let organisme = yaml.safeLoad(content)
-    organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
-
-    const geoJson = {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [null, null]
-      },
-      properties: organisme
-    }
-
-    return {
-      path: p,
-      json: geoJson
-    }
+    organisme = yaml.safeLoad(content)
   } catch (error) {
     const obj = {
-      message: `Error converting to JSON: ${p}`,
+      message: `Error reading YAML file: ${p}`,
       error: error
     }
     throw obj
+  }
+
+  validate(organisme)
+  organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
+
+  const geoJson = {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [null, null]
+    },
+    properties: organisme
+  }
+
+  return {
+    path: p,
+    json: geoJson
   }
 }
 
