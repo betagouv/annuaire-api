@@ -1,0 +1,55 @@
+---
+nom: Centre Départemental d'Action Sociale de Châteeaulin
+pivotLocal: cdas
+id: cdas_chateaulin
+adresses:
+  - lignes:
+    - 56 avenue de Quimper
+    codePostal: 29150
+    commune: Châteaulin
+    type: physique
+url: https://www.finistere.fr/Les-services-pres-de-chez-vous/Les-Centres-departementaux-d-action-sociale-CDAS-du-Finistere/CDAS-de-Chateaulin
+téléphone: 02 98 86 00 44
+fax: 02 98 86 39 70
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h30
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 29020 Briec-de-l’Odet
+    - 29025 Cast
+    - 29026 Châteaulin
+    - 29044 Dinéault
+    - 29048 Edern 
+    - 29062 Gouézec
+    - 29106 Landrévarzec
+    - 29107 Landudal  
+    - 29110 Langolen   
+    - 29115 Lannédern  
+    - 29123 Lennon 
+    - 29142 Lothey  
+    - 29033 Le Cloitre-Pleyben 
+    - 29162 Pleyben  
+    - 29166 Ploéven  
+    - 29172 Plomodiern 
+    - 29176 Plonévez-Porzay  
+    - 29222 Port-Launay  
+    - 29243 Saint-Coulitz
+    - 29256 Saint-Nic  
+    - 29263 Saint-Rivoal  
+    - 29289 Trégarvan
