@@ -3,7 +3,8 @@ nom: Ma mairie mobile Place de la Porte de Montreuil
 pivotLocal: mairie_mobile
 id: mairie_mobile_20
 adresses:
-  - lignes: Place de la porte de Montreuil
+  - lignes:
+    - Place de la porte de Montreuil
     codePostal: 75020
     commune: Paris
     type: physique

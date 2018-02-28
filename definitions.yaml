@@ -4,6 +4,7 @@ definitions:
     type: object
     properties:
       lignes:
+        type: array
         items:
           type: string
       codePostal:
@@ -37,6 +38,7 @@ definitions:
       au:
         $ref: 'definitions.json#/definitions/jour'
       heures:
+        type: array
         items:
           $ref: 'definitions.json#/definitions/heures'
     required:
@@ -58,6 +60,7 @@ definitions:
   accueil:
     properties:
       horaires:
+        type: array
         items:
           $ref: 'definitions.json#/definitions/horaires'
     required:
