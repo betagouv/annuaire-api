@@ -1,7 +1,7 @@
 ---
 nom: Ma mairie mobile Rue Suzanne Masson Metro Riquet
 pivotLocal: mairie_mobile
-id: mairie_mobile_19
+id: mairie_mobile_19_masson
 adresses:
   - lignes: Rue Suzanne Masson Metro Riquet
     codePostal: 75019
