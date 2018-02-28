@@ -1,19 +1,21 @@
 ---
-nom: Ma mairie mobile Rue Suzanne Masson Metro Riquet
+nom: Ma mairie mobile Rue Suzanne Masson - Métro Riquet
 pivotLocal: mairie_mobile
 id: mairie_mobile_19_masson
 adresses:
-  - lignes: Rue Suzanne Masson Metro Riquet
-    codePostal: 75019
-    commune: Paris
-    type: physique
+  - lignes:
+    - Métro Riquet
+    - Rue Suzanne Masson
+    codePostal: 75019
+    commune: Paris
+    type: physique
 url: https://www.paris.fr/mairiemobile
 horaires:
-  - du: mercredi
-    au: mercredi
-    heures:
-      - de: 9h30
-        a: 17h
+  - du: mercredi
+    au: mercredi
+    heures:
+      - de: 9h30
+        a: 17h
 zonage:
-  communes:
-    - 75056 Paris
+  communes:
+    - 75056 Paris
