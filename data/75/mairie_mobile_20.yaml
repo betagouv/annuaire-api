@@ -1,0 +1,19 @@
+---
+nom: Ma mairie mobile Place de la Porte de Montreuil
+pivotLocal: Mairie mobile
+id: mairie_mobile_20
+adresses:
+  - lignes: Place de la porte de Montreuil
+    codePostal:75020
+    commune:Paris
+    type: physique
+url: https://www.paris.fr/mairiemobile
+  horaires:
+    - du: lundi
+    - au: lundi
+      heures:
+        - de: 9h30
+        - a: 17h
+zonage:
+communes :
+- 75056 Paris
