@@ -1,7 +1,7 @@
 ---
 nom: Ma mairie mobile Rue Jomard
 pivotLocal: mairie_mobile
-id: mairie_mobile_19
+id: mairie_mobile_19_jomard
 adresses:
   - lignes: Rue Jomard
     codePostal: 75019
