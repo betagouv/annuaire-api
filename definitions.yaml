@@ -73,6 +73,7 @@ definitions:
         type: string
         enum:
           - cdas
+          - mairie_mobile
       adresses:
         type: array
         items:
