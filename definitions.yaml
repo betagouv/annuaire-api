@@ -78,6 +78,10 @@ definitions:
         type: array
         items:
           $ref: 'definitions.json#/definitions/adresse'
+      horaires:
+        type: array
+        items:
+          $ref: 'definitions.json#/definitions/horaires'
       accueil physique:
         $ref: 'definitions.json#/definitions/accueil'
       permanence téléphonique:
