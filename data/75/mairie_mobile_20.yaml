@@ -10,10 +10,10 @@ adresses:
 url: https://www.paris.fr/mairiemobile
 horaires:
   - du: lundi
-  - au: lundi
+    au: lundi
     heures:
       - de: 9h30
-      - a: 17h
+        a: 17h
 zonage:
   communes:
     - 75056 Paris
