@@ -75,6 +75,7 @@ definitions:
       pivotLocal:
         type: string
         enum:
+          - ccas
           - cdas
           - mairie_mobile
       adresses:
