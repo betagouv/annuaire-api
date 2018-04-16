@@ -1,0 +1,35 @@
+---
+nom: Centre Communal d'Action Sociale de Saint-Pourçain-sur-Sioule
+pivotLocal: ccas
+id: ccas_saint_pourcain_sur_sioule
+adresses:
+  - lignes:
+    - 5, rue Cadoret
+    codePostal: 03500
+    commune: Saint-Pourçain-sur-Sioule
+    type: physique
+url: http://www.ville-saint-pourcain-sur-sioule.com/fr/Article/3658/GENERAL-Le-Centre-Communal-dAction-Sociale
+téléphone: 04 70 45 88 65
+fax: 04 70 45 55 27
+email: ccas@ville-saint-pourcain-sur-sioule.com
+accueil physique:
+  horaires:
+    - du: mardi
+      au: vendredi
+      heures:
+        - de: 8h30
+          a: 12h
+        - de: 14h30
+          a: 17h30
+permanence téléphonique:
+  horaires:
+    - du: lundi
+      au: lundi
+      heures:
+        - de: 8h30
+          a: 12h
+        - de: 14h30
+          a: 17h30
+zonage:
+  communes:
+    - 03254 Saint-Pourçain-sur-Sioule
