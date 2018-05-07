@@ -1,0 +1,89 @@
+---
+nom: Service départemental des solidarités et de l'insertion Haut Béarn
+pivotLocal: sdsei
+id: sdsei_haut_bearn
+adresses:
+  - lignes:
+    - 14 rue Adoue
+    codePostal: 64400
+    commune: Oloron
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 10 00 70
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h
+          a: 17h
+zonage:
+  communes:
+    -	64490	Accous
+    -	64400	Agnos
+    -	64570	Ance Féas
+    -	64570	Aramits
+    -	64400	Aren
+    -	64570	Arette
+    -	64260	Arudy
+    -	64660	Asasp-Arros
+    -	64260	Aste-Béon
+    -	64490	Aydius
+    -	64490	Bedous
+    -	64440	Béost
+    -	64260	Bescat
+    -	64400	Bidos
+    -	64260	Bielle
+    -	64260	Bilhères
+    -	64490	Borce
+    -	64680	Buziet
+    -	64260	Buzy
+    -	64260	Castet
+    -	64490	Cette-Eygun
+    -	64440	Eaux-Bonnes
+    -	64490	Escot
+    -	64870	Escou
+    -	64870	Escout
+    -	64400	Esquiule
+    -	64290	Estialescq
+    -	64400	Estos
+    -	64490	Etsaut
+    -	64400	Eysus
+    -	64260	Gère-Bélesten
+    -	64400	Géronce
+    -	64400	Geüs-d'Oloron
+    -	64400	Goès
+    -	64400	Gurmençon
+    -	64680	Herrère
+    -	64570	Issor
+    -	64260	Izeste
+    -	64570	Lanne-en-Barétous
+    -	64440	Laruns
+    -	64290	Lasseube
+    -	64290	Lasseubetat
+    -	64400	Ledeuix
+    -	64490	Lées-Athas
+    -	64490	Lescun
+    -	64570	Lourdios-Ichère
+    -	64260	Louvie-Juzon
+    -	64440	Louvie-Soubiron
+    -	64660	Lurbe-Saint-Christau
+    -	64260	Lys
+    -	64400	Moumour
+    -	64680	Ogeu-les-Bains
+    -	64400	Oloron
+    -	64400	Orin
+    -	64490	Osse-en-Aspe
+    -	64400	Poey-d'Oloron
+    -	64190	Préchacq-Josbaig
+    -	64400	Précilhon
+    -	64260	Rébénacq
+    -	64400	Saint-Goin
+    -	64260	Sainte-Colome
+    -	64490	Sarrance
+    -	64400	Saucède
+    -	64260	Sévignacq-Meyracq
+    -	64490	Urdos
+    -	64400	Verdets
