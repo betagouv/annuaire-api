@@ -78,6 +78,7 @@ definitions:
           - ccas
           - cdas
           - mairie_mobile
+          - sdsei
       adresses:
         type: array
         items:
