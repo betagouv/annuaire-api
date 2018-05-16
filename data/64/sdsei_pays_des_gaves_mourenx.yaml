@@ -1,0 +1,77 @@
+---
+nom: Service départemental des solidarités et de l'insertion Pays des Gaves - Mourenx
+pivotLocal: sdsei
+id: sdsei_pays_des_gaves_Mourenx
+adresses:
+  - lignes:
+    - Centre Yves Dréau
+    - Avenue de Monein
+    codePostal: 64150
+    commune: Mourenx
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 60 07 96
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64003 Abidos
+    - 64005 Abos
+    - 64025 Angous
+    - 64033 Araux
+    - 64048 Arnos
+    - 64061 Artix
+    - 64075 Audaux
+    - 64099 Bastanès
+    - 64117 Bésingrand
+    - 64144 Boumourt
+    - 64149 Bugnein
+    - 64165 Cardesse
+    - 64171 Casteide-Cami
+    - 64178 Castetnau-Camblong
+    - 64181 Castillon
+    - 64184 Cescau
+    - 64186 Charre
+    - 64197 Cuqueron
+    - 64200 Doazon
+    - 64201 Dognen
+    - 64253 Gurs
+    - 64281 Jasses
+    - 64288 Labastide-Cézéracq
+    - 64290 Labastide-Monréjeau
+    - 64299 Lacommande
+    - 64300 Lacq
+    - 64301 Lagor
+    - 64302 Araujuzon
+    - 64306 Lahourcade
+    - 64326 Lay-Lamidou
+    - 64359 Lucq-de-Béarn
+    - 64367 Maslacq
+    - 64381 Méritein
+    - 64393 Monein
+    - 64396 Mont
+    - 64410 Mourenx
+    - 64412 Nabas
+    - 64416 Navarrenx
+    - 64418 Noguères
+    - 64420 Ogenne-Camptort
+    - 64431 Os-Marsillon
+    - 64442 Parbayse
+    - 64443 Pardies
+    - 64459 Préchacq-Navarrenx
+    - 64466 Rivehaute
+    - 64512 Sauvelade
+    - 64521 Serres-Sainte-Marie
+    - 64529 Sus
+    - 64530 Susmiou
+    - 64535 Tarsacq
+    - 64554 Viellenave-d'Arthez
+    - 64555 Viellenave-de-Navarrenx
+    - 64556 Vielleségure
