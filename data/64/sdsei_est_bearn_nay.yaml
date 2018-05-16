@@ -1,0 +1,63 @@
+---
+nom: Service départemental des solidarités et de l'insertion Est Béarn - Nay
+pivotLocal: sdsei
+id: sdsei_est_bearn_nay
+adresses:
+  - lignes:
+    - Centre multiservices
+    - 8 cours Pasteur
+    codePostal: 64800
+    commune: Nay
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 61 04 83
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64023 Angaïs
+    - 64037 Assat
+    - 64054 Arros-de-Nay
+    - 64058 Arthez-d'Asson
+    - 64068 Asson
+    - 64091 Baliros
+    - 64097 Barzun
+    - 64101 Baudreix
+    - 64109 Bénéjacq
+    - 64119 Beuste
+    - 64133 Boeil-Bezing
+    - 64137 Bordères
+    - 64138 Bordes
+    - 64145 Bourdettes
+    - 64148 Bruges-Capbis-Mifaget
+    - 64191 Coarraze
+    - 64216 Espoey
+    - 64238 Ger
+    - 64246 Gomer
+    - 64257 Haut-de-Bosdarros
+    - 64266 Hours
+    - 64270 Igon
+    - 64292 Labatmale
+    - 64302 Lagos
+    - 64339 Lestelle-Bétharram
+    - 64343 Limendous
+    - 64344 Livron
+    - 64352 Lourenties
+    - 64358 Lucgarier
+    - 64386 Mirepeix
+    - 64400 Montaut
+    - 64413 Narcastet
+    - 64417 Nay
+    - 64419 Nousty
+    - 64444 Pardies-Piétat
+    - 64453 Pontacq
+    - 64469 Saint-Abit
+    - 64498 Saint-Vincent
+    - 64526 Soumoulou
