@@ -1,0 +1,24 @@
+---
+nom: Service départemental des solidarités et de l'insertion Adour BAB - Biarritz
+pivotLocal: sdsei
+id: sdsei_adour_bab_biarritz
+adresses:
+  - lignes:
+    - 1 avenue Jean Jaurès
+    codePostal: 64200
+    commune: Biarritz
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 01 61 61
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64122 Biarritz
