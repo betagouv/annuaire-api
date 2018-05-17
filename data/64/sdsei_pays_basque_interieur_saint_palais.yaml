@@ -1,12 +1,12 @@
 ---
-nom: Service départemental des solidarités et de l'insertion Pays basque intérieur - Saint Palais
+nom: Service départemental des solidarités et de l'insertion Pays basque intérieur - Saint-Palais
 pivotLocal: sdsei
 id: sdsei_pays_basque_interieur_saint_palais
 adresses:
   - lignes:
     - Boulevard de la Madeleine
     codePostal: 64120
-    commune: Saint Palais
+    commune: Saint-Palais
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
 téléphone: 05 59 65 98 08
