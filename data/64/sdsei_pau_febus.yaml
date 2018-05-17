@@ -1,0 +1,29 @@
+---
+nom: Service départemental des solidarités et de l'insertion Pau Agglo - Fébus
+pivotLocal: sdsei
+id: sdsei_pau_febus
+adresses:
+  - lignes:
+    - 31 avenue du Général Leclerc
+    codePostal: 64000
+    commune: Pau
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 02 60 95
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64059 Artigueloutan
+    - 64269 Idron
+    - 64329 Lée
+    - 64439 Ousse
+    - 64445 Pau
+    - 64518 Sendets
