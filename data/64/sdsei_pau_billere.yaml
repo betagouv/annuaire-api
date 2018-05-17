@@ -5,8 +5,8 @@ id: sdsei_pau_billere
 adresses:
   - lignes:
     - 1 allée Montestquieu
-    codePostal: 64140 Billère
-    commune: Pau
+    codePostal: 64140
+    commune: Billère
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
 téléphone: 05 59 72 03 03
