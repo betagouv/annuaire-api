@@ -4,7 +4,9 @@ pivotLocal: sdsei
 id: sdsei_pays_des_gaves_salies_de_bearn
 adresses:
   - lignes:
-    - Pôle social chemin Bellecave
+    - Pôle social
+    - Rue du Jardin
+    - Chemin Bellecave
     codePostal: 64270
     commune: Salies-de-Béarn
     type: physique

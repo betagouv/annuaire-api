@@ -5,6 +5,7 @@ id: sdsei_pays_basque_interieur_hasparren
 adresses:
   - lignes:
     - Centre multiservices Elgar
+    - 11, rue Gaskoina
     codePostal: 64240
     commune: Hasparren
     type: physique
