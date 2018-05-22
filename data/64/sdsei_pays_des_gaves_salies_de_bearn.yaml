@@ -1,0 +1,60 @@
+---
+nom: Service départemental des solidarités et de l'insertion Pays des Gaves - Salies-de-Béarn
+pivotLocal: sdsei
+id: sdsei_pays_des_gaves_salies_de_bearn
+adresses:
+  - lignes:
+    - Pôle social
+    - Rue du Jardin
+    - Chemin Bellecave
+    codePostal: 64270
+    commune: Salies-de-Béarn
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 09 17 10
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64004 Abitain
+    - 64022 Andrein
+    - 64071 Athos-Aspis
+    - 64082 Auterrive
+    - 64083 Autevielle-Saint-Martin-Bideren
+    - 64096 Barraute-Camu
+    - 64108 Bellocq
+    - 64112 Berenx
+    - 64151 Burgaronne
+    - 64168 Carresse-Cassaber
+    - 64170 Castagnède
+    - 64176 Castetbon
+    - 64205 Escos
+    - 64215 Espiute
+    - 64242 Gestas
+    - 64251 Guinarthe-Parenties
+    - 64263 L'Hôpital-d'Orion
+    - 64287 Laàs
+    - 64291 Labastide-Villefranche
+    - 64305 Lahontan
+    - 64334 Léren
+    - 64403 Montfort
+    - 64414 Narp
+    - 64423 Oraàs
+    - 64427 Orion
+    - 64428 Orriule
+    - 64434 Ossenx
+    - 64461 Puyoô
+    - 64462 Ramous
+    - 64474 Saint-Dos
+    - 64480 Saint-Gladie-Arrive-Munein
+    - 64494 Saint-Pé-de-Léren
+    - 64499 Salies-de-Béarn
+    - 64513 Sauveterre-de-Béarn
+    - 64531 Tabaille-Usquain

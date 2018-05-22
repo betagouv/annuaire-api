@@ -1,0 +1,33 @@
+---
+nom: Service départemental des solidarités et de l'insertion Pau Agglo - Jurançon
+pivotLocal: sdsei
+id: sdsei_pau_jurancon
+adresses:
+  - lignes:
+    - 6 place Gabard
+    codePostal: 64110
+    commune: Jurançon
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 02 13 52
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64072 Aubertin
+    - 64139 Bosdarros
+    - 64230 Gan
+    - 64237 Gelos
+    - 64284 Jurançon
+    - 64315 Laroin
+    - 64373 Mazères-Lezons
+    - 64467 Rontignon
+    - 64478 Saint-Faust
+    - 64550 Uzos

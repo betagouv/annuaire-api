@@ -1,0 +1,29 @@
+---
+nom: Service départemental des solidarités et de l'insertion Adour BAB - Bayonne
+pivotLocal: sdsei
+id: sdsei_adour_bab_bayonne
+adresses:
+  - lignes:
+    - 25 avenue de Mounédé
+    codePostal: 64100
+    commune: Bayonne
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 50 62 62
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64102 Bayonne
+    - 64304 Lahonce
+    - 64407 Mouguerre
+    - 64496 Saint-Pierre-d'Irube
+    - 64540 Urcuit
+    - 64546 Urt

@@ -1,0 +1,36 @@
+---
+nom: Service départemental des solidarités et de l'insertion Pau Agglo - Billère
+pivotLocal: sdsei
+id: sdsei_pau_billere
+adresses:
+  - lignes:
+    - 1 allée Montestquieu
+    codePostal: 64140
+    commune: Billère
+    type: physique
+url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
+téléphone: 05 59 72 03 03
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+zonage:
+  communes:
+    - 64445 Pau
+    - 64037 Arbus
+    - 64060 Artiguelouve
+    - 64090 Aussevielle
+    - 64121 Beyrie-en-Béarn
+    - 64129 Billère
+    - 64142 Bougarber
+    - 64198 Denguin
+    - 64335 Lescar
+    - 64348 Lescar
+    - 64448 Poey-de-Lescar
+    - 64525 Siros
+    - 64549 Uzein
