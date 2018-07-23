@@ -34,7 +34,7 @@ accueil physique:
           a: 12h
         - de: 13h30
           a: 17h
-permanence téléphonique:
+permanence telephonique:
   horaires:
     - du: lundi
       au: vendredi
