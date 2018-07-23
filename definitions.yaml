@@ -1,5 +1,7 @@
 $id: 'http://etablissements-publics.api.gouv.fr/v3/definitions.json'
 definitions:
+  telephone:
+    pattern: '^\d{2}( \d{0,2}){4}$'
   adresse:
     type: object
     properties:
@@ -87,6 +89,10 @@ definitions:
         type: array
         items:
           $ref: 'definitions.json#/definitions/horaires'
+      telephone:
+        $ref: 'definitions.json#/definitions/telephone'
+      fax:
+        $ref: 'definitions.json#/definitions/telephone'
       accueil physique:
         $ref: 'definitions.json#/definitions/accueil'
       permanence telephonique:
