@@ -10,7 +10,7 @@ adresses:
     commune: Cambo-les-Bains
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 93 50 50
+telephone: 05 59 93 50 50
 accueil physique:
   horaires:
     - du: lundi

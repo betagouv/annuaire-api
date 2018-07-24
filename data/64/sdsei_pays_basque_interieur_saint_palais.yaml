@@ -9,7 +9,7 @@ adresses:
     commune: Saint-Palais
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 65 98 08
+telephone: 05 59 65 98 08
 accueil physique:
   horaires:
     - du: lundi

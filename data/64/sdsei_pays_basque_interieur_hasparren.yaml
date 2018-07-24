@@ -10,7 +10,7 @@ adresses:
     commune: Hasparren
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 29 61 00
+telephone: 05 59 29 61 00
 accueil physique:
   horaires:
     - du: lundi

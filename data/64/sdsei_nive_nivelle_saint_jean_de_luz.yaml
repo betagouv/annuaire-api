@@ -10,7 +10,7 @@ adresses:
     commune: Saint-Jean-de-Luz
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 51 65 65
+telephone: 05 59 51 65 65
 accueil physique:
   horaires:
     - du: lundi

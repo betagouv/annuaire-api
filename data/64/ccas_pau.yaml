@@ -9,7 +9,7 @@ adresses:
     commune: Pau
     type: physique
 url: http://www.pau.fr/233-centre-communal-d-action-sociale.htm
-téléphone: 05 59 27 54 85
+telephone: 05 59 27 54 85
 accueil physique:
   horaires:
     - du: lundi
