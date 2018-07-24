@@ -9,7 +9,7 @@ adresses:
     commune: Morlaas
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 72 14 72
+telephone: 05 59 72 14 72
 accueil physique:
   horaires:
     - du: lundi

@@ -9,7 +9,7 @@ adresses:
     commune: Pau
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 14 84 84
+telephone: 05 59 14 84 84
 accueil physique:
   horaires:
     - du: lundi

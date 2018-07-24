@@ -10,7 +10,7 @@ adresses:
     commune: Mourenx
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 60 07 96
+telephone: 05 59 60 07 96
 accueil physique:
   horaires:
     - du: lundi

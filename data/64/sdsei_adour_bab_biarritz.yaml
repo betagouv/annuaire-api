@@ -9,7 +9,7 @@ adresses:
     commune: Biarritz
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 01 61 61
+telephone: 05 59 01 61 61
 accueil physique:
   horaires:
     - du: lundi

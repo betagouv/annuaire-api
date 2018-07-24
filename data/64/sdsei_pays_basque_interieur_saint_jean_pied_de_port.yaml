@@ -9,7 +9,7 @@ adresses:
     commune: Saint-Jean-Pied-de-Port
     type: physique
 url: http://www.le64.fr/services-en-ligne/trouver-votre-sdsei.html
-téléphone: 05 59 37 90 10
+telephone: 05 59 37 90 10
 accueil physique:
   horaires:
     - du: lundi
