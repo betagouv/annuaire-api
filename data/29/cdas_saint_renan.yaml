@@ -30,6 +30,13 @@ accueil physique:
 permanence telephonique:
   horaires:
     - du: lundi
+      au: lundi
+      heures:
+        - de: 10h
+          a: 12h15
+        - de: 13h30
+          a: 17h
+    - du: mardi
       au: vendredi
       heures:
         - de: 8h45
@@ -38,23 +45,23 @@ permanence telephonique:
           a: 17h
 zonage:
   communes:
-    - 29017 Brélès  
-    - 29076 Milizac-Guipronvel  
-    - 29084 Ile-Molène  
-    - 29098 Lampaul-Plouarzel  
-    - 29099 Lampaul-Ploudalmézeau 
-    - 29109 Landunvez 
-    - 29112 Lanildut  
-    - 29119 Lanrivoaré  
-    - 29040 Le Conquet   
-    - 29130 Locmaria-Plouzané 
-    - 29155 Ouessant 
-    - 29177 Plouarzel   
-    - 29178 Ploudalmézeau    
-    - 29190 Plougonvelin  
-    - 29201 Ploumoguer  
-    - 29208 Plourin  
-    - 29221 Porspoder   
-    - 29260 Saint-Renan 
-    - 29282 Trébabu  
+    - 29017 Brélès
+    - 29076 Milizac-Guipronvel
+    - 29084 Ile-Molène
+    - 29098 Lampaul-Plouarzel
+    - 29099 Lampaul-Ploudalmézeau
+    - 29109 Landunvez
+    - 29112 Lanildut
+    - 29119 Lanrivoaré
+    - 29040 Le Conquet
+    - 29130 Locmaria-Plouzané
+    - 29155 Ouessant
+    - 29177 Plouarzel
+    - 29178 Ploudalmézeau
+    - 29190 Plougonvelin
+    - 29201 Ploumoguer
+    - 29208 Plourin
+    - 29221 Porspoder
+    - 29260 Saint-Renan
+    - 29282 Trébabu
     - 29299 Treouergat
