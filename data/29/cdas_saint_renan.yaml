@@ -39,9 +39,9 @@ permanence telephonique:
     - du: mardi
       au: vendredi
         - de: 8h45
-           a: 12h15
+          a: 12h15
         - de: 13h30
-           a: 17h
+          a: 17h
 zonage:
   communes:
     - 29017 Brélès
