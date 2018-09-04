@@ -16,7 +16,7 @@ accueil physique:
     - du: lundi
       au: vendredi
       heures:
-        - de: 9h
+        - de: 8h30
           a: 12h
         - de: 13h30
           a: 17h
@@ -25,7 +25,7 @@ permanence telephonique:
     - du: lundi
       au: vendredi
       heures:
-        - de: 9h
+        - de: 8h30
           a: 12h
         - de: 13h30
           a: 17h

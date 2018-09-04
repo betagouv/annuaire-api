@@ -38,6 +38,7 @@ permanence telephonique:
           a: 17h
     - du: mardi
       au: vendredi
+      heures:
         - de: 8h45
           a: 12h15
         - de: 13h30
