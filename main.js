@@ -7,6 +7,7 @@ const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
 const fs = Promise.promisifyAll(require('fs'))
+const enrich = require('./enrich')
 const normalize = require('./normalize')
 
 function download (url, fileName) {
@@ -106,7 +107,7 @@ function build (url, fileName) {
   })
 }
 
-function prepareDataset () {
+function generateInitialDataset () {
   const folder = 'tmp/cache'
   let dataset = {
     communes: {},
@@ -114,7 +115,7 @@ function prepareDataset () {
     organismes: {}
   }
 
-  fs.readdirSync(folder).forEach(departementFile => {
+  return Promise.map(fs.readdirAsync(folder), departementFile => {
     const { name } = path.parse(departementFile)
     const departementPath = path.join(folder, departementFile)
     const departementData = require('./' + departementPath)
@@ -137,9 +138,12 @@ function prepareDataset () {
     })
 
     dataset.departements[name] = departement
-  })
+  }).then(() => dataset)
+}
 
-  return dataset
+function prepareDataset () {
+  return generateInitialDataset()
+    .then(dataset => enrich.addOrganismesFromFolder('data', dataset))
 }
 
 module.exports = {
