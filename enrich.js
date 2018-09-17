@@ -65,7 +65,7 @@ function addOrganisme (dataset, organisme, departementCode) {
   appendOrganisme(dataset.departements[departementCode], props.pivotLocal, organisme)
 }
 
-function addOrganismesFromFolder (folder, dataset) {
+function addOrganismesFromFolder (dataset, folder) {
   let additionCount = 0
   fs.readdirSync(folder).map(departementFolder => {
     const departementPath = path.join(folder, departementFolder)

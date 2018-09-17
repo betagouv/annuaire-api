@@ -143,7 +143,7 @@ function generateInitialDataset () {
 
 function prepareDataset () {
   return generateInitialDataset()
-    .then(dataset => enrich.addOrganismesFromFolder('data', dataset))
+    .then(dataset => enrich.addOrganismesFromFolder(dataset, 'data'))
 }
 
 module.exports = {
