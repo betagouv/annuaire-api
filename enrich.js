@@ -50,7 +50,7 @@ function addOrganisme (dataset, organisme, departementCode) {
   props.zonage.communes.forEach(communesLabel => {
     const communeId = communesLabel.slice(0, 5)
 
-    let commune = dataset.communes[communeId]
+    const commune = dataset.communes[communeId]
     if (!commune) {
       return
     }
@@ -84,9 +84,10 @@ function addOrganismesFromFolder (dataset, folder) {
 }
 
 function addOrganismes (dataset, organismes, departementCode) {
-  return Promise.map(organismes, (organisme) => {
-    return addOrganisme(dataset, organisme, departementCode)
-  }).then(() => dataset)
+  return Promise.map(organismes, (organisme) => addOrganisme(dataset, organisme, departementCode))
+    .then(organismes => organismes.length)
+    .then(count => console.log(`Added ${count} organismes for departement ${departementCode}.`))
+    .then(() => dataset)
 }
 
 module.exports = {
