@@ -83,7 +83,13 @@ function addOrganismesFromFolder (dataset, folder) {
   return dataset
 }
 
+function addOrganismes (dataset, organismes, departementCode) {
+  return Promise.map(organismes, (organisme) => {
+    return addOrganisme(dataset, organisme, departementCode)
+  }).then(() => dataset)
+}
+
 module.exports = {
-  addOrganisme,
+  addOrganismes,
   addOrganismesFromFolder
 }

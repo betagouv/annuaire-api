@@ -141,9 +141,12 @@ function generateInitialDataset () {
   }).then(() => dataset)
 }
 
+const HdS = require('./scripts/hauts-de-seine')
+
 function prepareDataset () {
   return generateInitialDataset()
     .then(dataset => enrich.addOrganismesFromFolder(dataset, 'data'))
+    .then(HdS.addOrganismes)
 }
 
 module.exports = {
