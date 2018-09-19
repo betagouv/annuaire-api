@@ -18,7 +18,7 @@ describe('enrich', function () {
       },
       organismes: {}
     }
-    enrich('./data', dataset)
+    enrich.addOrganismesFromFolder(dataset, './data')
   })
 
   it('adds organisme in dataset', () => {
