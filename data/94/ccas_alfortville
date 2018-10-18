@@ -1,0 +1,38 @@
+---
+nom: Centre Communal d'Action Sociale de la ville d'Alfortville
+pivotLocal: ccas
+id: ccas_alfortville
+adresses:
+  - lignes:
+    - 160, rue Paul-Vaillant-Couturier
+    codePostal: 94140
+    commune: Alfortville
+    type: physique
+url: https://www.alfortville.fr/-centre-communal-d-action-sociale-ccas-
+telephone: 01 58 73 28 45
+accueil physique:
+  horaires:
+    - du: lundi
+      au: mercredi
+      heures:
+        - de: 8h45
+          a: 12h
+        - de: 13h30
+          a: 17h30
+    - du: jeudi
+      au: jeudi
+      heures:
+        - de: 8h45
+          a: 11h45
+        - de: 15h30
+          a: 19h30
+    - du: vendredi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 16h30
+zonage:
+  communes:
+    - 64140 Alfortville
