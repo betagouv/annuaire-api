@@ -5,7 +5,7 @@ id: ccas_alfortville
 adresses:
   - lignes:
     - 160, rue Paul-Vaillant-Couturier
-    codePostal: 94002
+    codePostal: 94140
     commune: Alfortville
     type: physique
 url: https://www.alfortville.fr/-centre-communal-d-action-sociale-ccas-
