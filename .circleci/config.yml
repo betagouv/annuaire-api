@@ -1,0 +1,50 @@
+defaults: &defaults
+  working_directory: ~/annuaire-api
+  docker:
+    - image: circleci/node:6.14-stretch
+
+version: 2
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/annuaire-api
+      - run:
+          name: Run tests
+          command: yarn test
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy on production
+          command: |
+            ssh cloud@etablissements-publics.api.gouv.fr
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - install
+      - test:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
