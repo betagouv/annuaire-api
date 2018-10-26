@@ -10,7 +10,7 @@ function processOrganisme (props) {
     adresses: [processAddress(props)],
     horaires: utils.processOpeningHours(props.Horaires),
     telephone: props.Tel,
-    zonage: { communes: [props.Zonage.split(';')] },
+    zonage: { communes: props.Zonage.split(';') },
     raw: props
   }
 }
