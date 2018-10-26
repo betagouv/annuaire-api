@@ -142,11 +142,13 @@ function generateInitialDataset () {
 }
 
 const HdS = require('./scripts/hauts-de-seine')
+const gendarmerie = require('./scripts/gendarmerie')
 
 function prepareDataset () {
   return generateInitialDataset()
     .then(dataset => enrich.addOrganismesFromFolder(dataset, 'data'))
     .then(HdS.addOrganismes)
+    .then(gendarmerie.addOrganismes)
 }
 
 module.exports = {
