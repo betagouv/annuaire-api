@@ -1,5 +1,6 @@
 const enrich = require('../enrich')
 const rp = require('request-promise')
+const utils = require('./utils')
 
 function processOrganisme (organisme) {
   const props = organisme.properties
@@ -11,7 +12,7 @@ function processOrganisme (organisme) {
     pivotLocal: 'edas',
     id: props.id,
     adresses: [processAddress(props)],
-    horaires: processOpeningHours(props.horaires),
+    horaires: utils.processOpeningHours(props.horaires),
     telephone: props.tel.replace(/\./g, ' '),
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
@@ -31,29 +32,6 @@ function processAddress (organisme) {
   }
 
   return address
-}
-
-function processOpeningHours (text) {
-  if (!text) {
-    return {}
-  }
-  const matchBase = text.match(/^Du (\w+) au (\w+) : (\w+)-(\w+) \/ (\w+)-(\w+)/)
-
-  if (!matchBase) {
-    return []
-  }
-
-  return [{
-    du: matchBase[1],
-    au: matchBase[2],
-    heures: [{
-      de: matchBase[3],
-      a: matchBase[4]
-    }, {
-      de: matchBase[5],
-      a: matchBase[6]
-    }]
-  }]
 }
 
 function filterOrganismes (organismes) {
