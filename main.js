@@ -143,12 +143,14 @@ function generateInitialDataset () {
 
 const HdS = require('./scripts/hauts-de-seine')
 const SeL = require('./scripts/saone-et-loire')
+const SSD = require('./scripts/seine-saint-denis')
 
 function prepareDataset () {
   return generateInitialDataset()
     .then(dataset => enrich.addOrganismesFromFolder(dataset, 'data'))
     .then(dataset => HdS.addOrganismes(dataset).then(() => dataset))
     .then(dataset => SeL.addOrganismes(dataset).then(() => dataset))
+    .then(dataset => SSD.addOrganismes(dataset).then(() => dataset))
 }
 
 module.exports = {
