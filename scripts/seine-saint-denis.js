@@ -4,7 +4,7 @@ const rp = require('request-promise')
 function processOrganisme (organisme) {
   const props = organisme.properties
 
-  if (!props.nom) {
+  if (!props.nomcs) {
     return {}
   }
 
