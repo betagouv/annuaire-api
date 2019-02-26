@@ -2,7 +2,8 @@ const enrich = require('../enrich')
 const rp = require('request-promise')
 const utils = require('./utils')
 
-function processOrganisme (organisme) {
+function processOrganisme (zonage, organisme) {
+
   if (!organisme.Nom) {
     return { horaires: [] }
   }
@@ -15,7 +16,7 @@ function processOrganisme (organisme) {
     horaires: utils.processOpeningHours(organisme.Horaires),
     telephone: organisme.Tel,
     zonage: {
-      communes: [ organisme.Code_INSEE + ' ' + organisme.Commune ]
+      communes: zonage
     },
     raw: organisme
   }
@@ -40,12 +41,12 @@ function filterOrganismes (organismes) {
   return organismes.filter(organisme => organisme.horaires.length)
 }
 
-function importOrganismes () {
+function importOrganismes (zonage) {
   return rp({
     uri: 'http://datarmor.cotesdarmor.fr/dataserver/cg22/data/site_acceuil?&$format=json',
     json: true
   }).then(d => d.d.results)
-    .then(d => d.map(processOrganisme))
+    .then(d => d.map(processOrganisme.bind(null, [zonage])))
     .then(filterOrganismes)
     .then(d => d.map(props => { return { properties: props } }))
     .catch(e => {
@@ -55,7 +56,18 @@ function importOrganismes () {
 }
 
 function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '22')
+
+  const communes = dataset.departements['22'].communes
+
+  const zonage = []
+  for (let codeInsee in communes) {
+    if (communes.hasOwnProperty(codeInsee)) {
+      let commune = communes[codeInsee]
+      zonage.push(commune.codeInsee + ' ' + commune.nom)
+    }
+  }
+
+  return enrich.addOrganismes(dataset, importOrganismes(zonage), '22')
 }
 
 module.exports = {
