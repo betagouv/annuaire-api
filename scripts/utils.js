@@ -2,6 +2,10 @@ function processOpeningHours (text) {
   if (!text) {
     return {}
   }
+
+  // Replace non-breaking spaces by spaces
+  text = text.replace('\u00a0', ' ')
+
   const matchBase = text.match(/^Du (\w+) au (\w+) : (\w+)-(\w+) \/ (\w+)-(\w+)/)
 
   if (!matchBase) {
