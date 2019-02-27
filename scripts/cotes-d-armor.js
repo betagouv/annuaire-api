@@ -45,7 +45,7 @@ function importOrganismes (zonage) {
     uri: 'http://datarmor.cotesdarmor.fr/dataserver/cg22/data/site_acceuil?&$format=json',
     json: true
   }).then(d => d.d.results)
-    .then(d => d.map(processOrganisme.bind(null, [zonage])))
+    .then(d => d.map(processOrganisme.bind(null, zonage)))
     .then(filterOrganismes)
     .then(d => d.map(props => { return { properties: props } }))
     .catch(e => {
