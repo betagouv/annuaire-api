@@ -3,7 +3,6 @@ const rp = require('request-promise')
 const utils = require('./utils')
 
 function processOrganisme (zonage, organisme) {
-
   if (!organisme.Nom) {
     return { horaires: [] }
   }
@@ -56,7 +55,6 @@ function importOrganismes (zonage) {
 }
 
 function addOrganismes (dataset) {
-
   const communes = dataset.departements['22'].communes
 
   const zonage = []
