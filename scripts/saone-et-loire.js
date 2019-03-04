@@ -1,11 +1,23 @@
 const rp = require('request-promise')
-const XLSX = require('xlsx')
+const parse = require('csv-parse')
 const utils = require('./utils')
 
 function processOrganisme (props) {
+  let pivotLocal
+  if (props.ID.startsWith('mds_')) {
+    pivotLocal = 'mds'
+  }
+  if (props.ID.startsWith('mdph_')) {
+    pivotLocal = 'maison_handicapees '
+  }
+
+  if (!pivotLocal) {
+    return {}
+  }
+
   return {
     nom: props.Nom,
-    pivotLocal: 'mds',
+    pivotLocal: pivotLocal,
     id: props.ID,
     adresses: [processAddress(props)],
     horaires: utils.processOpeningHours(props.Horaires),
@@ -30,17 +42,48 @@ function processAddress (organisme) {
   return address
 }
 
+function filterOrganismes (organismes) {
+  return organismes.filter(organisme => organisme.nom)
+}
+
 function importOrganismes () {
   return rp({
-    uri: 'https://static.data.gouv.fr/resources/test-dintegration-pour-lenrichissement-de-lannuaire-de-service-public-fr/20181022-175317/mds-saone-et-loire.xlsx',
+    uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190130-142932/implantations-territoriales-cd71.csv',
     method: 'GET',
-    encoding: 'binary'
+    encoding: 'utf8'
   })
-    .then(data => XLSX.read(data, { type: 'binary' }))
-    .then(workbook => workbook.Sheets[workbook.SheetNames[0]])
-    .then(XLSX.utils.sheet_to_json)
-    .map(processOrganisme)
-    .map(props => { return { properties: props } })
+    .then(data => {
+      return new Promise((resolve, reject) => {
+        // Remove BOM
+        data = data.slice(2)
+
+        // Remove unicode spaces
+        data = data.replace(/\u0000/g, '')
+
+        parse(data, {
+          delimiter: ';',
+          skip_lines_with_error: true,
+          ltrim: true,
+          rtrim: true,
+          quote: '"',
+          columns: true
+        }, function (err, output) {
+          if (err) {
+            reject(err)
+            return
+          }
+
+          resolve(output)
+        })
+      })
+    })
+    .then(data => data.map(processOrganisme))
+    .then(filterOrganismes)
+    .then(data => data.map(props => { return { properties: props } }))
+    .catch(e => {
+      console.error(e)
+      return []
+    })
 }
 
 const enrich = require('../enrich')
