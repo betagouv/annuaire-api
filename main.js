@@ -146,6 +146,7 @@ const SeL = require('./scripts/saone-et-loire')
 const SSD = require('./scripts/seine-saint-denis')
 const CdA = require('./scripts/cotes-d-armor')
 const SeM = require('./scripts/seine-et-marne')
+const ML = require('./scripts/metropole-lyon')
 
 function prepareDataset () {
   return generateInitialDataset()
@@ -155,6 +156,7 @@ function prepareDataset () {
     .then(dataset => SSD.addOrganismes(dataset).then(() => dataset))
     .then(dataset => CdA.addOrganismes(dataset).then(() => dataset))
     .then(dataset => SeM.addOrganismes(dataset).then(() => dataset))
+    .then(dataset => ML.addOrganismes(dataset).then(() => dataset))
 }
 
 module.exports = {
