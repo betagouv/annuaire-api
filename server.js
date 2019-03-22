@@ -46,7 +46,11 @@ function serve (dataset) {
   })
 
   mainRouter.get('/', (req, res) => {
-    res.status(401).json({ message: `There is nothing here, you should use (communes|departements)/:id/:pivot. Both return GeoJSON.` })
+    res.status(401).json({ message: `There is nothing here, you should check /definitions.yaml.` })
+  })
+
+  mainRouter.get('/definitions.yaml', (req, res) => {
+    res.type('yaml').send(require('js-yaml').safeDump(require('./specs')))
   })
 
   mainRouter.use((error, req, res, next) => {
