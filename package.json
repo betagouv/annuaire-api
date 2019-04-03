@@ -10,6 +10,7 @@
     "ajv": "^6.5.4",
     "bluebird": "^3.5.0",
     "csv": "^5.1.1",
+    "csv-parser": "^2.2.0",
     "decompress": "^4.2.0",
     "express": "^4.16.2",
     "js-yaml": "^3.8.4",

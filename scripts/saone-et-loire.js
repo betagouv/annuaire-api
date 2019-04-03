@@ -1,6 +1,7 @@
 const rp = require('request-promise')
-const parse = require('csv-parse')
+const csv = require('csv-parser')
 const utils = require('./utils')
+const Readable = require('stream').Readable
 
 function processOrganisme (props) {
   let pivotLocal
@@ -60,21 +61,16 @@ function importOrganismes () {
         // Remove unicode spaces
         data = data.replace(/\u0000/g, '')
 
-        parse(data, {
-          delimiter: ';',
-          skip_lines_with_error: true,
-          ltrim: true,
-          rtrim: true,
-          quote: '"',
-          columns: true
-        }, function (err, output) {
-          if (err) {
-            reject(err)
-            return
-          }
+        const stream = new Readable()
+        stream.push(data)
+        stream.push(null)
 
-          resolve(output)
-        })
+        const results = []
+
+        stream
+          .pipe(csv({ separator: ';' }))
+          .on('data', (data) => results.push(data))
+          .on('end', () => resolve(results))
       })
     })
     .then(data => data.map(processOrganisme))
