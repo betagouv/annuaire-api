@@ -34,6 +34,7 @@
     "lint": "eslint *.js **/*.js",
     "test": "yarn lint && yarn mocha",
     "mocha": "mocha",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "reload": "pm2 reload annuaire_v3"
   }
 }
