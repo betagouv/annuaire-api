@@ -12,6 +12,8 @@ export NVM_DIR="$HOME/.nvm"
 # Get latest master
 git pull
 
+npm install yarn@1.15.2 --global
+
 # Update packages
 yarn
 
