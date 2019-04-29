@@ -16,4 +16,4 @@ git pull
 yarn
 
 # Restart server
-/home/cloud/.nvm/versions/node/v6.12.2/bin/pm2 reload annuaire_v3
+${NVM_BIN}/pm2 reload annuaire_v3
