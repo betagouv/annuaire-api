@@ -18,4 +18,4 @@ npm install yarn@1.15.2 --global
 yarn
 
 # Restart server
-${NVM_BIN}/pm2 reload annuaire_v3
+yarn reload
