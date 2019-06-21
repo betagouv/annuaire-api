@@ -1,0 +1,23 @@
+nom: Centre Communal d'Action Sociale de la ville de Canéjan
+pivotLocal: ccas
+id: ccas_Canéjan
+adresses:
+  - id: 33090_4187_aedb0e
+    lignes:
+      - Rue de la Cavalle
+    codePostal: '33610'
+    commune: Canéjan
+    type: physique
+telephone: '12'
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 33090 Canéjan
