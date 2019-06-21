@@ -59,7 +59,7 @@ function importOrganismes () {
         data = data.slice(2)
 
         // Remove unicode spaces
-        data = data.replace(/\u0000/g, '')
+        data = data.replace(/\u0000/g, '') // eslint-disable-line
 
         const stream = new Readable()
         stream.push(data)
