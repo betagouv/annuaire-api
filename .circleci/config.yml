@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/annuaire-api
   docker:
-    - image: circleci/node:6.14-stretch
+    - image: circleci/node:12
 
 version: 2
 jobs:
