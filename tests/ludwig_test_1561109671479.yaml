@@ -1,0 +1,24 @@
+nom: Centre Communal d'Action Sociale de la ville de Caen
+pivotLocal: ccas
+id: ccas_Caen
+adresses:
+  - id: 14118_XXXX_b8b21e
+    lignes:
+      - Avenue de Tourville
+    codePostal: '14000'
+    commune: Caen
+    type: physique
+url: ''
+telephone: '1'
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 14118 Caen
