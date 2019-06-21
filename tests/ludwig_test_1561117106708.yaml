@@ -1,0 +1,23 @@
+nom: Centre Communal d'Action Sociale de la ville de Locon
+pivotLocal: ccas
+id: ccas_Locon
+adresses:
+  - id: 62520_0240_bc51c2
+    lignes:
+      - Rue Victor Genel
+    codePostal: '62400'
+    commune: Locon
+    type: physique
+telephone: '12'
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 62520 Locon
