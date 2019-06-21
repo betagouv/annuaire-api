@@ -1,0 +1,23 @@
+nom: Centre Communal d'Action Sociale de la ville de Saint-Joachim
+pivotLocal: ccas
+id: ccas_Saint-Joachim
+adresses:
+  - id: 44168_0193_a815ad
+    lignes:
+      - Rue du Stade
+    codePostal: '44720'
+    commune: Saint-Joachim
+    type: physique
+telephone: '1'
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 44168 Saint-Joachim
