@@ -10,7 +10,7 @@ definitions:
         items:
           type: string
       codePostal:
-        type: integer
+        pattern: '^.{5}$'
       commune:
         type: string
       type:
