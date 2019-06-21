@@ -2,9 +2,9 @@
 
 ## Usage
 
-* `yarn install` pour installer les dépendances
-* `yarn build` pour lancer l'import
-* `yarn serve` pour lancer le serveur
+* `npm ci` pour installer les dépendances
+* `npm run build` pour lancer l'import
+* `npm run serve` pour lancer le serveur
 
 ## Infrastructure
 

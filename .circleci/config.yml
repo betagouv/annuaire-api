@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: yarn install
+          command: npm ci
       - persist_to_workspace:
           root: .
           paths:
@@ -24,7 +24,7 @@ jobs:
           at: ~/annuaire-api
       - run:
           name: Run tests
-          command: yarn test
+          command: npm test
   deploy:
     machine:
       enabled: true
