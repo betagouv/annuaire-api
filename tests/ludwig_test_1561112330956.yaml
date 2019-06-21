@@ -1,0 +1,23 @@
+nom: Centre Communal d'Action Sociale de la ville de Beaux
+pivotLocal: ccas
+id: ccas_Beaux
+adresses:
+  - id: 43024_B030_646953
+    lignes:
+      - Courenc
+    codePostal: '43200'
+    commune: Beaux
+    type: physique
+telephone: '1'
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 43024 Beaux
