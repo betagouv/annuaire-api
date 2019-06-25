@@ -16,14 +16,20 @@ describe('enrich', function () {
           organismes: {}
         }
       },
-      organismes: {}
+      organismes: {},
+      organismesById: {}
     }
     enrich.addOrganismesFromFolder(dataset, './data')
   })
 
   it('adds organisme in dataset', () => {
-    assert.ok(Object.keys(dataset.organismes).length >= 1)
-    assert.ok(dataset.organismes.cdas_brest_bellevue.properties)
+    assert.ok(Object.keys(dataset.organismesById).length >= 1)
+    assert.ok(dataset.organismesById.cdas_brest_bellevue.properties)
+  })
+
+  it('adds organisme in cdas list', () => {
+    assert.ok(dataset.organismes.cdas.length >= 1)
+    assert.ok(dataset.organismes.cdas.filter(({properties: { id }}) => id === 'cdas_brest_bellevue').length > 0)
   })
 
   it('adds the organisme ID in commune', () => {

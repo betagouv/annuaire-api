@@ -112,7 +112,8 @@ function generateInitialDataset () {
   let dataset = {
     communes: {},
     departements: {},
-    organismes: {}
+    organismes: {},
+    organismesById: {}
   }
 
   return Promise.map(fs.readdirAsync(folder), departementFile => {
@@ -131,34 +132,39 @@ function generateInitialDataset () {
     })
 
     departementData.organismes.forEach(organisme => {
-      departement.organismes[organisme.properties.pivotLocal] = departement.organismes[organisme.properties.pivotLocal] || []
-      departement.organismes[organisme.properties.pivotLocal].push(organisme)
+      let props = organisme.properties
+      dataset.organismesById[organisme.properties.id] = organisme
 
-      dataset.organismes[organisme.properties.id] = organisme
+      enrich.appendOrganisme(departement, props.pivotLocal, organisme)
+      enrich.appendOrganisme(dataset, props.pivotLocal, organisme)
     })
 
     dataset.departements[name] = departement
   }).then(() => dataset)
 }
 
-const HdS = require('./scripts/hauts-de-seine')
-const SeL = require('./scripts/saone-et-loire')
-const SSD = require('./scripts/seine-saint-denis')
-const CdA = require('./scripts/cotes-d-armor')
-const SeM = require('./scripts/seine-et-marne')
-const ML = require('./scripts/metropole-lyon')
-const HG = require('./scripts/haute-garonne')
+const additions = [
+  require('./scripts/hauts-de-seine'),
+  require('./scripts/saone-et-loire'),
+  require('./scripts/seine-saint-denis'),
+  require('./scripts/cotes-d-armor'),
+  require('./scripts/seine-et-marne'),
+  require('./scripts/metropole-lyon'),
+  require('./scripts/haute-garonne')
+]
+
+function addOpenDataOrganismes (dataset) {
+  enrich.addOrganismesFromFolder(dataset, 'data')
+  return Promise.all(additions.map(addition => addition.addOrganismes(dataset)))
+    .then(_ => {
+      fs.writeFileSync('organismes.json', JSON.stringify(dataset.organismes))
+      return dataset
+    })
+}
 
 function prepareDataset () {
   return generateInitialDataset()
-    .then(dataset => enrich.addOrganismesFromFolder(dataset, 'data'))
-    .then(dataset => HdS.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => SeL.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => SSD.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => CdA.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => SeM.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => ML.addOrganismes(dataset).then(() => dataset))
-    .then(dataset => HG.addOrganismes(dataset).then(() => dataset))
+    .then(d => addOpenDataOrganismes(d))
 }
 
 module.exports = {
