@@ -3,6 +3,7 @@ const enrich = require('./enrich')
 let ds = {
   communes: {},
   departements: {},
-  organismes: {}
+  organismes: {},
+  organismesById: {}
 }
 enrich('data', ds)

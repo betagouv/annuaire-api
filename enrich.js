@@ -45,7 +45,9 @@ function appendOrganisme (holder, key, value) {
 
 function addOrganisme (dataset, organisme, departementCode) {
   const props = organisme.properties
-  dataset.organismes[props.id] = organisme
+
+  dataset.organismesById[props.id] = organisme
+  appendOrganisme(dataset, props.pivotLocal, organisme)
 
   props.zonage.communes.forEach(communesLabel => {
     const communeId = communesLabel.slice(0, 5)
@@ -91,6 +93,7 @@ function addOrganismes (dataset, organismes, departementCode) {
 }
 
 module.exports = {
+  appendOrganisme,
   addOrganismes,
   addOrganismesFromFolder
 }
