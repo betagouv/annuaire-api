@@ -13,7 +13,7 @@ function serve (dataset) {
 
     let organismes = []
     pivots.forEach(pivot => {
-      organismes = organismes.concat(source[pivot].map(operation) || [])
+      organismes = organismes.concat((source[pivot] || []).map(operation))
     })
 
     return {
