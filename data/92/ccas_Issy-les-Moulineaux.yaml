@@ -1,0 +1,33 @@
+nom: Centre Communal d'Action Sociale de la ville de Issy-les-Moulineaux
+pivotLocal: ccas
+id: ccas_Issy-les-Moulineaux
+adresses:
+  - id: ADRNIVX_0000000287175423
+    lignes:
+      - 47 Rue du Général Leclerc
+    codePostal: '92130'
+    commune: Issy-les-Moulineaux
+    type: physique
+telephone: 01 41 23 86 50
+accueil physique:
+  horaires:
+    - du: lundi
+      au: mercredi
+      heures:
+        - de: 8h30
+          a: 18h
+    - du: jeudi
+      au: jeudi
+      heures:
+        - de: 8h30
+          a: 19h
+    - du: vendredi
+      au: vendredi
+      heures:
+        - de: 8h30
+          a: 18h
+zonage:
+  communes:
+    - 92040 Issy-les-Moulineaux
+url: >-
+  https://www.issy.com/equipements-et-services/solidarite-aides/les-structures/le-ccas-acteur-cle-pour-une-solidarite-de-0
