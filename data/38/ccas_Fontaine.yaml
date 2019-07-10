@@ -1,0 +1,43 @@
+nom: Centre Communal d'Action Sociale de la ville de Fontaine
+pivotLocal: ccas
+id: ccas_Fontaine
+adresses:
+  - id: ADRNIVX_0000000286677182
+    lignes:
+      - 32 BIS Rue de la Liberté
+    codePostal: '38600'
+    commune: Fontaine
+    type: physique
+telephone: 04 76 28 75 03
+accueil physique:
+  horaires:
+    - du: lundi
+      au: lundi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+    - du: mardi
+      au: mardi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 18h30
+    - du: mercredi
+      au: jeudi
+      heures:
+        - de: 9h
+          a: 12h
+        - de: 13h30
+          a: 17h
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 14h30
+zonage:
+  communes:
+    - 38169 Fontaine
+url: 'https://ville-fontaine.fr/contacts-services-municipaux/'
