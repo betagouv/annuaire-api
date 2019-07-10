@@ -1,0 +1,24 @@
+nom: Centre Communal d'Action Sociale de la ville de Neuilly-sur-Seine
+pivotLocal: ccas
+id: ccas_Neuilly-sur-Seine
+adresses:
+  - id: ADRNIVX_0000000287122958
+    lignes:
+      - 96 Avenue Achille Peretti
+    codePostal: '92200'
+    commune: Neuilly-sur-Seine
+    type: physique
+telephone: 01 40 88 88 88
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 9h
+          a: 17h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 92051 Neuilly-sur-Seine
+url: http://www.neuillysurseine.fr
