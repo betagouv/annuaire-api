@@ -8,7 +8,7 @@ adresses:
     codePostal: '13500'
     commune: Martigues
     type: physique
-telephone: 0442443188
+telephone: 04 42 44 31 88
 accueil physique:
   horaires:
     - du: lundi
