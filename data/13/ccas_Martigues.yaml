@@ -1,0 +1,25 @@
+nom: Centre Communal d'Action Sociale de la ville de Martigues
+pivotLocal: ccas
+id: ccas_Martigues
+adresses:
+  - id: 13056_XXXX_95a886
+    lignes:
+      - Rond-Point de l'Hôtel de Ville
+    codePostal: '13500'
+    commune: Martigues
+    type: physique
+telephone: 04 42 44 31 88
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h30
+          a: 12h
+        - de: 13h30
+          a: 17h30
+zonage:
+  communes:
+    - 13056 Martigues
+url: >-
+  https://www.ville-martigues.fr/information-transversale/annuaire-des-services/ccas-centre-communal-daction-sociale-317
