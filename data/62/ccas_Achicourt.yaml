@@ -1,0 +1,32 @@
+nom: Centre Communal d'Action Sociale de la ville de Achicourt
+pivotLocal: ccas
+id: ccas_Achicourt
+adresses:
+  - id: ADRNIVX_0000000325841180
+    lignes:
+      - 4 Place Jean Jaurès
+    codePostal: '62217'
+    commune: Achicourt
+    type: physique
+telephone: 03 21 71 68 68
+accueil physique:
+  horaires:
+    - du: lundi
+      au: mardi
+      heures:
+        - de: 14h
+          a: 16h
+    - du: mercredi
+      au: mercredi
+      heures:
+        - de: 9h30
+          a: 11h30
+    - du: vendredi
+      au: vendredi
+      heures:
+        - de: 9h30
+          a: 11h30
+zonage:
+  communes:
+    - 62004 Achicourt
+url: 'https://achicourt.fr/vie-municipale/ccas/'
