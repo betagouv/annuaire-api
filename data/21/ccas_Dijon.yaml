@@ -1,0 +1,25 @@
+nom: Centre Communal d'Action Sociale de la ville de Dijon
+pivotLocal: ccas
+id: ccas_Dijon
+adresses:
+  - id: ADRNIVX_0000000329132272
+    lignes:
+      - 11 Rue de l'Hôpital
+    codePostal: '21000'
+    commune: Dijon
+    type: physique
+telephone: 03 80 44 81 00
+accueil physique:
+  horaires:
+    - du: lundi
+      au: vendredi
+      heures:
+        - de: 8h
+          a: 12h
+        - de: 14h
+          a: 17h
+zonage:
+  communes:
+    - 21231 Dijon
+url: >-
+  https://www.dijon.fr/Dijon-au-quotidien/Social-et-handicap/CCAS-Centre-communal-d-action-sociale
