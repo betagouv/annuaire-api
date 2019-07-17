@@ -8,7 +8,7 @@ adresses:
     codePostal: '21000'
     commune: Dijon
     type: physique
-telephone: ' 03 80 44 81 00'
+telephone: 03 80 44 81 00
 accueil physique:
   horaires:
     - du: lundi
