@@ -17,12 +17,15 @@ bsn: Bureau ou centre du service national
 caa: Cour administrative d’appel
 caf: Caisse d’allocations familiales (CAF)
 carsat: Caisse d'assurance retraite et de la santé au travail (CARSAT)
+ccas: Centre communal d'action sociale
 cci: Chambre de commerce et d’industrie (CCI)
+cdas: Centre départemental d'action sociale
 cddp: Centre départemental de documentation pédagogique
 cdg: Centre de gestion de la fonction publique territoriale
 centre_detention: Centre de détention
 centre_impots_fonciers: Centre des impôts foncier et cadastre
 centre_penitentiaire: Centre pénitentiaire
+centre_social: Centre social
 cesr: Conseil économique, social et environnemental régional
 cg: Conseil départemental
 chambre_agriculture: Chambre d’agriculture
@@ -98,6 +101,7 @@ drpjj: Direction interdépartementale ou régionale de la protection judiciaire 
 drrt: Délégation régionale à la recherche et à la technologie
 drsp: Direction interrégionale des services pénitentiaires
 dz_paf: Direction zonale de la police aux frontières
+edas: Établissement départemental d'actions sociales
 epci: Intercommunalité
 esm: Etablissement spécialisé pour mineurs
 fdapp: Fédération départementale pour la pêche et la protection du milieu aquatique
@@ -110,9 +114,11 @@ inspection_academique: Direction des services départementaux de l'Éducation na
 maia: Mission d’accueil et d’information des associations (MAIA)
 mairie: Mairie
 mairie_com: Mairie des collectivités d'outre-mer
+mairie_mobile: Mairie mobile de la ville de Paris
 maison_arret: Maison d'arrêt
 maison_centrale: Maison centrale
 maison_handicapees: Maison départementale des personnes handicapées (MDPH)
+mds: Maison départementale des solidarités
 mission_locale: Mission locale et Permanence d’accueil, d’information et d’orientation
   (PAIO)
 mjd: Maison de justice et du droit
@@ -138,6 +144,7 @@ prefecture_region: Préfecture de région
 prudhommes: Conseil de prud’hommes
 rectorat: Rectorat
 sdac: Service territorial de l’architecture et du patrimoine
+sdsei: Services départementaux des solidarités et de l'insertion
 service_navigation: Service de la navigation
 sgami: Secrétariat pour l'administration du ministère de l'Intérieur (SGAMI)
 sie: Service des impôts des entreprises du Centre des finances publiques

@@ -144,20 +144,19 @@ function generateInitialDataset () {
 }
 
 const additions = [
-  require('./scripts/hauts-de-seine'),
-  require('./scripts/saone-et-loire'),
-  require('./scripts/seine-saint-denis'),
   require('./scripts/cotes-d-armor'),
-  require('./scripts/seine-et-marne'),
+  require('./scripts/haute-garonne'),
+  require('./scripts/hauts-de-seine'),
   require('./scripts/metropole-lyon'),
-  require('./scripts/haute-garonne')
+  require('./scripts/saone-et-loire'),
+  require('./scripts/seine-et-marne'),
+  require('./scripts/seine-saint-denis')
 ]
 
 function addOpenDataOrganismes (dataset) {
   enrich.addOrganismesFromFolder(dataset, 'data')
   return Promise.all(additions.map(addition => addition.addOrganismes(dataset)))
     .then(_ => {
-      fs.writeFileSync('organismes.json', JSON.stringify(dataset.organismes))
       return dataset
     })
 }
@@ -168,6 +167,7 @@ function prepareDataset () {
 }
 
 module.exports = {
+  additions,
   build,
   prepareDataset,
   toJson

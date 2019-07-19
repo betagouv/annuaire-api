@@ -2,14 +2,15 @@ const rp = require('request-promise')
 const csv = require('csv-parser')
 const utils = require('./utils')
 const Readable = require('stream').Readable
+const types = ['mds', 'maison_handicapees']
 
 function processOrganisme (props) {
   let pivotLocal
   if (props.ID.startsWith('mds_')) {
-    pivotLocal = 'mds'
+    pivotLocal = types[0]
   }
   if (props.ID.startsWith('mdph_')) {
-    pivotLocal = 'maison_handicapees '
+    pivotLocal = types[1]
   }
 
   if (!pivotLocal) {
@@ -88,5 +89,6 @@ function addOrganismes (dataset) {
 }
 
 module.exports = {
-  addOrganismes
+  addOrganismes,
+  types
 }
