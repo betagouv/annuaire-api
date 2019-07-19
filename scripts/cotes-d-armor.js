@@ -1,6 +1,7 @@
 const enrich = require('../enrich')
 const rp = require('request-promise')
 const utils = require('./utils')
+const type = 'mds'
 
 function processOrganisme (zonage, organisme) {
   if (!organisme.Nom) {
@@ -9,7 +10,7 @@ function processOrganisme (zonage, organisme) {
 
   return {
     nom: organisme.Nom,
-    pivotLocal: 'mds',
+    pivotLocal: type,
     id: organisme.id__,
     adresses: [ processAddress(organisme) ],
     horaires: utils.processOpeningHours(organisme.Horaires),
@@ -69,5 +70,6 @@ function addOrganismes (dataset) {
 }
 
 module.exports = {
-  addOrganismes
+  addOrganismes,
+  type
 }

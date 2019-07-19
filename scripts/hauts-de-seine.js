@@ -1,6 +1,7 @@
 const enrich = require('../enrich')
 const rp = require('request-promise')
 const utils = require('./utils')
+const type = 'edas'
 
 function processOrganisme (organisme) {
   const props = organisme.properties
@@ -9,7 +10,7 @@ function processOrganisme (organisme) {
   }
   return {
     nom: props.nom.replace(/^EDAS/, 'Établissement départemental d\'actions sociales'),
-    pivotLocal: 'edas',
+    pivotLocal: type,
     id: props.id,
     adresses: [processAddress(props)],
     horaires: utils.processOpeningHours(props.horaires),
@@ -57,5 +58,6 @@ function addOrganismes (dataset) {
 }
 
 module.exports = {
-  addOrganismes
+  addOrganismes,
+  type
 }

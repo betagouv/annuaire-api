@@ -1,11 +1,12 @@
 const rp = require('request-promise')
 const XLSX = require('xlsx')
 const utils = require('./utils')
+const type = 'mds'
 
 function processOrganisme (props) {
   return {
     nom: props.Nom,
-    pivotLocal: 'mds',
+    pivotLocal: type,
     id: props.ID,
     adresses: [processAddress(props)],
     horaires: utils.processOpeningHours(props.Horaires),
@@ -49,5 +50,6 @@ function addOrganismes (dataset) {
 }
 
 module.exports = {
-  addOrganismes
+  addOrganismes,
+  type
 }
