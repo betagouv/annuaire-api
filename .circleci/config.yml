@@ -25,14 +25,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - run:
-          name: Deploy on production
-          command: |
-            ssh cloud@etablissements-publics.api.gouv.fr
 
 workflows:
   version: 2
@@ -42,9 +34,3 @@ workflows:
       - test:
           requires:
             - install
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
