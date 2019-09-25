@@ -4,7 +4,7 @@ const { prepareDataset } = require('./main')
 const port = process.env.PORT || 12346
 
 function serve (dataset) {
-  let app = express()
+  const app = express()
 
   function generateGeoJson (pivots, source, operation) {
     if (!operation) {
@@ -22,7 +22,7 @@ function serve (dataset) {
     }
   }
 
-  let mainRouter = express.Router()
+  const mainRouter = express.Router()
   mainRouter.get('/communes/:communeId/:pivot', (req, res) => {
     const pivots = new Set(req.params.pivot.split('+'))
     const commune = dataset.communes[req.params.communeId]
@@ -51,7 +51,7 @@ function serve (dataset) {
   })
 
   mainRouter.get('/', (req, res) => {
-    res.status(401).json({ message: `There is nothing here, you should check /definitions.yaml.` })
+    res.status(401).json({ message: 'There is nothing here, you should check /definitions.yaml.' })
   })
 
   mainRouter.get('/definitions.yaml', (req, res) => {

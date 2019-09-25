@@ -24,7 +24,7 @@ function getCoordinates (address) {
 }
 
 function address (data) {
-  let properties = {
+  const properties = {
     type: data.$.type,
     lignes: data.Ligne,
     codePostal: data.CodePostal && data.CodePostal[0],

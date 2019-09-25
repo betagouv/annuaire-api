@@ -1,6 +1,6 @@
 const enrich = require('./enrich')
 
-let ds = {
+const ds = {
   communes: {},
   departements: {},
   organismes: {},

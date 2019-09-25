@@ -7,12 +7,12 @@ describe('enrich', function () {
   before(() => {
     dataset = {
       communes: {
-        '29011': {
+        29011: {
           organismes: {}
         }
       },
       departements: {
-        '29': {
+        29: {
           organismes: {}
         }
       },
@@ -29,7 +29,7 @@ describe('enrich', function () {
 
   it('adds organisme in cdas list', () => {
     assert.ok(dataset.organismes.cdas.length >= 1)
-    assert.ok(dataset.organismes.cdas.filter(({properties: { id }}) => id === 'cdas_brest_bellevue').length > 0)
+    assert.ok(dataset.organismes.cdas.filter(({ properties: { id } }) => id === 'cdas_brest_bellevue').length > 0)
   })
 
   it('adds the organisme ID in commune', () => {
