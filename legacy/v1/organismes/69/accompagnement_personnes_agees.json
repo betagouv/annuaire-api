@@ -1,0 +1,283 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.859348,
+          45.735293
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-69388-01",
+        "codeInsee": "69388",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Lyon",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour Polydom",
+            "15 rue Villon"
+          ],
+          "CodePostal": "69008",
+          "NomCommune": "Lyon",
+          "Localisation": {
+            "Latitude": "45.735293",
+            "Longitude": "4.859348",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 76 50 48",
+          "Email": "bistrotdesaidants@polydom.com",
+          "Url": "http://www.polydom.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:30:00",
+              "fin": "17:00:00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.820281,
+          45.744231
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-69382-01",
+        "codeInsee": "69382",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Lyon",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour Interlude",
+            "6 A cours Bayard"
+          ],
+          "CodePostal": "69002",
+          "NomCommune": "Lyon",
+          "Localisation": {
+            "Latitude": "45.744231",
+            "Longitude": "4.820281",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 29 74 01",
+          "Télécopie": "04 78 28 08 15",
+          "Email": "plateforme@smdlyon.fr",
+          "Url": "http://smdlyon.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "16:00:00"
+            },
+            "Note": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.891936,
+          45.760132
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-69266-01",
+        "codeInsee": "69266",
+        "dateMiseAJour": "2017-11-10",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-989",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Villeurbanne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "77 boulevard Eugène-Réguillon",
+            "Lieu de répit",
+            "CCAS"
+          ],
+          "CodePostal": "69100",
+          "NomCommune": "Villeurbanne",
+          "Localisation": {
+            "Latitude": "45.760132",
+            "Longitude": "4.891936",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 03 82 22",
+          "Email": "lieuderepitccas@mairie-villeurbanne.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:30:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            ],
+            "Note": "Accueil ouvert sur rendez-vous uniquement. Le vendredi fermeture à 16h15"
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9000748,
+          45.7630964
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-69266-02",
+        "codeInsee": "69266",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Villeurbanne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "77 boulevard Eugène-Réguillon",
+          "CodePostal": "69100",
+          "NomCommune": "Villeurbanne",
+          "Localisation": {
+            "Latitude": "45.7630964",
+            "Longitude": "4.9000748",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 03 82 22",
+          "Email": "lieuderepitccas@mairie-villeurbanne.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ],
+              "Note": "Accueil ouvert sur rendez-vous uniquement."
+            },
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "16:15:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.707051,
+          45.995535
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-69092-01",
+        "codeInsee": "69092",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Gleizé",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "L'Hippocampe",
+            "Accueil de jour",
+            "95 avenue du Beaujolais"
+          ],
+          "CodePostal": "69400",
+          "NomCommune": "Gleizé",
+          "Localisation": {
+            "Latitude": "45.995535",
+            "Longitude": "4.707051",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 74 69 50 77",
+          "Email": "arcav.hippocampe@laposte.net",
+          "Url": "http://www.arcav.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "18:00:00"
+            },
+            "Note": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8549454,
+          47.6379703
+        ]
+      },
+      "properties": {
+        "id": "cij-90010-01",
+        "codeInsee": "90010",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Belfort",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "3 rue Jules-Vallès",
+          "CodePostal": "90000",
+          "NomCommune": "Belfort",
+          "Localisation": {
+            "Latitude": "47.6379703",
+            "Longitude": "6.8549454",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 84 90 11 11",
+          "Email": "bij@mairie-belfort.fr",
+          "Url": "http://www.ijbelfort.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "13:30:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "10:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "18:00:00"
+                }
+              ]
+            },
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.8435041,
+          47.7407421
+        ]
+      },
+      "properties": {
+        "id": "cij-90052-01",
+        "codeInsee": "90052",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Giromagny",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "35 rue du Stade",
+            "BP 27"
+          ],
+          "CodePostal": "90200",
+          "NomCommune": "Vescemont",
+          "Localisation": {
+            "Latitude": "47.7407421",
+            "Longitude": "6.8435041",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 84 29 03 90",
+          "Email": "csgiro@wanadoo.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "18:00:00"
+                }
+              ]
+            },
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              "Note": "Accueil fermé pendant les vacances scolaires."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

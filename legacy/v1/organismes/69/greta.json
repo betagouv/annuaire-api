@@ -1,0 +1,116 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.7062811,
+          45.9991638
+        ]
+      },
+      "properties": {
+        "id": "greta-69264-01",
+        "codeInsee": "69264",
+        "dateMiseAJour": "2014-12-04",
+        "pivotLocal": "greta",
+        "Nom": "Greta du Beaujolais et des Monts-du-Lyonnais",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Lycée Louis-Armand",
+            "507, avenue du Beaujolais",
+            "CS 60402",
+            "Gleizé"
+          ],
+          "CodePostal": "69651",
+          "NomCommune": "Villefranche-sur-Saône Cedex",
+          "Localisation": {
+            "Latitude": "45.9991638",
+            "Longitude": "4.7062811",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "+33 4 74 02 30 16",
+          "Télécopie": "+33 4 74 02 30 18",
+          "Email": "greta-bml@ac-lyon.fr",
+          "Url": "http://www.ac-lyon.frgreta/bml"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "greta-69388-01",
+        "codeInsee": "69388",
+        "dateMiseAJour": "2017-10-31",
+        "pivotLocal": "greta",
+        "Nom": "Greta - Lyon Métropole",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "41 rue Antoine Lumière",
+          "CodePostal": "69008",
+          "NomCommune": "Lyon",
+          "Accessibilité": {
+            "type": "DEM"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 78 84 84",
+          "Email": "Contact.greta.lyonmetropole@ac-lyon.fr",
+          "Url": "https://www1.ac-lyon.fr/greta/lyon-metropole"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "13:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "17:30:00"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

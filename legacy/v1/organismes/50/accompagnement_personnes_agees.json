@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-50294-01",
+        "codeInsee": "50294",
+        "dateMiseAJour": "2017-11-15",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-914",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Martinvast",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "7 Bis route de la Poste",
+            "EHPAD",
+            "Elisabeth de Surville"
+          ],
+          "CodePostal": "50690",
+          "NomCommune": "Martinvast"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "02 33 01 63 80"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

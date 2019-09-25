@@ -1,0 +1,210 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.893615,
+          42.70536
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-66136-01",
+        "codeInsee": "66136",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Perpignan",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "France Alzheimer Po",
+            "Le Grand Platane",
+            "Accueil thérapeutique de jour",
+            "10 rue Vincent-d'Indy"
+          ],
+          "CodePostal": "66000",
+          "NomCommune": "Perpignan",
+          "Localisation": {
+            "Latitude": "42.70536",
+            "Longitude": "2.893615",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 68 52 22 22",
+          "Télécopie": "04 68 28 62 77",
+          "Email": "francealzheimer-catalogne@wanadoo.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "17:00:00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7072916,
+          42.6881002
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-66108-01",
+        "codeInsee": "66108",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Millas",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour",
+            "Lotissement ZAC Los Palaus",
+            "15 rue Hermès"
+          ],
+          "CodePostal": "66170",
+          "NomCommune": "Millas",
+          "Localisation": {
+            "Latitude": "42.6881002",
+            "Longitude": "2.7072916",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 68 66 02 02",
+          "Email": "grandplatanemillas@gmail.com",
+          "Url": "http://www.legrandplatane.fr"
+        },
+        "Commentaire": "Accueil ouvert uniquement sur rendez-vous, contacter le 0468522222."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.424575,
+          42.618293
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-66149-01",
+        "codeInsee": "66149",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Prades",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "EHPAD Guy-Malé",
+            "Centre hospitalier",
+            "1 rue de la Basse"
+          ],
+          "CodePostal": "66500",
+          "NomCommune": "Prades",
+          "Localisation": {
+            "Latitude": "42.618293",
+            "Longitude": "2.424575",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 68 96 00 88",
+          "Télécopie": "04 68 96 57 85",
+          "Email": "m.retraite@hopital-prades.fr",
+          "Url": "http://hopital-prades.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "08:30:00",
+              "fin": "18:00:00"
+            },
+            "Note": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.695244,
+          42.689959
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-66108-02",
+        "codeInsee": "66108",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Millas",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Résidence Força Real",
+            "Accueil de jour",
+            "3 allée Edmond-Michelet"
+          ],
+          "CodePostal": "66170",
+          "NomCommune": "Millas",
+          "Localisation": {
+            "Latitude": "42.689959",
+            "Longitude": "2.695244",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 68 84 61 00",
+          "Télécopie": "04 68 84 61 89",
+          "Email": "residenceforcareal@wanadoo.fr",
+          "Url": "http://ehpad-millas.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:30:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

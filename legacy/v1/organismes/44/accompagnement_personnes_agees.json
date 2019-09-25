@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.057335,
+          47.4767
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-44053-01",
+        "codeInsee": "44053",
+        "dateMiseAJour": "2017-11-14",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-906",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Drefféac",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour",
+            "Al'fa répit",
+            "13 place de l'Eglise"
+          ],
+          "CodePostal": "44530",
+          "NomCommune": "Drefféac",
+          "Localisation": {
+            "Latitude": "47.4767",
+            "Longitude": "-2.057335",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "02 40 66 94 58",
+          "Email": "contact@alfarepit.fr",
+          "Url": "http://www.alfarepit.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.543702,
+          47.223822
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-44109-01",
+        "codeInsee": "44109",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Nantes",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Mairie de Nantes",
+            "2 rue de Courson"
+          ],
+          "CodePostal": "44000",
+          "NomCommune": "Nantes",
+          "Localisation": {
+            "Latitude": "47.223822",
+            "Longitude": "-1.543702",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "02 51 89 17 60",
+          "Email": "maisondesaidants@mairie-nantes.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              "Note": "Accueil uniquement le 1er samedi du mois."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

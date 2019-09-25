@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.440607,
+          43.590208
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-40133-01",
+        "codeInsee": "40133",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Labenne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Institut Hélio-Marin",
+            "315 route Océane"
+          ],
+          "CodePostal": "40530",
+          "NomCommune": "Labenne",
+          "Localisation": {
+            "Latitude": "43.590208",
+            "Longitude": "-1.440607",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 59 45 83 78",
+          "Email": "lescale@helio-labenne.asso.fr",
+          "Url": "http://www.plateformelescale.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "17:00:00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.169127,
+          44.39399
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-40046-01",
+        "codeInsee": "40046",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Biscarrosse",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "EHPAD Léon-Dubedat",
+            "55 avenue de Montbron"
+          ],
+          "CodePostal": "40600",
+          "NomCommune": "Biscarrosse",
+          "Localisation": {
+            "Latitude": "44.39399",
+            "Longitude": "-1.169127",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 58 83 01 50",
+          "Télécopie": "05 58 83 01 03",
+          "Email": "par@ehpadbiscarrosse.fr",
+          "Url": "http://www.ehpad-biscarrosse.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

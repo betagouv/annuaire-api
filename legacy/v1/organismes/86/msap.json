@@ -1,0 +1,510 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.65550319,
+          46.1210787
+        ]
+      },
+      "properties": {
+        "id": "msap-86015-01",
+        "codeInsee": "86015",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Availles-Limouzine",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "5 rue du Commerce",
+          "CodePostal": "86460",
+          "NomCommune": "Availles-Limouzine",
+          "Localisation": {
+            "Latitude": "46.1210787",
+            "Longitude": "0.65550319",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 49 48 53 70",
+          "Email": "msap.availles-limouzine@laposte.fr",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "15:00:00"
+                }
+              ],
+              "Note": "Fermeture à 14h50."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.205644,
+          46.917804
+        ]
+      },
+      "properties": {
+        "id": "msap-86167-01",
+        "codeInsee": "86167",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Monts-sur-Guesnes",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Bureau de poste",
+            "11 place Frézeau-de-la-Frézelière"
+          ],
+          "CodePostal": "86420",
+          "NomCommune": "Monts-sur-Guesnes",
+          "Localisation": {
+            "Latitude": "46.917804",
+            "Longitude": "0.205644",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 49 22 82 89",
+          "Email": "msap.monts-sur-guesnes@laposte.fr",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "mercredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "16:15:00"
+                }
+              ],
+              "Note": "Accueil ouvert  à 13h50."
+            },
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "16:15:00"
+                }
+              ],
+              "Note": "Accueil ouvert précisement à 13h50."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.38293,
+          46.589864
+        ]
+      },
+      "properties": {
+        "id": "msap-86194-01",
+        "codeInsee": "86194",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Poitiers",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Point information médiation multi-services",
+            "15 avenue de la Fraternité"
+          ],
+          "CodePostal": "86000",
+          "NomCommune": "Poitiers",
+          "Localisation": {
+            "Latitude": "46.589864",
+            "Longitude": "0.38293",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 49 52 67 66",
+          "Email": "poitiers.st-eloi@pimms.org",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": [
+                {
+                  "début": "09:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "18:00:00"
+                }
+              ]
+            },
+            {
+              "début": "mercredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.309746,
+          46.735641
+        ]
+      },
+      "properties": {
+        "id": "msap-86281-01",
+        "codeInsee": "86281",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Vendeuvre-du-Poitou",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Bureau de poste",
+            "12 bis place Raoul-Perret"
+          ],
+          "CodePostal": "86380",
+          "NomCommune": "Vendeuvre-du-Poitou",
+          "Localisation": {
+            "Latitude": "46.735641",
+            "Longitude": "0.309746",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 49 51 28 00",
+          "Email": "msap.vendeuvre-du-poitou@laposte.fr",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:15:00",
+                  "fin": "16:45:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.121424,
+          46.435962
+        ]
+      },
+      "properties": {
+        "id": "msap-86139-01",
+        "codeInsee": "86139",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Lusignan",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "7 rue Enjambes",
+          "CodePostal": "86600",
+          "NomCommune": "Lusignan",
+          "Localisation": {
+            "Latitude": "46.435962",
+            "Longitude": "0.121424",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 49 89 07 52",
+          "Email": "msap.lusignan@grandpoitiers.fr",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            ],
+            "Note": "Hormis les jours fériés."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.642577,
+          46.5697
+        ]
+      },
+      "properties": {
+        "id": "msap-86070-01",
+        "codeInsee": "86070",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Chauvigny",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "9 place du Marché",
+          "CodePostal": "86300",
+          "NomCommune": "Chauvigny",
+          "Localisation": {
+            "Latitude": "46.5697",
+            "Longitude": "0.642577",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Url": "https://www.maisondeservicesaupublic.frcontent/pays-chauvinois"
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.017315,
+          47.063985
+        ]
+      },
+      "properties": {
+        "id": "msap-86274-01",
+        "codeInsee": "86274",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Trois-Moutiers",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Bureau de poste",
+            "3 rue des Deniers"
+          ],
+          "CodePostal": "86120",
+          "NomCommune": "Trois-Moutiers",
+          "Localisation": {
+            "Latitude": "47.063985",
+            "Longitude": "0.017315",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Email": "msap.les-trois-moutiers@laposte.fr",
+          "Url": "https://www.maisondeservicesaupublic.frcontent/les-trois-moutiers-bureau-de-poste"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "13:45:00",
+                "fin": "16:15:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:45:00",
+                  "fin": "16:15:00"
+                }
+              ]
+            },
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:45:00",
+                  "fin": "16:15:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.183036,
+          46.300692
+        ]
+      },
+      "properties": {
+        "id": "msap-86082-01",
+        "codeInsee": "86082",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "msap",
+        "Nom": "Maison de services au public - Couhé",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Bureau de poste",
+            "7 place de la Marne"
+          ],
+          "CodePostal": "86700",
+          "NomCommune": "Couhé",
+          "Localisation": {
+            "Latitude": "46.300692",
+            "Longitude": "0.183036",
+            "Précision": "8"
+          }
+        },
+        "CoordonnéesNum": {
+          "Email": "msap.couhe@laposte.fr",
+          "Url": "https://www.maisondeservicesaupublic.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "16:30:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-74011-01",
+        "codeInsee": "74011",
+        "dateMiseAJour": "2017-11-14",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-992",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Annecy-le-Vieux",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour",
+            "L'Escale",
+            "Résidence Les Vergers",
+            "4 rue Guynemer"
+          ],
+          "CodePostal": "74940",
+          "NomCommune": "Annecy-le-Vieux"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 50 64 08 87"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

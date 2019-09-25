@@ -1,0 +1,2078 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4843197,
+          43.5985377
+        ]
+      },
+      "properties": {
+        "id": "cij-13113-01",
+        "codeInsee": "13113",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Venelles",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "7 rue des Écoles",
+          "CodePostal": "13770",
+          "NomCommune": "Venelles",
+          "Localisation": {
+            "Latitude": "43.5985377",
+            "Longitude": "5.4843197",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 54 09 09",
+          "Télécopie": "04 42 54 71 43",
+          "Email": "pij.venelles@wanadoo.fr",
+          "Url": "http://www.venelles.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "19:00:00"
+              },
+              "Note": "Horaires pendant les congés scolaires."
+            },
+            {
+              "début": "mardi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "19:00:00"
+              },
+              "Note": "Horaires hors congés scolaires."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.447427,
+          43.529742
+        ]
+      },
+      "properties": {
+        "id": "cij-13001-01",
+        "codeInsee": "13001",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Centre information famille - Aix-en-Provence",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Direction jeunesse petite-enfance - Enfance",
+            "37 boulevard Aristide-Briand"
+          ],
+          "CodePostal": "13100",
+          "NomCommune": "Aix-en-Provence",
+          "Localisation": {
+            "Latitude": "43.529742",
+            "Longitude": "5.447427",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 91 98 01",
+          "Email": "cif@mairie-aixenprovence.fr",
+          "Url": "http://www.aixenprovence.frJeunesse"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            },
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            },
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "cij-13205-01",
+        "codeInsee": "13205",
+        "dateMiseAJour": "2017-10-16",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 5e - Tivoli",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre Tivoli - IFAC",
+            "66 cours Franklin-Roosevelt"
+          ],
+          "CodePostal": "13005",
+          "NomCommune": "Marseille",
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 96 12 20 20",
+          "Télécopie": "04 91 94 57 54",
+          "Email": "pijtivoli@yahoo.fr",
+          "Url": "www.crijpa.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "13:00:00",
+                "fin": "18:00:00"
+              },
+              "Note": "Accueil de groupe sur rendez-vous."
+            },
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "13:00:00",
+                "fin": "18:00:00"
+              },
+              "Note": "Accueil de groupe sur rendez-vous."
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "10:00:00",
+                "fin": "18:00:00"
+              },
+              "Note": "Accueil de groupe sur rendez-vous."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.937047,
+          43.5918769
+        ]
+      },
+      "properties": {
+        "id": "cij-13047-01",
+        "codeInsee": "13047",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Entressen",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre social et d'animation Pierre-Miallet",
+            "Rue de Coulies"
+          ],
+          "CodePostal": "13118",
+          "NomCommune": "Entressen",
+          "Localisation": {
+            "Latitude": "43.5918769",
+            "Longitude": "4.937047",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 50 69 49",
+          "Télécopie": "04 90 50 69 40",
+          "Email": "csapm.accueil@orange.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "18:00:00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.10840988159,
+          43.3320007324
+        ]
+      },
+      "properties": {
+        "id": "cij-13026-02",
+        "codeInsee": "13026",
+        "dateMiseAJour": "2011-09-02",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Châteauneuf-les-Martigues",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "DEFI pour l'Emplois",
+            "Place Jean Jaurès"
+          ],
+          "CodePostal": "13220",
+          "NomCommune": "CHATEAUNEUF LES MARTIGUES",
+          "Localisation": {
+            "Latitude": "43.3320007324",
+            "Longitude": "5.10840988159",
+            "Précision": "6"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "+33 4 42 76 21 21",
+          "Url": "http://www.crijpa.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:30:00"
+                }
+              ]
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.373926,
+          43.307609
+        ]
+      },
+      "properties": {
+        "id": "cij-13203-02",
+        "codeInsee": "13203",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 3e - Kléber",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Maison pour tous Kléber",
+            "Centre ressources numériques",
+            "90 avenue Camille-Pelletan"
+          ],
+          "CodePostal": "13003",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.307609",
+            "Longitude": "5.373926",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 62 04 23",
+          "Email": "movekleber@gmail.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            ],
+            "Note": "Accueil ouvert un vendredi sur deux, contacter l'accueil pour vérifier l'ouverture du service."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5940766,
+          43.3940272
+        ]
+      },
+      "properties": {
+        "id": "cij-13016-01",
+        "codeInsee": "13016",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - La Bouilladisse",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "9 avenue de la Libération",
+          "CodePostal": "13720",
+          "NomCommune": "La Bouilladisse",
+          "Localisation": {
+            "Latitude": "43.3940272",
+            "Longitude": "5.5940766",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 62 40 35",
+          "Télécopie": "04 42 72 58 93",
+          "Email": "ccas@ville-bouilladisse.com",
+          "Url": "http://www.ville-bouilladisse.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "17:30:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "19:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "17:30:00"
+                }
+              ]
+            },
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "17:30:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1685617,
+          43.4754722
+        ]
+      },
+      "properties": {
+        "id": "cij-13014-01",
+        "codeInsee": "13014",
+        "dateMiseAJour": "2017-10-17",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Berre-l'Étang",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Mission locale Est Étang-de-Berre",
+            "11 boulevard Victor-Hugo"
+          ],
+          "CodePostal": "13130",
+          "NomCommune": "Berre-l'Étang",
+          "Localisation": {
+            "Latitude": "43.4754722",
+            "Longitude": "5.1685617",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC",
+            "$t": "rez-de-chaussée"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 74 94 42",
+          "Télécopie": "04 42 74 93 48",
+          "Email": "ml_berre@club-internet.fr",
+          "Url": "http://www.missionlocale-eeb.blogspot.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:30:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:15:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.855685,
+          43.8820059
+        ]
+      },
+      "properties": {
+        "id": "cij-13027-01",
+        "codeInsee": "13027",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Châteaurenard",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Pôle jeunesse",
+            "Parking de la Halte-Routière"
+          ],
+          "CodePostal": "13160",
+          "NomCommune": "Châteaurenard",
+          "Localisation": {
+            "Latitude": "43.8820059",
+            "Longitude": "4.855685",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 94 44 10",
+          "Télécopie": "04 90 90 16 44",
+          "Email": "jeunesse@chateaurenard.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "13:30:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "18:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.382287,
+          43.297826
+        ]
+      },
+      "properties": {
+        "id": "cij-13201-01",
+        "codeInsee": "13201",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Centre régional information jeunesse - Provence-Alpes-Côte d'azur",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "96 la Canebière",
+          "CodePostal": "13001",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.297826",
+            "Longitude": "5.382287",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 24 33 50",
+          "Email": "crijpa@crijpa.fr",
+          "Url": "http://www.crijpa.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "13:00:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "10:00:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "13:00:00",
+                "fin": "18:00:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.658481,
+          43.801977
+        ]
+      },
+      "properties": {
+        "id": "cij-13108-01",
+        "codeInsee": "13108",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Tarascon",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Pôle social",
+            "Avenue Pierre-Sémard"
+          ],
+          "CodePostal": "13150",
+          "NomCommune": "Tarascon",
+          "Localisation": {
+            "Latitude": "43.801977",
+            "Longitude": "4.658481",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 91 02 96",
+          "Télécopie": "04 90 43 52 20",
+          "Email": "ass.teef@wanadoo.fr",
+          "Url": "http://www.teef-tarascon.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.643946,
+          43.372304
+        ]
+      },
+      "properties": {
+        "id": "cij-13007-01",
+        "codeInsee": "13007",
+        "dateMiseAJour": "2017-10-18",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Auriol",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Mission d'animation de UFCV",
+            "Cité de la jeunesse",
+            "Château de la Bardeline",
+            "Avenue Jean-Maffre"
+          ],
+          "CodePostal": "13390",
+          "NomCommune": "Auriol",
+          "Localisation": {
+            "Latitude": "43.372304",
+            "Longitude": "5.643946",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 08 80 70",
+          "Télécopie": "04 42 08 80 74",
+          "Email": "magali.daillan@ufcv.fr",
+          "Url": "www.portail-animation.ufcv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "16:00:00",
+                "fin": "19:00:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "16:00:00",
+                "fin": "19:00:00"
+              }
+            },
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "18:30:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.262374,
+          43.649089
+        ]
+      },
+      "properties": {
+        "id": "cij-13050-01",
+        "codeInsee": "13050",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Lambesc",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "9 avenue du 8-Mai-1945",
+          "CodePostal": "13410",
+          "NomCommune": "Lambesc",
+          "Localisation": {
+            "Latitude": "43.649089",
+            "Longitude": "5.262374",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 17 02 95",
+          "Email": "pij@lambesc.fr",
+          "Url": "http://www.lambesc.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5651988,
+          43.293708
+        ]
+      },
+      "properties": {
+        "id": "cij-13005-01",
+        "codeInsee": "13005",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Aubagne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Immeuble Le Millepertuis",
+            "10 avenue Joseph-Fallen"
+          ],
+          "CodePostal": "13400",
+          "NomCommune": "Aubagne",
+          "Localisation": {
+            "Latitude": "43.293708",
+            "Longitude": "5.5651988",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 18 19 64",
+          "Email": "pij@aubagne.fr",
+          "Url": "http://www.aubagne.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "18:30:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "17:30:00"
+              }
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "17:30:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "17:30:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "12:00:00",
+                "fin": "17:30:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "cij-13100-02",
+        "codeInsee": "13100",
+        "dateMiseAJour": "2017-10-18",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Saint-Rémy-de-Provence",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Maison de la jeunesse",
+            "11 avenue Félix Gras"
+          ],
+          "CodePostal": "13210",
+          "NomCommune": "Saint-Rémy-de-Provence"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 90 56 17",
+          "Email": "jeunesse@mairie-saintremydeprovence.fr",
+          "Url": "http://www.mairie-saintremydeprovence.fr/"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "15:00:00",
+                "fin": "19:00:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "15:00:00",
+                "fin": "19:00:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "samedi",
+              "fin": "samedi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            }
+          ]
+        },
+        "Commentaire": "Hors période scolaire du lundi au vendredi de 14 à 18 heures"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1465026,
+          43.6364445
+        ]
+      },
+      "properties": {
+        "id": "cij-13069-01",
+        "codeInsee": "13069",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Pélissanne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "393 chemin Saint-Pierre",
+          "CodePostal": "13330",
+          "NomCommune": "Pélissanne",
+          "Localisation": {
+            "Latitude": "43.6364445",
+            "Longitude": "5.1465026",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 55 32 92",
+          "Télécopie": "04 90 55 45 47",
+          "Email": "sej@ville-pelissanne.fr",
+          "Url": "http://www.ville-pelissanne.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "12:30:00"
+            },
+            "Note": "Accueil ouvert uniquement sur rendez-vous l'après-midi."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5445955,
+          43.3957688
+        ]
+      },
+      "properties": {
+        "id": "cij-13031-01",
+        "codeInsee": "13031",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - La Destrousse",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Mairie",
+            "Place de la Mairie"
+          ],
+          "CodePostal": "13112",
+          "NomCommune": "La Destrousse",
+          "Localisation": {
+            "Latitude": "43.3957688",
+            "Longitude": "5.5445955",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 04 44 14",
+          "Email": "pij@ladestrousse.fr",
+          "Url": "http://www.crijpa.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "15:00:00",
+                "fin": "17:15:00"
+              },
+              "Note": "Accueil ouvert uniquement du mois de janvier à fin juin."
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "15:00:00",
+                "fin": "17:15:00"
+              },
+              "Note": "Accueil ouvert uniquement du mois de juillet à fin décembre."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9454803,
+          43.5212157
+        ]
+      },
+      "properties": {
+        "id": "cij-13047-02",
+        "codeInsee": "13047",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Istres",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Espace pluriel jeunes",
+            "16 place Champollion"
+          ],
+          "CodePostal": "13800",
+          "NomCommune": "Istres",
+          "Localisation": {
+            "Latitude": "43.5212157",
+            "Longitude": "4.9454803",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 56 25 19",
+          "Télécopie": "04 42 56 24 98",
+          "Email": "epj@wanadoo.fr",
+          "Url": "http://www.epj.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "samedi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "18:00:00"
+            },
+            "Note": "Fermeture le samedi de juin à août."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4786204,
+          43.3431276
+        ]
+      },
+      "properties": {
+        "id": "cij-13002-01",
+        "codeInsee": "13002",
+        "dateMiseAJour": "2017-10-17",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Allauch",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "Chemin des Cigales",
+          "CodePostal": "13190",
+          "NomCommune": "Allauch",
+          "Localisation": {
+            "Latitude": "43.3431276",
+            "Longitude": "5.4786204",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 86 67 46 20",
+          "Télécopie": "04 86 67 46 21",
+          "Email": "s.giustiniani@allauch",
+          "Url": "www.allauch.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3663999,
+          43.398772
+        ]
+      },
+      "properties": {
+        "id": "cij-13106-01",
+        "codeInsee": "13106",
+        "dateMiseAJour": "2017-10-17",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Septèmes-les-Vallons",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "50 avenue du 8 mai 1945",
+          "CodePostal": "13240",
+          "NomCommune": "Septèmes-les-Vallons",
+          "Localisation": {
+            "Latitude": "43.398772",
+            "Longitude": "5.3663999",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 96 07 74",
+          "Email": "ejseptemes@wanadoo.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6055357,
+          43.1783645
+        ]
+      },
+      "properties": {
+        "id": "cij-13028-01",
+        "codeInsee": "13028",
+        "dateMiseAJour": "2017-10-18",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - La Ciotat",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "7 place Evariste Gras",
+          "CodePostal": "13600",
+          "NomCommune": "La Ciotat",
+          "Localisation": {
+            "Latitude": "43.1783645",
+            "Longitude": "5.6055357",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 83 85 57",
+          "Email": "bij@mairie-laciotat.fr",
+          "Url": "http://www.laciotat.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "17:00:00"
+              }
+            },
+            {
+              "début": "jeudi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "17:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "18:00:00"
+              }
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "09:00:00",
+                "fin": "18:00:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4719445,
+          43.4548488
+        ]
+      },
+      "properties": {
+        "id": "cij-13041-01",
+        "codeInsee": "13041",
+        "dateMiseAJour": "2017-10-16",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Gardanne",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "19 rue Borély-Gardanne",
+          "CodePostal": "13120",
+          "NomCommune": "Gardanne",
+          "Localisation": {
+            "Latitude": "43.4548488",
+            "Longitude": "5.4719445",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 65 77 30",
+          "Télécopie": "04 42 51 06 42",
+          "Email": "jeunesse@ville-gardanne.fr",
+          "Url": "http://www.ville-gardanne.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "08:00:00",
+                "fin": "12:30:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "08:00:00",
+                "fin": "12:30:00"
+              }
+            },
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "08:00:00",
+                "fin": "12:30:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.342277,
+          43.367265
+        ]
+      },
+      "properties": {
+        "id": "cij-13216-01",
+        "codeInsee": "13216",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 16e - La Castellane",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre social La Castellane",
+            "216 boulevard Henri-Barnier"
+          ],
+          "CodePostal": "13016",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.367265",
+            "Longitude": "5.342277",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 46 04 39",
+          "Télécopie": "04 91 03 75 58",
+          "Email": "contact@cs-lacastellane.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2562248,
+          43.4385231
+        ]
+      },
+      "properties": {
+        "id": "cij-13117-01",
+        "codeInsee": "13117",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Vitrolles",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Logis des jeunes",
+            "Espace du Liourat 1",
+            "2 avenue Denis-Padovani"
+          ],
+          "CodePostal": "13127",
+          "NomCommune": "Vitrolles",
+          "Localisation": {
+            "Latitude": "43.4385231",
+            "Longitude": "5.2562248",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 75 00 60",
+          "Email": "logisdesjeunes@wanadoo.fr",
+          "Url": "http://www.crijpa.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            },
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "09:30:00",
+                  "fin": "12:30:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "18:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.381768,
+          43.305145
+        ]
+      },
+      "properties": {
+        "id": "cij-13203-01",
+        "codeInsee": "13203",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 3e - Saint-Charles",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "AAJT",
+            "3 rue Palestro"
+          ],
+          "CodePostal": "13003",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.305145",
+            "Longitude": "5.381768",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 07 80 00",
+          "Télécopie": "04 91 07 80 09",
+          "Email": "fanny.duperret@aajt.asso.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "mardi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "14:00:00",
+              "fin": "20:00:00"
+            },
+            "Note": "Accueil assuré jusqu'à 20h en principe, mais après 18h il vaut mieux appeler avant de se déplacer pour s'en assurer."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4274129,
+          43.4503691
+        ]
+      },
+      "properties": {
+        "id": "cij-13096-01",
+        "codeInsee": "13096",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Maison des jeunes - Saintes-Maries-de-la-Mer",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Maison des jeunes",
+            "Les Arènes",
+            "11 avenue Van-Gogh"
+          ],
+          "CodePostal": "13460",
+          "NomCommune": "Saintes-Maries-de-la-Mer",
+          "Localisation": {
+            "Latitude": "43.4503691",
+            "Longitude": "4.4274129",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 97 85 82",
+          "Email": "mdj.saintes-maries@wanadoo.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "mardi",
+            "fin": "samedi",
+            "PlageH": [
+              {
+                "début": "10:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "19:00:00"
+              }
+            ],
+            "Note": "Accueil ouvert pendant les congés scolaires du lundi au samedi de 10h à 12h et de 14h à 19h."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.456965,
+          43.287159
+        ]
+      },
+      "properties": {
+        "id": "cij-13211-01",
+        "codeInsee": "13211",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 11e - Vallée de l'Huveaune",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre social",
+            "4 rue Gimon"
+          ],
+          "CodePostal": "13011",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.287159",
+            "Longitude": "5.456965",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 35 06 07",
+          "Télécopie": "04 91 44 08 44",
+          "Email": "contact.huveaune@province.ifac.asso.fr",
+          "Url": "http://www.ifac.asso.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:30:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "16:30:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4628311,
+          43.3449468
+        ]
+      },
+      "properties": {
+        "id": "cij-13075-01",
+        "codeInsee": "13075",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Bureau information jeunesse - Plan-de-Cuques",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Bâtiment A1",
+            "Allée Plein-Sud"
+          ],
+          "CodePostal": "13380",
+          "NomCommune": "Plan-de-Cuques",
+          "Localisation": {
+            "Latitude": "43.3449468",
+            "Longitude": "5.4628311",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 68 61 11",
+          "Télécopie": "04 91 68 75 47",
+          "Email": "pointjeunes@plandecuques.fr",
+          "Url": "http://www.plandecuques.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "18:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5390943,
+          43.2149318
+        ]
+      },
+      "properties": {
+        "id": "cij-13022-01",
+        "codeInsee": "13022",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Cassis",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "10 rue Adolphe-Thiers",
+          "CodePostal": "13260",
+          "NomCommune": "Cassis",
+          "Localisation": {
+            "Latitude": "43.2149318",
+            "Longitude": "5.5390943",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 18 36 92",
+          "Télécopie": "04 42 18 36 94",
+          "Email": "n.billon@cassis.fr",
+          "Url": "http://ccgr-forumemploi.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            },
+            {
+              "début": "mardi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            },
+            {
+              "début": "mercredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3801608,
+          43.4413157
+        ]
+      },
+      "properties": {
+        "id": "cij-13015-01",
+        "codeInsee": "13015",
+        "dateMiseAJour": "2017-10-18",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Bouc-Bel-Air",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "Rue Frédéric Chopin",
+          "CodePostal": "13320",
+          "NomCommune": "Bouc-Bel-Air",
+          "Localisation": {
+            "Latitude": "43.4413157",
+            "Longitude": "5.3801608",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 42 94 96 62",
+          "Email": "emploi@boucbelair.fr",
+          "Url": "http://www.boucbelair.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "13:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "13:00:00"
+              }
+            },
+            {
+              "début": "mardi",
+              "fin": "jeudi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "17:00:00"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.3944047,
+          43.2773065
+        ]
+      },
+      "properties": {
+        "id": "cij-13208-06",
+        "codeInsee": "13208",
+        "dateMiseAJour": "2017-10-09",
+        "pivotLocal": "cij",
+        "Nom": "Point information jeunesse - Marseille 8e arrondissement - Tempo Rouet",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre Tempo-Rouet",
+            "Espace jeunesse",
+            "7 rue de Bénédetti"
+          ],
+          "CodePostal": "13008",
+          "NomCommune": "Marseille",
+          "Localisation": {
+            "Latitude": "43.2773065",
+            "Longitude": "5.3944047",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 91 83 17 42",
+          "Télécopie": "04 91 83 17 42",
+          "Email": "pijrouet@mairie-marseille.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "16:30:00"
+                }
+              ]
+            },
+            {
+              "début": "lundi",
+              "fin": "mercredi",
+              "PlageH": [
+                {
+                  "début": "09:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:30:00",
+                  "fin": "16:30:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "cij-13053-01",
+        "codeInsee": "13053",
+        "dateMiseAJour": "2017-11-06",
+        "pivotLocal": "cij",
+        "Nom": "Point Information Jeunesse - Mallemort",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Association Léo Lagrange",
+            "20, avenue de la Fontaine"
+          ],
+          "CodePostal": "13370",
+          "NomCommune": "Mallemort",
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 90 42 52 88",
+          "Email": "pij.agglopole@leolagrangepaca.org",
+          "Url": "http://www.mallemortdeprovence.com"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "10:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "13:00:00",
+                  "fin": "19:00:00"
+                }
+              ]
+            },
+            {
+              "début": "lundi",
+              "fin": "lundi",
+              "PlageH": [
+                {
+                  "début": "10:00:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "14:00:00",
+                  "fin": "19:00:00"
+                }
+              ]
+            },
+            {
+              "début": "mercredi",
+              "fin": "mercredi",
+              "PlageH": {
+                "début": "14:00:00",
+                "fin": "19:00:00"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

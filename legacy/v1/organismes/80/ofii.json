@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "ofii-80021-01",
+        "codeInsee": "80021",
+        "dateMiseAJour": "2017-11-27",
+        "pivotLocal": "ofii",
+        "Nom": "Office français de l'immigration et de l'intégration (OFII) - Direction territoriale d'Amiens (dép. 02, 60, 80)",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "64 bis rue du Vivier",
+          "CodePostal": "80000",
+          "NomCommune": "Amiens"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 22 91 28 99",
+          "Email": "amiens@ofii.fr",
+          "Url": "http://www.ofii.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:30:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "16:45:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

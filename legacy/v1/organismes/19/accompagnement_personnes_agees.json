@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.533696,
+          45.167933
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-19031-01",
+        "codeInsee": "19031",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Brive-la-Gaillarde",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Centre hospitalier de Brive-la-Gaillarde",
+            "Centre de gérontologie et gériatrie clinique",
+            "3 boulevard Docteur-Verlhac"
+          ],
+          "CodePostal": "19100",
+          "NomCommune": "Brive-la-Gaillarde",
+          "Localisation": {
+            "Latitude": "45.167933",
+            "Longitude": "1.533696",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": {
+            "coût": "Numéro vert : service et appel gratuits.",
+            "$t": "08 00 19 01 92"
+          },
+          "Email": "plateforme-repit@ch-brive.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

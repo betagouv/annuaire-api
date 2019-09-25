@@ -1,0 +1,121 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.85254001617,
+          45.757598877
+        ]
+      },
+      "properties": {
+        "id": "centre_impots_fonciers-69383-01",
+        "codeInsee": "69383",
+        "dateMiseAJour": "2017-10-05",
+        "pivotLocal": "centre_impots_fonciers",
+        "Nom": "Centre des impôts foncier de Lyon - Extérieur",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Cité administrative",
+            "165 rue Garibaldi",
+            "BP 3195"
+          ],
+          "CodePostal": "69401",
+          "NomCommune": "Lyon Cedex 3",
+          "Localisation": {
+            "Latitude": "45.757598877",
+            "Longitude": "4.85254001617",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 78 63 33 00",
+          "Télécopie": "04 78 63 30 20",
+          "Url": "http://www.impots.gouv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "jeudi",
+              "fin": "vendredi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "16:00:00"
+              }
+            },
+            {
+              "début": "lundi",
+              "fin": "mardi",
+              "PlageH": {
+                "début": "08:30:00",
+                "fin": "16:00:00"
+              },
+              "Note": "Accueil téléphonique du lundi au vendredi de 8h30 à 12h et de 13h30 à 16h."
+            }
+          ]
+        },
+        "Commentaire": "Pour contacter ce service par courriel, utilisez votre messagerie sécurisée disponible dans votre espace particulier sur le site impots.gouv.fr. Si vous ne disposez pas d'espace particulier, nous vous invitons à en créer un."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.85254001617,
+          45.757598877
+        ]
+      },
+      "properties": {
+        "id": "centre_impots_fonciers-69383-02",
+        "codeInsee": "69383",
+        "dateMiseAJour": "2017-10-05",
+        "pivotLocal": "centre_impots_fonciers",
+        "Nom": "Centre des impôts foncier de Lyon Ville",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Cité administrative",
+            "165 rue Garibaldi",
+            "BP 3131"
+          ],
+          "CodePostal": "69401",
+          "NomCommune": "Lyon Cedex 3",
+          "Localisation": {
+            "Latitude": "45.757598877",
+            "Longitude": "4.85254001617",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "+33 4 78 63 37 37",
+          "Télécopie": "+33 4 78 63 37 20",
+          "Url": "http://www.impots.gouv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "08:30:00",
+              "fin": "16:00:00"
+            },
+            "Note": "Fermé le mercredi hors période basse du dernier mercredi d'avril à la troisième semaine de mai et du 15 septembre au 15 décembre."
+          }
+        },
+        "Commentaire": "Pour contacter ce service par courriel, utilisez votre messagerie sécurisée disponible dans votre espace particulier sur le site impots.gouv.fr. Si vous ne disposez pas d'espace particulier, nous vous invitons à en créer un."
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.495786,
+          48.399916
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-29019-01",
+        "codeInsee": "29019",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Brest",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": [
+          {
+            "type": "physique",
+            "Ligne": "20 bis rue de la Libération",
+            "CodePostal": "29870",
+            "NomCommune": "Lannilis",
+            "Accessibilité": {
+              "type": "ACC"
+            }
+          },
+          {
+            "type": "postale",
+            "Ligne": [
+              "Les Amitiés d'Armor",
+              "11 rue Lanredec"
+            ],
+            "CodePostal": "29200",
+            "NomCommune": "Brest",
+            "Localisation": {
+              "Latitude": "48.399916",
+              "Longitude": "-4.495786",
+              "Précision": "8"
+            }
+          }
+        ],
+        "CoordonnéesNum": {
+          "Téléphone": "02 98 03 06 77",
+          "Email": "amities@amities-armor.asso.fr",
+          "Url": "http://www.amities-armor.asso.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:30:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.3274469,
+          48.0927625
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-29046-01",
+        "codeInsee": "29046",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Douarnenez",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "9 rue des Plomarc'h",
+          "CodePostal": "29100",
+          "NomCommune": "Douarnenez",
+          "Localisation": {
+            "Latitude": "48.0927625",
+            "Longitude": "-4.3274469",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "02 98 58 91 13",
+          "Email": "plateforme.repit@ch-douarnenez.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

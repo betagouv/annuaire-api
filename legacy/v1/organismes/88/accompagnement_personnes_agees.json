@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-88487-01",
+        "codeInsee": "88487",
+        "dateMiseAJour": "2017-11-17",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-965",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Le Val-d'Ajol",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Réseau gérontologique des Ets des Hautes Vosges",
+            "Maison de retraite EHPAD",
+            "71 Grande Rue",
+            "BP 20024"
+          ],
+          "CodePostal": "88340",
+          "NomCommune": "Le Val-d'Ajol"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 29 30 67 04"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "hypotheque-30294-01",
+        "codeInsee": "30294",
+        "dateMiseAJour": "2017-10-02",
+        "pivotLocal": "hypotheque",
+        "Nom": "Service de publicité foncière d'Alès",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "67 rue Salomon Reinach",
+          "CodePostal": "30032",
+          "NomCommune": "Nîmes Cedex 1"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 66 87 60 60",
+          "Email": "spf.ales@dgfip.finances.gouv.fr",
+          "Url": "http://www.impots.gouv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "15:30:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.38086986542,
+          43.8316993713
+        ]
+      },
+      "properties": {
+        "id": "hypotheque-30189-02",
+        "codeInsee": "30189",
+        "dateMiseAJour": "2016-12-19",
+        "pivotLocal": "hypotheque",
+        "Nom": "Service de publicité foncière de Nîmes",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "67 rue Salomon-Reinach",
+          "CodePostal": "30032",
+          "NomCommune": "Nîmes Cedex 1",
+          "Localisation": {
+            "Latitude": "43.8316993713",
+            "Longitude": "4.38086986542",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 66 87 60 98",
+          "Télécopie": "04 66 87 60 56",
+          "Email": "spf.nimes2@dgfip.finances.gouv.fr",
+          "Url": "http://www.impots.gouv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "15:30:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.38086986542,
+          43.8316993713
+        ]
+      },
+      "properties": {
+        "id": "hypotheque-30189-01",
+        "codeInsee": "30189",
+        "dateMiseAJour": "2016-12-19",
+        "pivotLocal": "hypotheque",
+        "Nom": "Service de publicité foncière de Nîmes 1",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "67 rue Salomon-Reinach",
+          "CodePostal": "30032",
+          "NomCommune": "Nîmes Cedex 1",
+          "Localisation": {
+            "Latitude": "43.8316993713",
+            "Longitude": "4.38086986542",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 66 87 60 60",
+          "Télécopie": "04 66 87 60 55",
+          "Email": "spf.nimes1@dgfip.finances.gouv.fr",
+          "Url": "http://www.impots.gouv.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "15:30:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

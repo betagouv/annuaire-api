@@ -1,0 +1,40 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-27056-01",
+        "codeInsee": "27056",
+        "dateMiseAJour": "2017-11-14",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-885",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Bernay",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "EHPAD",
+            "Résidence Jacques-Daviel",
+            "Rond-point de la Croix-Gloriant",
+            "BP 353"
+          ],
+          "CodePostal": "27300",
+          "NomCommune": "Bernay"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "02 32 45 63 85",
+          "Email": "secretariat.direction@ch-bernay.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

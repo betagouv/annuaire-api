@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.059778,
+          45.777583
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-63075-01",
+        "codeInsee": "63075",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Chamalières",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "EHPAD Les Savarounes",
+            "1 rue du Roc-Blanc"
+          ],
+          "CodePostal": "63400",
+          "NomCommune": "Chamalières",
+          "Localisation": {
+            "Latitude": "45.777583",
+            "Longitude": "3.059778",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 73 31 76 07",
+          "Télécopie": "04 73 31 76 01",
+          "Email": "plateforme@savarounes.fr",
+          "Url": "http://www.plateformederepit63.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "09:00:00",
+              "fin": "17:00:00"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

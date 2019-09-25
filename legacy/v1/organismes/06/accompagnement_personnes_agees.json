@@ -1,0 +1,149 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.26108,
+          43.710953
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-06088-01",
+        "codeInsee": "06088",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Nice",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "5 avenue Béatrix",
+          "CodePostal": "06100",
+          "NomCommune": "Nice",
+          "Localisation": {
+            "Latitude": "43.710953",
+            "Longitude": "7.26108",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "06 08 94 08 19",
+          "Email": "platerepit.nice@gmail.com"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:30:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:00:00"
+              }
+            ],
+            "Note": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-06030-01",
+        "codeInsee": "06030",
+        "dateMiseAJour": "2017-11-16",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-859",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Roubion",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "EHPAD",
+            "Tiers Temps",
+            "29 avenue Dolce-Farniente"
+          ],
+          "CodePostal": "06110",
+          "NomCommune": "Le Cannet"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 93 06 60 93 04 93 06 56 56",
+          "Email": "contact@tierstemps-lecannet.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.122769,
+          43.600546
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-06004-01",
+        "codeInsee": "06004",
+        "dateMiseAJour": "2017-11-13",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Antibes",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Relais club des aidants",
+            "Place Jean-Aude",
+            "1 rue de l'Église"
+          ],
+          "CodePostal": "06600",
+          "NomCommune": "Antibes",
+          "Localisation": {
+            "Latitude": "43.600546",
+            "Longitude": "7.122769",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 92 91 39 10",
+          "Télécopie": "04 92 91 39 11",
+          "Email": "atj.alzheimer@ccas-antibes.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:00:00",
+                "fin": "17:30:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8515752,
+          47.0304191
+        ]
+      },
+      "properties": {
+        "id": "greta-21054-01",
+        "codeInsee": "21054",
+        "dateMiseAJour": "2016-12-19",
+        "pivotLocal": "greta",
+        "Nom": "Greta 21 - Antenne de Beaune",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": "7 avenue Maréchal-de-Lattre-de-Tassigny",
+          "CodePostal": "21200",
+          "NomCommune": "Beaune",
+          "Localisation": {
+            "Latitude": "47.0304191",
+            "Longitude": "4.8515752",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 80 24 83 27",
+          "Télécopie": "03 80 24 15 93",
+          "Email": "ce.greta.beaune@dijon.fr",
+          "Url": "http://www.bourgogne.greta.fr"
+        },
+        "Ouverture": {
+          "PlageJ": [
+            {
+              "début": "vendredi",
+              "fin": "vendredi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:00:00"
+                },
+                {
+                  "début": "12:45:00",
+                  "fin": "15:45:00"
+                }
+              ]
+            },
+            {
+              "début": "lundi",
+              "fin": "jeudi",
+              "PlageH": [
+                {
+                  "début": "08:30:00",
+                  "fin": "12:15:00"
+                },
+                {
+                  "début": "13:15:00",
+                  "fin": "17:00:00"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.049253,
+          47.323685
+        ]
+      },
+      "properties": {
+        "id": "greta-21231-02",
+        "codeInsee": "21231",
+        "dateMiseAJour": "2016-12-19",
+        "pivotLocal": "greta",
+        "Nom": "Greta 21 - Agence commerciale de Dijon",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Cité scolaire Carnot",
+            "16 boulevard Thiers"
+          ],
+          "CodePostal": "21000",
+          "NomCommune": "Dijon",
+          "Localisation": {
+            "Latitude": "47.323685",
+            "Longitude": "5.049253",
+            "Précision": "8"
+          },
+          "Accessibilité": {
+            "type": "ACC",
+            "$t": "rampe"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 80 54 38 43",
+          "Email": "agencecom.greta21@ac-dijon.fr",
+          "Url": "http://www.bourgogne.greta.ac-dijon.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "16:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.337495,
+          47.624329
+        ]
+      },
+      "properties": {
+        "id": "greta-21425-01",
+        "codeInsee": "21425",
+        "dateMiseAJour": "2016-12-19",
+        "pivotLocal": "greta",
+        "Nom": "Greta 21 - Antenne de Montbard",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Lycée Eugène-Guillaume",
+            "12 avenue Maréchal-de-Lattre-de-Tassigny"
+          ],
+          "CodePostal": "21500",
+          "NomCommune": "Montbard",
+          "Localisation": {
+            "Latitude": "47.624329",
+            "Longitude": "4.337495",
+            "Précision": "4"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 80 89 90 30",
+          "Email": "agencecom.greta21@ac-dijon.fr",
+          "Url": "http://www.bourgogne.greta.ac-dijon.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.0511309,
+          47.3181031
+        ]
+      },
+      "properties": {
+        "id": "greta-21231-01",
+        "codeInsee": "21231",
+        "dateMiseAJour": "2014-12-04",
+        "pivotLocal": "greta",
+        "Nom": "Greta 21 - Siège de Dijon",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "BP 27529",
+            "Lycée Hippolyte-Fontaine",
+            "20, boulevard Voltaire"
+          ],
+          "CodePostal": "21033",
+          "NomCommune": "Dijon Cedex",
+          "Localisation": {
+            "Latitude": "47.3181031",
+            "Longitude": "5.0511309",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "03 80 54 38 43",
+          "Email": "ce.greta21@ac-dijon.fr",
+          "Url": "http://www.bourgogne.greta.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "09:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "14:00:00",
+                "fin": "17:00:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

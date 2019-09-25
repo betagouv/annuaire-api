@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "accompagnement_personnes_agees-82121-01",
+        "codeInsee": "82121",
+        "dateMiseAJour": "2017-11-15",
+        "pivotLocal": "accompagnement_personnes_agees",
+        "idPresta": "clic-957",
+        "Nom": "Plateforme d'accompagnement et de répit pour les aidants de personnes âgées - Montauban",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Accueil de jour du Clos Maury",
+            "275 rue du Clos-Maury"
+          ],
+          "CodePostal": "82000",
+          "NomCommune": "Montauban"
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "05 63 20 57 21",
+          "Email": "contact-montauban@apas82.fr",
+          "Url": "http://www.apas82.fr"
+        },
+        "Commentaire": "Téléphoner pour convenir d'un rendez-vous avant de se rendre sur place."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2225405,
+          43.6762904
+        ]
+      },
+      "properties": {
+        "id": "greta-06088-01",
+        "codeInsee": "06088",
+        "dateMiseAJour": "2017-10-31",
+        "pivotLocal": "greta",
+        "Nom": "Greta - Côte d'Azur",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Lycée Les Eucalyptus",
+            "7, avenue des Eucalyptus"
+          ],
+          "CodePostal": "06200",
+          "NomCommune": "Nice",
+          "Localisation": {
+            "Latitude": "43.6762904",
+            "Longitude": "7.2225405",
+            "Précision": "6"
+          },
+          "Accessibilité": {
+            "type": "ACC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "04 92 29 40 80",
+          "Email": "greta.cotedazur@ac-nice.fr",
+          "Url": "http://www.greta.ac-nice.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": [
+              {
+                "début": "08:00:00",
+                "fin": "12:00:00"
+              },
+              {
+                "début": "13:30:00",
+                "fin": "17:30:00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

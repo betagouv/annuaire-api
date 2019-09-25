@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          null,
+          null
+        ]
+      },
+      "properties": {
+        "id": "greta-97213-01",
+        "codeInsee": "97213",
+        "dateMiseAJour": "2017-11-06",
+        "pivotLocal": "greta",
+        "Nom": "Greta - Martinique",
+        "EditeurSource": "La Direction de l'information légale et administrative (Premier ministre)",
+        "Adresse": {
+          "type": "géopostale",
+          "Ligne": [
+            "Immeuble Caryota",
+            "ZAC de Bois QUARRE"
+          ],
+          "CodePostal": "97232",
+          "NomCommune": "Le Lamentin",
+          "Accessibilité": {
+            "type": "NAC"
+          }
+        },
+        "CoordonnéesNum": {
+          "Téléphone": "+596 5 96 50 45 75",
+          "Email": "communication.greta@ac-martinique.fr",
+          "Url": "http://gretamartinique.fr"
+        },
+        "Ouverture": {
+          "PlageJ": {
+            "début": "lundi",
+            "fin": "vendredi",
+            "PlageH": {
+              "début": "08:00:00",
+              "fin": "12:30:00"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
