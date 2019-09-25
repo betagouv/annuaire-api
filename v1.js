@@ -38,17 +38,20 @@ function toLegacyFeature (feature, lastUpdatedAt) {
 
   return {
     ...feature,
-    Nom: feature.properties.nom,
-    EditeurSource: '',
-    dateMiseAJour: lastUpdatedAt,
-    Adresse: address,
-    CoordonnéesNum: {
-      Téléphone: feature.properties.telephone || '',
-      Télécopie: feature.properties.fax || '',
-      Email: feature.properties.email || ''
-    },
-    Ouverture: {
-      PlageJ: openings
+    properties: {
+      ...feature.properties,
+      Nom: feature.properties.nom,
+      EditeurSource: '',
+      dateMiseAJour: lastUpdatedAt,
+      Adresse: address,
+      CoordonnéesNum: {
+        Téléphone: feature.properties.telephone || '',
+        Télécopie: feature.properties.fax || '',
+        Email: feature.properties.email || ''
+      },
+      Ouverture: {
+        PlageJ: openings
+      }
     }
   }
 }
