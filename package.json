@@ -18,7 +18,6 @@
     "js-yaml": "^3.8.4",
     "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
-    "pm2": "^3.5.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "xlsx": "^0.14.0",
@@ -35,9 +34,8 @@
   "scripts": {
     "build": "node build.js",
     "lint": "eslint \"*.js\" \"**/*.js\"",
-    "test": "npm run  mocha && npm run lint",
+    "test": "npm run mocha && npm run lint",
     "mocha": "mocha",
-    "serve": "node server.js",
-    "reload": "pm2 reload annuaire_v3"
+    "serve": "node server.js"
   }
 }
