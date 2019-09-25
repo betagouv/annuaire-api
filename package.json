@@ -6,6 +6,9 @@
   "author": "Thomas Guillet <guillet.thomas@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:betagouv/annuaire-api.git",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "ajv": "^6.5.4",
     "bluebird": "^3.5.0",
