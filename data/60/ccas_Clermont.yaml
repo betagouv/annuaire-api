@@ -8,7 +8,7 @@ adresses:
     codePostal: '60600'
     commune: Clermont
     type: physique
-telephone: 03 44 50 84 73 ou 03 44 50 25 06
+telephone: 03 44 50 84 73
 accueil physique:
   horaires:
     - du: lundi
