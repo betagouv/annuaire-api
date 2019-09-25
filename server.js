@@ -1,4 +1,5 @@
 var express = require('express')
+const path = require('path')
 const { prepareDataset } = require('./main')
 
 const port = process.env.PORT || 12346
@@ -67,6 +68,10 @@ function serve (dataset) {
   })
 
   app.use('/v3', mainRouter)
+
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'))
+  })
 
   app.listen(port, () => {
     console.log('API listening on port %d', port)
