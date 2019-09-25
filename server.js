@@ -1,6 +1,8 @@
 var express = require('express')
 const path = require('path')
+const fs = require('fs')
 const { prepareDataset } = require('./main')
+const { toLegacyFeature, decorateLegacyResponse } = require('./v1')
 
 const port = process.env.PORT || 12346
 
@@ -47,7 +49,18 @@ function serve (dataset) {
   }
 
   mainRouter.get('/departements/:departementId/:pivot', getDepartementOrganismes)
-  app.get('/v1/organismes/:departementId/:pivot', getDepartementOrganismes)
+  app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
+    const pivots = new Set(req.params.pivot.split('+'))
+    const departement = dataset.departements[req.params.departementId]
+
+    if (!departement) {
+      return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
+    }
+
+    const stats = fs.statSync(path.join(__dirname, 'tmp/all_latest.tar.bz2'))
+
+    return res.json(decorateLegacyResponse(generateGeoJson(pivots, departement.organismes), stats.mtime.toISOString().slice(0, 10)))
+  })
 
   mainRouter.get('/organismes/:pivot', (req, res) => {
     const pivots = new Set(req.params.pivot.split('+'))
