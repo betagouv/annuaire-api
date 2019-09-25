@@ -2,7 +2,7 @@ var express = require('express')
 const path = require('path')
 const fs = require('fs')
 const { prepareDataset } = require('./main')
-const { toLegacyFeature, decorateLegacyResponse } = require('./v1')
+const { decorateLegacyResponse } = require('./v1')
 
 const port = process.env.PORT || 12346
 

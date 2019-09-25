@@ -1,5 +1,4 @@
 function toLegacyFeature (feature, lastUpdatedAt) {
-
   let firstAddress
   if (feature.properties.adresses.length > 0) {
     firstAddress = feature.properties.adresses[0]
@@ -15,9 +14,9 @@ function toLegacyFeature (feature, lastUpdatedAt) {
       Localisation: {
         Latitude: firstAddress.coordonnees[0],
         Longitude: firstAddress.coordonnees[1],
-        'Précision': '4' // FIXME Not sure where this is coming from
+        Précision: '4' // FIXME Not sure where this is coming from
       },
-      'Accessibilité': {
+      Accessibilité: {
         type: 'ACC' // FIXME What is this?
       }
     }
@@ -26,13 +25,12 @@ function toLegacyFeature (feature, lastUpdatedAt) {
   let openings = []
   if (feature.properties.horaires.length > 0) {
     openings = feature.properties.horaires.map(opening => {
-
       return {
-        'début': opening.du,
-        'fin': opening.au,
+        début: opening.du,
+        fin: opening.au,
         PlageH: opening.heures.map(hours => ({
-          'début': hours.d,
-          'fin': hours.a,
+          début: hours.d,
+          fin: hours.a
         }))
       }
     })
@@ -44,9 +42,9 @@ function toLegacyFeature (feature, lastUpdatedAt) {
     EditeurSource: '',
     dateMiseAJour: lastUpdatedAt,
     Adresse: address,
-    'CoordonnéesNum': {
-      'Téléphone': feature.properties.telephone || '',
-      'Télécopie': feature.properties.fax || '',
+    CoordonnéesNum: {
+      Téléphone: feature.properties.telephone || '',
+      Télécopie: feature.properties.fax || '',
       Email: feature.properties.email || ''
     },
     Ouverture: {
@@ -56,7 +54,6 @@ function toLegacyFeature (feature, lastUpdatedAt) {
 }
 
 function decorateLegacyResponse (featureCollection, lastUpdatedAt) {
-
   return {
     ...featureCollection,
     features: featureCollection.features.map(feature => toLegacyFeature(feature, lastUpdatedAt))
