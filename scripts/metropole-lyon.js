@@ -7,10 +7,10 @@ function processOrganisme (organisme) {
     nom: organisme.nom,
     pivotLocal: type,
     id: organisme.identifiant,
-    adresses: [ processAddress(organisme) ],
+    adresses: [processAddress(organisme)],
     horaires: processHoraires(organisme),
     telephone: organisme.telephone,
-    zonage: { communes: [ organisme.code_insee + ' ' + organisme.ville ] },
+    zonage: { communes: [organisme.code_insee + ' ' + organisme.ville] },
     raw: organisme
   }
 }
@@ -25,7 +25,7 @@ function processHoraires (organisme) {
     const hoursByDay = []
     dayParts.forEach(dayPart => {
       const key = `${dayName}_${dayPart}`
-      if (organisme.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(organisme, key)) {
         const matches = organisme[key].match(/^([0-9h]+)-([0-9h]+)$/)
         if (matches) {
           hoursByDay.push({
@@ -48,10 +48,10 @@ function processHoraires (organisme) {
 }
 
 function processAddress (organisme) {
-  let address = {
+  const address = {
     codePostal: organisme.code_postal,
     commune: organisme.ville,
-    lignes: [ organisme.adresse ],
+    lignes: [organisme.adresse],
     type: 'physique'
   }
 

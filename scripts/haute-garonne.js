@@ -13,7 +13,7 @@ function processOrganisme (organisme) {
     nom: props.nom,
     pivotLocal: type,
     id: organisme.recordid,
-    adresses: [ processAddress(props) ],
+    adresses: [processAddress(props)],
     horaires: props.horaires ? utils.processOpeningHours(props.horaires) : [],
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
@@ -27,7 +27,7 @@ function processOrganisme (organisme) {
 }
 
 function processAddress (organisme) {
-  let address = {
+  const address = {
     codePostal: organisme.cp,
     commune: organisme.commune,
     lignes: [organisme.adresse],

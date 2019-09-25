@@ -12,7 +12,7 @@ function processOrganisme (zonage, organisme) {
     nom: organisme.Nom,
     pivotLocal: type,
     id: organisme.id__,
-    adresses: [ processAddress(organisme) ],
+    adresses: [processAddress(organisme)],
     horaires: utils.processOpeningHours(organisme.Horaires),
     telephone: organisme.Tel,
     zonage: {
@@ -23,10 +23,10 @@ function processOrganisme (zonage, organisme) {
 }
 
 function processAddress (organisme) {
-  let address = {
+  const address = {
     codePostal: organisme.CP,
     commune: organisme.Commune,
-    lignes: [ organisme.Adresse ],
+    lignes: [organisme.Adresse],
     type: 'physique'
   }
 
@@ -59,9 +59,9 @@ function addOrganismes (dataset) {
   const communes = dataset.departements['22'].communes
 
   const zonage = []
-  for (let codeInsee in communes) {
-    if (communes.hasOwnProperty(codeInsee)) {
-      let commune = communes[codeInsee]
+  for (const codeInsee in communes) {
+    if (Object.prototype.hasOwnProperty.call(communes, codeInsee)) {
+      const commune = communes[codeInsee]
       zonage.push(commune.codeInsee + ' ' + commune.nom)
     }
   }

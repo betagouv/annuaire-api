@@ -30,7 +30,7 @@ function processOrganisme (props) {
 }
 
 function processAddress (organisme) {
-  let address = {
+  const address = {
     codePostal: organisme.CP,
     commune: organisme.Commune,
     lignes: [organisme.Adresse],

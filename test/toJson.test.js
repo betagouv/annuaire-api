@@ -21,8 +21,8 @@ describe('toJson', function () {
 
   it('should work', function (done) {
     toJson(file).then(result => {
-      assert.equal(result.json.geometry.coordinates[0], 5.2306651)
-      assert.equal(result.json.geometry.coordinates[1], 46.2069614)
+      assert.strictEqual(result.json.geometry.coordinates[0], 5.2306651)
+      assert.strictEqual(result.json.geometry.coordinates[1], 46.2069614)
     }).then(done)
   })
 })

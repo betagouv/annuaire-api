@@ -20,7 +20,7 @@ function download (url, fileName) {
     http.get(`${url}`, response => response.pipe(file).on('finish', (err) => {
       if (err) return reject(err)
 
-      process.stdout.write(`\t✓ Successfull.\n`)
+      process.stdout.write('\t✓ Successfull.\n')
       return resolve(filePath)
     }))
   })
@@ -53,7 +53,7 @@ function group (files) {
     return grouped
   }, {})
 
-  process.stdout.write(`\t✓ Successfull.\n`)
+  process.stdout.write('\t✓ Successfull.\n')
   return Object.keys(grouped).map((dir) => {
     return {
       path: dir,
@@ -109,7 +109,7 @@ function build (url, fileName) {
 
 function generateInitialDataset () {
   const folder = 'tmp/cache'
-  let dataset = {
+  const dataset = {
     communes: {},
     departements: {},
     organismes: {},
@@ -121,7 +121,7 @@ function generateInitialDataset () {
     const departementPath = path.join(folder, departementFile)
     const departementData = require('./' + departementPath)
 
-    let departement = {
+    const departement = {
       communes: {},
       organismes: {}
     }
@@ -132,7 +132,7 @@ function generateInitialDataset () {
     })
 
     departementData.organismes.forEach(organisme => {
-      let props = organisme.properties
+      const props = organisme.properties
       dataset.organismesById[organisme.properties.id] = organisme
 
       enrich.appendOrganisme(departement, props.pivotLocal, organisme)

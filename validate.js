@@ -11,8 +11,8 @@ const schema = {
 }
 
 module.exports = function (organisme) {
-  let ajv = new Ajv()
-  let validate = ajv.addSchema(definitions).compile(schema)
+  const ajv = new Ajv()
+  const validate = ajv.addSchema(definitions).compile(schema)
   const valid = validate(organisme)
   if (!valid) {
     const obj = {
