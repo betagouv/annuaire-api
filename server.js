@@ -70,7 +70,7 @@ function serve (dataset) {
   app.use('/v3', mainRouter)
 
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'))
   })
 
   app.listen(port, () => {
