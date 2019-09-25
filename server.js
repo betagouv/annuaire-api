@@ -1,4 +1,6 @@
 var express = require('express')
+const path = require('path')
+const fs = require('fs')
 const { prepareDataset } = require('./main')
 
 const port = process.env.PORT || 12346
@@ -64,6 +66,23 @@ function serve (dataset) {
   })
 
   app.use('/v3', mainRouter)
+
+  const legacyRouter = express.Router()
+
+  legacyRouter.get('/organismes/:departement/:type', (req, res) => {
+    const { departement, type } = req.params
+
+    const jsonFile = path.join(__dirname, 'legacy/v1/organismes', departement, `${type}.json`)
+
+    if (fs.existsSync(jsonFile)) {
+      res.header('Content-Type', 'application/json')
+      return res.sendFile(jsonFile)
+    }
+
+    return res.send(404)
+  })
+
+  app.use('/v1', legacyRouter)
 
   app.listen(port, () => {
     console.log('API listening on port %d', port)
