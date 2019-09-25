@@ -34,7 +34,7 @@ function serve (dataset) {
     return res.json(generateGeoJson(pivots, commune.organismes, organismeId => dataset.organismesById[organismeId]))
   })
 
-  function getDepartementOrganismes(req, res) {
+  function getDepartementOrganismes (req, res) {
     const pivots = new Set(req.params.pivot.split('+'))
     const departement = dataset.departements[req.params.departementId]
 
