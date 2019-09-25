@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "lint": "eslint *.js **/*.js",
+    "lint": "eslint \"*.js\" \"**/*.js\"",
     "test": "npm run  mocha && npm run lint",
     "mocha": "mocha",
     "serve": "node server.js",
