@@ -79,7 +79,7 @@ function serve (dataset) {
       return res.sendFile(jsonFile)
     }
 
-    return res.send(404)
+    return res.sendStatus(404)
   })
 
   app.use('/v1', legacyRouter)
