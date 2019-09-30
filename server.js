@@ -1,4 +1,5 @@
 var express = require('express')
+const cors = require('cors')
 const path = require('path')
 const fs = require('fs')
 const { prepareDataset } = require('./main')
@@ -79,6 +80,8 @@ function serve (dataset) {
     console.log(error)
     res.json({ message: 'error', error: error.message })
   })
+
+  app.use(cors())
 
   app.use('/v3', mainRouter)
 
