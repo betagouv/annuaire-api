@@ -37,7 +37,7 @@ function serve (dataset) {
     return res.json(generateGeoJson(pivots, commune.organismes, organismeId => dataset.organismesById[organismeId]))
   })
 
-  function getDepartementOrganismes (req, res) {
+  mainRouter.get('/departements/:departementId/:pivot', (req, res) => {
     const pivots = new Set(req.params.pivot.split('+'))
     const departement = dataset.departements[req.params.departementId]
 
@@ -46,9 +46,9 @@ function serve (dataset) {
     }
 
     return res.json(generateGeoJson(pivots, departement.organismes))
-  }
+  })
 
-  mainRouter.get('/departements/:departementId/:pivot', getDepartementOrganismes)
+  // Legacy API
   app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
     const pivots = new Set(req.params.pivot.split('+'))
     const departement = dataset.departements[req.params.departementId]
