@@ -40,6 +40,6 @@
     "lint": "eslint \"*.js\" \"**/*.js\"",
     "test": "npm run lint && npm run mocha",
     "mocha": "mocha",
-    "serve": "node server.js"
+    "serve": "node server"
   }
 }
