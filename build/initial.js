@@ -2,15 +2,18 @@ const path = require('path')
 const { writeFile, readdir } = require('fs').promises
 const { statSync } = require('fs')
 
+const xml2js = require('xml2js')
 const bluebird = require('bluebird')
 const rp = require('request-promise')
-const xml2js = require('xml2js')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
-const { writeJson } = require('./util')
 const enrich = require('./enrich')
 const normalize = require('./normalize')
+const { writeJson } = require('./util')
+
+const SPL_FILE_NAME = 'all_latest.tar.bz2'
+const SPL_URL = `http://lecomarquage.service-public.fr/donnees_locales_v2/${SPL_FILE_NAME}`
 
 async function download (url, fileName) {
   const filePath = path.join(__dirname, '..', 'tmp', fileName)
@@ -86,8 +89,8 @@ async function writeOut (group) {
   await writeJson(newPath, content)
 }
 
-async function build (url, fileName) {
-  const filePath = await download(url, fileName)
+async function prepareInitialDataset () {
+  const filePath = await download(SPL_URL, SPL_FILE_NAME)
   const files = await decompressWithlogs(filePath)
 
   await Promise.all(group(filter(files)).map(writeOut))
@@ -133,30 +136,8 @@ async function generateInitialDataset () {
   return dataset
 }
 
-const additions = [
-  require('./sources/cotes-d-armor'),
-  require('./sources/haute-garonne'),
-  require('./sources/hauts-de-seine'),
-  require('./sources/metropole-lyon'),
-  require('./sources/saone-et-loire'),
-  require('./sources/seine-et-marne'),
-  require('./sources/seine-saint-denis')
-]
-
-async function addOpenDataOrganismes (dataset) {
-  enrich.addOrganismesFromFolder(dataset, 'data')
-  await Promise.all(additions.map(addition => addition.computeAndAddOrganismes(dataset)))
-}
-
-async function prepareDataset () {
-  const dataset = await generateInitialDataset()
-  await addOpenDataOrganismes(dataset)
-  return dataset
-}
-
 module.exports = {
-  additions,
-  build,
-  prepareDataset,
+  prepareInitialDataset,
+  generateInitialDataset,
   toJson
 }

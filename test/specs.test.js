@@ -1,7 +1,7 @@
 const fs = require('fs')
 const yaml = require('js-yaml')
 
-const { additions } = require('../build/main')
+const { additions } = require('../build/additions')
 const definitions = yaml.safeLoad(fs.readFileSync('definitions.yaml'))
 const types = yaml.safeLoad(fs.readFileSync('types.yaml'))
 const assert = require('assert')
