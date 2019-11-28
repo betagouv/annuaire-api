@@ -1,7 +1,10 @@
-var express = require('express')
-const cors = require('cors')
 const path = require('path')
 const fs = require('fs')
+
+const express = require('express')
+const cors = require('cors')
+const morgan = require('morgan')
+
 const { decorateLegacyResponse } = require('./v1')
 const dataset = require('./dataset.json')
 
@@ -81,6 +84,10 @@ mainRouter.use((error, req, res, next) => {
 })
 
 app.use(cors())
+
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan('dev'))
+}
 
 app.use('/v3', mainRouter)
 
