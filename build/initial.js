@@ -1,5 +1,5 @@
 const path = require('path')
-const { writeFile, readdir } = require('fs').promises
+const { readdir } = require('fs').promises
 const { statSync } = require('fs')
 
 const xml2js = require('xml2js')
@@ -12,23 +12,18 @@ const enrich = require('./enrich')
 const normalize = require('./normalize')
 const { writeJson } = require('./util')
 
-const SPL_FILE_NAME = 'all_latest.tar.bz2'
-const SPL_URL = `http://lecomarquage.service-public.fr/donnees_locales_v2/${SPL_FILE_NAME}`
+const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v2/all_latest.tar.bz2'
 
-async function download (url, fileName) {
-  const filePath = path.join(__dirname, '..', 'tmp', fileName)
-
+async function downloadFile (url) {
   process.stdout.write(`Downloading ${url}...`)
   const data = await rp({ uri: url, encoding: null })
-  await writeFile(filePath, data)
   process.stdout.write('\t✓ Successfull.\n')
-
-  return filePath
+  return data
 }
 
-async function decompressWithlogs (filePath) {
-  process.stdout.write(`Decompressing ${path.relative(__dirname, filePath)}, (${statSync(filePath).size} bytes)...`)
-  const files = await decompress(filePath, { strip: 1 })
+async function decompressWithLogs (archiveBuffer) {
+  process.stdout.write(`Decompressing archive, (${archiveBuffer.length} bytes)...`)
+  const files = await decompress(archiveBuffer, { strip: 1 })
   process.stdout.write(`\t✓ ${files.length} extracted.\n`)
   return files
 }
@@ -90,8 +85,8 @@ async function writeOut (group) {
 }
 
 async function prepareInitialDataset () {
-  const filePath = await download(SPL_URL, SPL_FILE_NAME)
-  const files = await decompressWithlogs(filePath)
+  const archive = await downloadFile(SPL_URL)
+  const files = await decompressWithLogs(archive)
 
   await Promise.all(group(filter(files)).map(writeOut))
 }
