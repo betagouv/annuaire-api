@@ -10,6 +10,9 @@ const dataset = require('./dataset.json')
 
 const port = process.env.PORT || 12346
 
+const LAST_MODIFIED = fs.statSync(path.join(__dirname, 'dataset.json'))
+  .mtime.toISOString().slice(0, 10)
+
 const app = express()
 
 function generateGeoJson (pivots, source, operation) {
@@ -60,9 +63,7 @@ app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
     return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
   }
 
-  const stats = fs.statSync(path.join(__dirname, 'tmp/all_latest.tar.bz2'))
-
-  return res.json(decorateLegacyResponse(generateGeoJson(pivots, departement.organismes), stats.mtime.toISOString().slice(0, 10)))
+  return res.json(decorateLegacyResponse(generateGeoJson(pivots, departement.organismes), LAST_MODIFIED))
 })
 
 mainRouter.get('/organismes/:pivot', (req, res) => {
