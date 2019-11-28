@@ -1,33 +1,29 @@
 const path = require('path')
-const http = require('http')
+const { writeFile, readdir } = require('fs').promises
+const { statSync } = require('fs')
 
 const Promise = require('bluebird')
+const rp = require('request-promise')
 const xml2js = require('xml2js')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
-const fs = require('fs').promises
 const enrich = require('./enrich')
 const normalize = require('./normalize')
 
-function download (url, fileName) {
+async function download (url, fileName) {
   const filePath = path.join(__dirname, 'tmp', fileName)
 
   process.stdout.write(`Downloading ${url}...`)
-  const file = fs.createWriteStream(filePath)
+  const data = await rp({ uri: url, encoding: null })
+  await writeFile(filePath, data)
+  process.stdout.write('\t✓ Successfull.\n')
 
-  return new Promise((resolve, reject) => {
-    http.get(`${url}`, response => response.pipe(file).on('finish', (err) => {
-      if (err) return reject(err)
-
-      process.stdout.write('\t✓ Successfull.\n')
-      return resolve(filePath)
-    }))
-  })
+  return filePath
 }
 
 function decompressWithlogs (filePath) {
-  process.stdout.write(`Decompressing ${path.relative(__dirname, filePath)}, (${fs.statSync(filePath).size} bytes)...`)
+  process.stdout.write(`Decompressing ${path.relative(__dirname, filePath)}, (${statSync(filePath).size} bytes)...`)
   return decompress(filePath, { strip: 1 }).then(files => {
     process.stdout.write(`\t✓ ${files.length} extracted.\n`)
     return files
@@ -87,7 +83,7 @@ function writeOut (group) {
       organismes: []
     })
 
-    return fs.writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
+    return writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
   }).catch(error => {
     console.error(`The following error occured while processing ${group.path}:`)
     console.error(error)
@@ -116,7 +112,7 @@ function generateInitialDataset () {
     organismesById: {}
   }
 
-  return Promise.map(fs.readdir(folder), departementFile => {
+  return Promise.map(readdir(folder), departementFile => {
     const { name } = path.parse(departementFile)
     const departementPath = path.join(folder, departementFile)
     const departementData = require('./' + departementPath)
