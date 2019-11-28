@@ -8,6 +8,7 @@ const xml2js = require('xml2js')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
+const { writeJson } = require('./util')
 const enrich = require('./enrich')
 const normalize = require('./normalize')
 
@@ -82,7 +83,7 @@ async function writeOut (group) {
     organismes: []
   })
 
-  return writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
+  await writeJson(newPath, content)
 }
 
 async function build (url, fileName) {
