@@ -12,7 +12,7 @@ const enrich = require('./enrich')
 const normalize = require('./normalize')
 
 async function download (url, fileName) {
-  const filePath = path.join(__dirname, 'tmp', fileName)
+  const filePath = path.join(__dirname, '..', 'tmp', fileName)
 
   process.stdout.write(`Downloading ${url}...`)
   const data = await rp({ uri: url, encoding: null })
@@ -71,7 +71,7 @@ async function toJson (file) {
 
 async function writeOut (group) {
   const files = await bluebird.mapSeries(group.files, toJson)
-  const newPath = path.join('tmp', 'cache', group.path + '.json')
+  const newPath = path.join(__dirname, '..', 'tmp', 'cache', group.path + '.json')
   mkdirp.sync(path.dirname(newPath))
 
   const content = files.reduce((content, entityFile) => {
@@ -93,7 +93,7 @@ async function build (url, fileName) {
 }
 
 async function generateInitialDataset () {
-  const folder = 'tmp/cache'
+  const folder = path.join(__dirname, '..', 'tmp', 'cache')
   const dataset = {
     communes: {},
     departements: {},
@@ -106,7 +106,7 @@ async function generateInitialDataset () {
   files.forEach(departementFile => {
     const { name } = path.parse(departementFile)
     const departementPath = path.join(folder, departementFile)
-    const departementData = require('./' + departementPath)
+    const departementData = require(departementPath)
 
     const departement = {
       communes: {},
@@ -133,13 +133,13 @@ async function generateInitialDataset () {
 }
 
 const additions = [
-  require('./scripts/cotes-d-armor'),
-  require('./scripts/haute-garonne'),
-  require('./scripts/hauts-de-seine'),
-  require('./scripts/metropole-lyon'),
-  require('./scripts/saone-et-loire'),
-  require('./scripts/seine-et-marne'),
-  require('./scripts/seine-saint-denis')
+  require('./sources/cotes-d-armor'),
+  require('./sources/haute-garonne'),
+  require('./sources/hauts-de-seine'),
+  require('./sources/metropole-lyon'),
+  require('./sources/saone-et-loire'),
+  require('./sources/seine-et-marne'),
+  require('./sources/seine-saint-denis')
 ]
 
 async function addOpenDataOrganismes (dataset) {
@@ -149,7 +149,7 @@ async function addOpenDataOrganismes (dataset) {
 
 async function prepareDataset () {
   const dataset = await generateInitialDataset()
-  addOpenDataOrganismes(dataset)
+  await addOpenDataOrganismes(dataset)
   return dataset
 }
 

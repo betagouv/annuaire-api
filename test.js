@@ -1,4 +1,4 @@
-const enrich = require('./enrich')
+const enrich = require('./build/enrich')
 
 const ds = {
   communes: {},

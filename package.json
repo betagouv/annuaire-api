@@ -36,7 +36,7 @@
     "eslint-plugin-standard": "^4.0"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "node build",
     "lint": "eslint \"*.js\" \"**/*.js\"",
     "test": "npm run mocha && npm run lint",
     "mocha": "mocha",

@@ -2,7 +2,7 @@ const fs = require('fs').promises
 const path = require('path')
 
 const assert = require('assert')
-const { toJson } = require('../main')
+const { toJson } = require('../build/main')
 
 describe('toJson', function () {
   let file
