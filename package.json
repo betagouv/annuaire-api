@@ -10,12 +10,20 @@
     "node": "12.x"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
     "ajv": "^6.5.4",
     "bluebird": "^3.5.0",
-    "cors": "^2.8.5",
     "csv-parser": "^2.2.0",
     "decompress": "^4.2.0",
-    "express": "^4.16.2",
+    "eslint": "^6.0",
+    "eslint-config-standard": "^14.0",
+    "eslint-plugin-import": "^2.18",
+    "eslint-plugin-node": "^10.0",
+    "eslint-plugin-promise": "^4.0",
+    "eslint-plugin-standard": "^4.0",
     "get-stream": "^5.1.0",
     "iconv-lite": "^0.5.0",
     "into-stream": "^5.1.1",
@@ -26,14 +34,6 @@
     "request-promise": "^4.2.4",
     "xlsx": "^0.14.0",
     "xml2js": "^0.4.22"
-  },
-  "devDependencies": {
-    "eslint": "^6.0",
-    "eslint-config-standard": "^14.0",
-    "eslint-plugin-import": "^2.18",
-    "eslint-plugin-node": "^10.0",
-    "eslint-plugin-promise": "^4.0",
-    "eslint-plugin-standard": "^4.0"
   },
   "scripts": {
     "build": "node build",
