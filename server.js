@@ -83,7 +83,7 @@ mainRouter.use((error, req, res, next) => {
   res.json({ message: 'error', error: error.message })
 })
 
-app.use(cors())
+app.use(cors({ origin: true }))
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
