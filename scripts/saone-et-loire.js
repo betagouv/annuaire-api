@@ -1,5 +1,6 @@
 const rp = require('request-promise')
 const csv = require('csv-parser')
+const iconv = require('iconv-lite')
 const utils = require('./utils')
 const Readable = require('stream').Readable
 const types = ['mds', 'maison_handicapees']
@@ -52,18 +53,12 @@ function importOrganismes () {
   return rp({
     uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190130-142932/implantations-territoriales-cd71.csv',
     method: 'GET',
-    encoding: 'utf8'
+    encoding: null
   })
     .then(data => {
       return new Promise((resolve, reject) => {
-        // Remove BOM
-        data = data.slice(2)
-
-        // Remove unicode spaces
-        data = data.replace(/\u0000/g, '') // eslint-disable-line
-
         const stream = new Readable()
-        stream.push(data)
+        stream.push(iconv.decode(data, 'utf-16le'))
         stream.push(null)
 
         const results = []
