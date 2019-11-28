@@ -6,7 +6,7 @@ const xml2js = require('xml2js')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
-const fs = Promise.promisifyAll(require('fs'))
+const fs = require('fs').promises
 const enrich = require('./enrich')
 const normalize = require('./normalize')
 
@@ -87,7 +87,7 @@ function writeOut (group) {
       organismes: []
     })
 
-    return fs.writeFileAsync(newPath, JSON.stringify(content, null, 2), 'utf-8')
+    return fs.writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
   }).catch(error => {
     console.error(`The following error occured while processing ${group.path}:`)
     console.error(error)
@@ -116,7 +116,7 @@ function generateInitialDataset () {
     organismesById: {}
   }
 
-  return Promise.map(fs.readdirAsync(folder), departementFile => {
+  return Promise.map(fs.readdir(folder), departementFile => {
     const { name } = path.parse(departementFile)
     const departementPath = path.join(folder, departementFile)
     const departementData = require('./' + departementPath)

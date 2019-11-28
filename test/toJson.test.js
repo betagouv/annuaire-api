@@ -1,5 +1,4 @@
-const Promise = require('bluebird')
-const fs = Promise.promisifyAll(require('fs'))
+const fs = require('fs').promises
 const path = require('path')
 
 const assert = require('assert')
@@ -11,7 +10,7 @@ describe('toJson', function () {
   before((done) => {
     const filePath = path.join(__dirname, 'files', 'organismes-msa.xml')
 
-    fs.readFileAsync(filePath).then(content => {
+    fs.readFile(filePath).then(content => {
       file = {
         path: filePath,
         data: content
