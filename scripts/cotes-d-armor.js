@@ -55,7 +55,7 @@ function importOrganismes (zonage) {
     })
 }
 
-function addOrganismes (dataset) {
+async function addOrganismes (dataset) {
   const communes = dataset.departements['22'].communes
 
   const zonage = []
@@ -66,7 +66,7 @@ function addOrganismes (dataset) {
     }
   }
 
-  return enrich.addOrganismes(dataset, importOrganismes(zonage), '22')
+  enrich.addOrganismes(dataset, await importOrganismes(zonage), '22')
 }
 
 module.exports = {

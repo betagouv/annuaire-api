@@ -69,8 +69,8 @@ async function importOrganismes () {
     .map(organisme => ({ properties: organisme }))
 }
 
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '71')
+async function addOrganismes (dataset) {
+  enrich.addOrganismes(dataset, await importOrganismes(), '71')
 }
 
 module.exports = {

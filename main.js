@@ -2,7 +2,7 @@ const path = require('path')
 const { writeFile, readdir } = require('fs').promises
 const { statSync } = require('fs')
 
-const Promise = require('bluebird')
+const bluebird = require('bluebird')
 const rp = require('request-promise')
 const xml2js = require('xml2js')
 const decompress = require('decompress')
@@ -22,12 +22,11 @@ async function download (url, fileName) {
   return filePath
 }
 
-function decompressWithlogs (filePath) {
+async function decompressWithlogs (filePath) {
   process.stdout.write(`Decompressing ${path.relative(__dirname, filePath)}, (${statSync(filePath).size} bytes)...`)
-  return decompress(filePath, { strip: 1 }).then(files => {
-    process.stdout.write(`\t✓ ${files.length} extracted.\n`)
-    return files
-  })
+  const files = await decompress(filePath, { strip: 1 })
+  process.stdout.write(`\t✓ ${files.length} extracted.\n`)
+  return files
 }
 
 function filter (files) {
@@ -58,52 +57,42 @@ function group (files) {
   })
 }
 
-function toJson (file) {
-  return xml2js.parseStringPromise(file.data).then(content => {
-    const type = content.Organisme ? 'organisme' : 'commune'
-    const normalizeFunction = normalize[type]
-    return {
-      path: file.path,
-      type: type,
-      json: normalizeFunction(content)
-    }
-  })
+async function toJson (file) {
+  const content = await xml2js.parseStringPromise(file.data)
+  const type = content.Organisme ? 'organisme' : 'commune'
+  const normalizeFunction = normalize[type]
+
+  return {
+    path: file.path,
+    type: type,
+    json: normalizeFunction(content)
+  }
 }
 
-function writeOut (group) {
-  return Promise.map(group.files, toJson, { concurrency: 1 }).then(files => {
-    const newPath = path.join('tmp', 'cache', group.path + '.json')
-    mkdirp.sync(path.dirname(newPath))
+async function writeOut (group) {
+  const files = await bluebird.mapSeries(group.files, toJson)
+  const newPath = path.join('tmp', 'cache', group.path + '.json')
+  mkdirp.sync(path.dirname(newPath))
 
-    const content = files.reduce((content, entityFile) => {
-      content[entityFile.type + 's'].push(entityFile.json)
-      return content
-    }, {
-      communes: [],
-      organismes: []
-    })
-
-    return writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
-  }).catch(error => {
-    console.error(`The following error occured while processing ${group.path}:`)
-    console.error(error)
+  const content = files.reduce((content, entityFile) => {
+    content[entityFile.type + 's'].push(entityFile.json)
+    return content
+  }, {
+    communes: [],
+    organismes: []
   })
+
+  return writeFile(newPath, JSON.stringify(content, null, 2), 'utf-8')
 }
 
-function build (url, fileName) {
-  return Promise.map(
-    download(url, fileName)
-      .then(decompressWithlogs)
-      .then(filter)
-      .then(group),
-    writeOut, { concurrency: 1 }
-  ).catch(err => {
-    console.error(err)
-    process.exitCode = 1
-  })
+async function build (url, fileName) {
+  const filePath = await download(url, fileName)
+  const files = await decompressWithlogs(filePath)
+
+  await Promise.all(group(filter(files)).map(writeOut))
 }
 
-function generateInitialDataset () {
+async function generateInitialDataset () {
   const folder = 'tmp/cache'
   const dataset = {
     communes: {},
@@ -112,7 +101,9 @@ function generateInitialDataset () {
     organismesById: {}
   }
 
-  return Promise.map(readdir(folder), departementFile => {
+  const files = await readdir(folder)
+
+  files.forEach(departementFile => {
     const { name } = path.parse(departementFile)
     const departementPath = path.join(folder, departementFile)
     const departementData = require('./' + departementPath)
@@ -136,7 +127,9 @@ function generateInitialDataset () {
     })
 
     dataset.departements[name] = departement
-  }).then(() => dataset)
+  })
+
+  return dataset
 }
 
 const additions = [
@@ -149,17 +142,15 @@ const additions = [
   require('./scripts/seine-saint-denis')
 ]
 
-function addOpenDataOrganismes (dataset) {
+async function addOpenDataOrganismes (dataset) {
   enrich.addOrganismesFromFolder(dataset, 'data')
-  return Promise.all(additions.map(addition => addition.addOrganismes(dataset)))
-    .then(_ => {
-      return dataset
-    })
+  await Promise.all(additions.map(addition => addition.addOrganismes(dataset)))
 }
 
-function prepareDataset () {
-  return generateInitialDataset()
-    .then(d => addOpenDataOrganismes(d))
+async function prepareDataset () {
+  const dataset = await generateInitialDataset()
+  addOpenDataOrganismes(dataset)
+  return dataset
 }
 
 module.exports = {

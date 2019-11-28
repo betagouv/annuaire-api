@@ -1,6 +1,8 @@
 const rp = require('request-promise')
 const XLSX = require('xlsx')
+const enrich = require('../enrich')
 const utils = require('./utils')
+
 const type = 'mds'
 
 function processOrganisme (props) {
@@ -44,9 +46,8 @@ function importOrganismes () {
     .map(props => { return { properties: props } })
 }
 
-const enrich = require('../enrich')
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '77')
+async function addOrganismes (dataset) {
+  enrich.addOrganismes(dataset, await importOrganismes(), '77')
 }
 
 module.exports = {

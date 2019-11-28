@@ -59,8 +59,8 @@ function importOrganismes () {
     })
 }
 
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '31')
+async function addOrganismes (dataset) {
+  enrich.addOrganismes(dataset, await importOrganismes(), '31')
 }
 
 module.exports = {
