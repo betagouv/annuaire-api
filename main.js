@@ -2,7 +2,7 @@ const path = require('path')
 const http = require('http')
 
 const Promise = require('bluebird')
-const xml2js = Promise.promisifyAll(require('xml2js'))
+const xml2js = require('xml2js')
 const decompress = require('decompress')
 const mkdirp = require('mkdirp')
 
@@ -63,7 +63,7 @@ function group (files) {
 }
 
 function toJson (file) {
-  return xml2js.parseStringAsync(file.data).then(content => {
+  return xml2js.parseStringPromise(file.data).then(content => {
     const type = content.Organisme ? 'organisme' : 'commune'
     const normalizeFunction = normalize[type]
     return {
