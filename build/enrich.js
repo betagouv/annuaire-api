@@ -1,8 +1,6 @@
 const path = require('path')
+const fs = require('fs')
 
-const Promise = require('bluebird')
-
-const fs = Promise.promisifyAll(require('fs'))
 const yaml = require('js-yaml')
 
 const validate = require('./validate')
@@ -85,15 +83,14 @@ function addOrganismesFromFolder (dataset, folder) {
   return dataset
 }
 
-function addOrganismes (dataset, organismes, departementCode) {
-  return Promise.map(organismes, (organisme) => addOrganisme(dataset, organisme, departementCode))
-    .then(organismes => organismes.length)
-    .then(count => console.log(`Added ${count} organismes for departement ${departementCode}.`))
-    .then(() => dataset)
+function addOrganismesToDataset (dataset, organismes, departementCode) {
+  organismes.forEach(organisme => addOrganisme(dataset, organisme, departementCode))
+  console.log(`Added ${organismes.length} organismes for departement ${departementCode}.`)
+  return dataset
 }
 
 module.exports = {
   appendOrganisme,
-  addOrganismes,
+  addOrganismesToDataset,
   addOrganismesFromFolder
 }

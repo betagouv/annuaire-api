@@ -1,28 +1,24 @@
-const Promise = require('bluebird')
-const fs = Promise.promisifyAll(require('fs'))
+const fs = require('fs').promises
 const path = require('path')
 
 const assert = require('assert')
-const { toJson } = require('../main')
+const { toJson } = require('../build/main')
 
 describe('toJson', function () {
   let file
 
-  before((done) => {
+  before(async () => {
     const filePath = path.join(__dirname, 'files', 'organismes-msa.xml')
-
-    fs.readFileAsync(filePath).then(content => {
-      file = {
-        path: filePath,
-        data: content
-      }
-    }).then(done)
+    const content = await fs.readFile(filePath)
+    file = {
+      path: filePath,
+      data: content
+    }
   })
 
-  it('should work', function (done) {
-    toJson(file).then(result => {
-      assert.strictEqual(result.json.geometry.coordinates[0], 5.2306651)
-      assert.strictEqual(result.json.geometry.coordinates[1], 46.2069614)
-    }).then(done)
+  it('should work', async () => {
+    const result = await toJson(file)
+    assert.strictEqual(result.json.geometry.coordinates[0], 5.2306651)
+    assert.strictEqual(result.json.geometry.coordinates[1], 46.2069614)
   })
 })

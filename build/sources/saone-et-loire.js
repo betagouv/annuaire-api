@@ -1,8 +1,13 @@
 const rp = require('request-promise')
 const csv = require('csv-parser')
 const iconv = require('iconv-lite')
+const getStream = require('get-stream')
+const intoStream = require('into-stream')
+
+const enrich = require('../enrich')
+
 const utils = require('./utils')
-const Readable = require('stream').Readable
+
 const types = ['mds', 'maison_handicapees']
 
 function processOrganisme (props) {
@@ -45,45 +50,30 @@ function processAddress (organisme) {
   return address
 }
 
-function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.nom)
-}
-
-function importOrganismes () {
-  return rp({
+async function importOrganismes () {
+  const data = await rp({
     uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190130-142932/implantations-territoriales-cd71.csv',
     method: 'GET',
     encoding: null
   })
-    .then(data => {
-      return new Promise((resolve, reject) => {
-        const stream = new Readable()
-        stream.push(iconv.decode(data, 'utf-16le'))
-        stream.push(null)
 
-        const results = []
+  const rows = await getStream.array(
+    intoStream(data)
+      .pipe(iconv.decodeStream('utf-16le'))
+      .pipe(csv({ separator: ';' }))
+  )
 
-        stream
-          .pipe(csv({ separator: ';' }))
-          .on('data', (data) => results.push(data))
-          .on('end', () => resolve(results))
-      })
-    })
-    .then(data => data.map(processOrganisme))
-    .then(filterOrganismes)
-    .then(data => data.map(props => { return { properties: props } }))
-    .catch(e => {
-      console.error(e)
-      return []
-    })
+  return rows
+    .map(processOrganisme)
+    .filter(organisme => organisme.nom)
+    .map(organisme => ({ properties: organisme }))
 }
 
-const enrich = require('../enrich')
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '71')
+async function computeAndAddOrganismes (dataset) {
+  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '71')
 }
 
 module.exports = {
-  addOrganismes,
+  computeAndAddOrganismes,
   types
 }

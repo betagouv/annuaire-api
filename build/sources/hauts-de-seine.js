@@ -1,29 +1,23 @@
 const enrich = require('../enrich')
 const rp = require('request-promise')
 const utils = require('./utils')
-const type = 'mds'
+const type = 'edas'
 
 function processOrganisme (organisme) {
-  const props = organisme.fields
+  const props = organisme.properties
   if (!props.nom) {
     return { horaires: [] }
   }
-
-  const normalized = {
-    nom: props.nom,
+  return {
+    nom: props.nom.replace(/^EDAS/, 'Établissement départemental d\'actions sociales'),
     pivotLocal: type,
-    id: organisme.recordid,
+    id: props.id,
     adresses: [processAddress(props)],
-    horaires: props.horaires ? utils.processOpeningHours(props.horaires) : [],
+    horaires: utils.processOpeningHours(props.horaires),
+    telephone: props.tel.replace(/\./g, ' '),
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
   }
-
-  if (props.telephone) {
-    return Object.assign(normalized, { telephone: props.telephone.replace(/[.-]/g, ' ') })
-  }
-
-  return normalized
 }
 
 function processAddress (organisme) {
@@ -47,9 +41,9 @@ function filterOrganismes (organismes) {
 
 function importOrganismes () {
   return rp({
-    uri: 'https://data.opendatasoft.com/explore/dataset/site_social@haute-garonne/download/?format=json&timezone=Europe/Berlin',
+    uri: 'https://opendata.hauts-de-seine.fr/explore/dataset/espaces-departementaux-dactions-sociales-edas/download/?format=geojson',
     json: true
-  })
+  }).then(d => d.features)
     .then(d => d.map(processOrganisme))
     .then(filterOrganismes)
     .then(d => d.map(props => { return { properties: props } }))
@@ -59,11 +53,11 @@ function importOrganismes () {
     })
 }
 
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '31')
+async function computeAndAddOrganismes (dataset) {
+  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '92')
 }
 
 module.exports = {
-  addOrganismes,
+  computeAndAddOrganismes,
   type
 }

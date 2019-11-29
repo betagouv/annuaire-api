@@ -16,14 +16,16 @@
     "csv-parser": "^2.2.0",
     "decompress": "^4.2.0",
     "express": "^4.16.2",
+    "get-stream": "^5.1.0",
     "iconv-lite": "^0.5.0",
+    "into-stream": "^5.1.1",
     "js-yaml": "^3.8.4",
     "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "xlsx": "^0.14.0",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.22"
   },
   "devDependencies": {
     "eslint": "^6.0",
@@ -34,7 +36,7 @@
     "eslint-plugin-standard": "^4.0"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "node build",
     "lint": "eslint \"*.js\" \"**/*.js\"",
     "test": "npm run mocha && npm run lint",
     "mocha": "mocha",

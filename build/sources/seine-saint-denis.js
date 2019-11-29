@@ -1,21 +1,22 @@
 const enrich = require('../enrich')
 const rp = require('request-promise')
-const utils = require('./utils')
-const type = 'edas'
+const type = 'centre_social'
 
 function processOrganisme (organisme) {
   const props = organisme.properties
-  if (!props.nom) {
-    return { horaires: [] }
+
+  if (!props.nomcs) {
+    return {}
   }
+
   return {
-    nom: props.nom.replace(/^EDAS/, 'Établissement départemental d\'actions sociales'),
+    nom: props.nomcs,
     pivotLocal: type,
-    id: props.id,
+    id: 'centre_social_ssd' + props.id,
     adresses: [processAddress(props)],
-    horaires: utils.processOpeningHours(props.horaires),
-    telephone: props.tel.replace(/\./g, ' '),
-    zonage: { communes: [props.code_insee + ' ' + props.commune] },
+    horaires: [],
+    telephone: props.tel,
+    zonage: { communes: [props.insee + ' ' + props.commune] },
     raw: organisme
   }
 }
@@ -28,20 +29,16 @@ function processAddress (organisme) {
     type: 'physique'
   }
 
-  if (organisme.comp_adr && organisme.comp_adr.length) {
-    address.lignes.unshift(organisme.comp_adr)
-  }
-
   return address
 }
 
 function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.horaires.length)
+  return organismes.filter(organisme => organisme.nom)
 }
 
 function importOrganismes () {
   return rp({
-    uri: 'https://opendata.hauts-de-seine.fr/explore/dataset/espaces-departementaux-dactions-sociales-edas/download/?format=geojson',
+    uri: 'https://geoportail93.fr/SERV/DATA/?SERVICE=WFS&LAYERS=1360&FORMAT=GEOJSON&COL=ALL&MODE=2&SRID=undefined',
     json: true
   }).then(d => d.features)
     .then(d => d.map(processOrganisme))
@@ -53,11 +50,11 @@ function importOrganismes () {
     })
 }
 
-function addOrganismes (dataset) {
-  return enrich.addOrganismes(dataset, importOrganismes(), '92')
+async function computeAndAddOrganismes (dataset) {
+  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '93')
 }
 
 module.exports = {
-  addOrganismes,
+  computeAndAddOrganismes,
   type
 }

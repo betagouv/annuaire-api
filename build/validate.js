@@ -1,9 +1,7 @@
-const Promise = require('bluebird')
-
-const fs = Promise.promisifyAll(require('fs'))
+const fs = require('fs')
 const yaml = require('js-yaml')
-
 const Ajv = require('ajv')
+
 const definitions = yaml.safeLoad(fs.readFileSync('definitions.yaml'))
 const schema = {
   $id: 'http://etablissements-publics.api.gouv.fr/v3/etablissements.json',

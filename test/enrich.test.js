@@ -1,5 +1,5 @@
 const assert = require('assert')
-const enrich = require('../enrich')
+const enrich = require('../build/enrich')
 
 describe('enrich', function () {
   let dataset
