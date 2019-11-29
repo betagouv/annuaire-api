@@ -1,23 +1,11 @@
 const path = require('path')
-const fs = require('fs')
+const { readdir } = require('fs').promise
 
-const yaml = require('js-yaml')
-
+const { readYaml } = require('./util')
 const validate = require('./validate')
 
-function YAMLtoJSON (p) {
-  let organisme
-  try {
-    const content = fs.readFileSync(p)
-    organisme = yaml.safeLoad(content)
-  } catch (error) {
-    const obj = {
-      message: `Error reading YAML file: ${p}`,
-      error: error
-    }
-    throw obj
-  }
-
+async function readAndConvert (filePath) {
+  const organisme = await readYaml(filePath)
   validate(organisme)
   organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
 
@@ -31,7 +19,7 @@ function YAMLtoJSON (p) {
   }
 
   return {
-    path: p,
+    path: filePath,
     json: geoJson
   }
 }
@@ -65,18 +53,22 @@ function addOrganisme (dataset, organisme, departementCode) {
   appendOrganisme(dataset.departements[departementCode], props.pivotLocal, organisme)
 }
 
-function addOrganismesFromFolder (dataset, folder) {
+async function computeAndAddOrganismesFromFolder (dataset, folder) {
   let additionCount = 0
-  fs.readdirSync(folder).map(departementFolder => {
+  const departementsFolders = await readdir(folder)
+
+  await Promise.all(departementsFolders.map(async departementFolder => {
     const departementPath = path.join(folder, departementFolder)
 
-    fs.readdirSync(departementPath).forEach(organismeFile => {
+    const organismesFiles = await readdir(departementPath)
+
+    await Promise.all(organismesFiles.map(async organismeFile => {
       additionCount = additionCount + 1
       const organismePath = path.join(departementPath, organismeFile)
-      const organisme = YAMLtoJSON(organismePath)
+      const organisme = await readAndConvert(organismePath)
       addOrganisme(dataset, organisme.json, departementFolder)
-    })
-  })
+    }))
+  }))
 
   console.log(`Added ${additionCount} organismes from ${folder}.`)
 
@@ -92,5 +84,5 @@ function addOrganismesToDataset (dataset, organismes, departementCode) {
 module.exports = {
   appendOrganisme,
   addOrganismesToDataset,
-  addOrganismesFromFolder
+  computeAndAddOrganismesFromFolder
 }

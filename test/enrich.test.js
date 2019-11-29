@@ -4,7 +4,7 @@ const enrich = require('../build/enrich')
 describe('enrich', function () {
   let dataset
 
-  before(() => {
+  before(async () => {
     dataset = {
       communes: {
         29011: {
@@ -19,7 +19,7 @@ describe('enrich', function () {
       organismes: {},
       organismesById: {}
     }
-    enrich.addOrganismesFromFolder(dataset, './data')
+    await enrich.computeAndAddOrganismesFromFolder(dataset, './data')
   })
 
   it('adds organisme in dataset', () => {

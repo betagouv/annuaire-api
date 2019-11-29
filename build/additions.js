@@ -11,7 +11,7 @@ const additions = [
 ]
 
 async function addOpenDataOrganismes (dataset) {
-  enrich.addOrganismesFromFolder(dataset, 'data')
+  await enrich.computeAndAddOrganismesFromFolder(dataset, 'data')
   await Promise.all(additions.map(addition => addition.computeAndAddOrganismes(dataset)))
 }
 
