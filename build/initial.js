@@ -1,16 +1,12 @@
 const path = require('path')
-const { readdir } = require('fs').promises
-const { statSync } = require('fs')
 
 const xml2js = require('xml2js')
 const bluebird = require('bluebird')
 const rp = require('request-promise')
 const decompress = require('decompress')
-const mkdirp = require('mkdirp')
 
 const enrich = require('./enrich')
 const normalize = require('./normalize')
-const { writeJson } = require('./util')
 
 const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v2/all_latest.tar.bz2'
 
@@ -35,7 +31,7 @@ function filter (files) {
   return filtered
 }
 
-function group (files) {
+function groupByDepartement (files) {
   process.stdout.write(`Grouping ${files.length} files by departement...`)
 
   const grouped = files.reduce((grouped, file) => {
@@ -68,31 +64,7 @@ async function toJson (file) {
   }
 }
 
-async function writeOut (group) {
-  const files = await bluebird.mapSeries(group.files, toJson)
-  const newPath = path.join(__dirname, '..', 'tmp', 'cache', group.path + '.json')
-  mkdirp.sync(path.dirname(newPath))
-
-  const content = files.reduce((content, entityFile) => {
-    content[entityFile.type + 's'].push(entityFile.json)
-    return content
-  }, {
-    communes: [],
-    organismes: []
-  })
-
-  await writeJson(newPath, content)
-}
-
-async function prepareInitialDataset () {
-  const archive = await downloadFile(SPL_URL)
-  const files = await decompressWithLogs(archive)
-
-  await Promise.all(group(filter(files)).map(writeOut))
-}
-
 async function generateInitialDataset () {
-  const folder = path.join(__dirname, '..', 'tmp', 'cache')
   const dataset = {
     communes: {},
     departements: {},
@@ -100,13 +72,18 @@ async function generateInitialDataset () {
     organismesById: {}
   }
 
-  const files = await readdir(folder)
+  const archive = await downloadFile(SPL_URL)
+  const sourceFiles = filter(await decompressWithLogs(archive))
 
-  files.forEach(departementFile => {
-    const { name } = path.parse(departementFile)
-    const departementPath = path.join(folder, departementFile)
-    const departementData = require(departementPath)
-
+  await bluebird.mapSeries(groupByDepartement(sourceFiles), async departementGroup => {
+    const parsedFiles = await Promise.all(departementGroup.files.map(file => toJson(file)))
+    const departementData = parsedFiles.reduce((content, entityFile) => {
+      content[entityFile.type + 's'].push(entityFile.json)
+      return content
+    }, {
+      communes: [],
+      organismes: []
+    })
     const departement = {
       communes: {},
       organismes: {}
@@ -125,14 +102,13 @@ async function generateInitialDataset () {
       enrich.appendOrganisme(dataset, props.pivotLocal, organisme)
     })
 
-    dataset.departements[name] = departement
+    dataset.departements[departementGroup.path] = departement
   })
 
   return dataset
 }
 
 module.exports = {
-  prepareInitialDataset,
   generateInitialDataset,
   toJson
 }
