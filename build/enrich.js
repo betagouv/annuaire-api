@@ -83,7 +83,7 @@ function addOrganismesFromFolder (dataset, folder) {
   return dataset
 }
 
-function addOrganismes (dataset, organismes, departementCode) {
+function addOrganismesToDataset (dataset, organismes, departementCode) {
   organismes.forEach(organisme => addOrganisme(dataset, organisme, departementCode))
   console.log(`Added ${organismes.length} organismes for departement ${departementCode}.`)
   return dataset
@@ -91,6 +91,6 @@ function addOrganismes (dataset, organismes, departementCode) {
 
 module.exports = {
   appendOrganisme,
-  addOrganismes,
+  addOrganismesToDataset,
   addOrganismesFromFolder
 }

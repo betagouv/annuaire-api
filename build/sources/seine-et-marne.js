@@ -46,11 +46,11 @@ function importOrganismes () {
     .map(props => { return { properties: props } })
 }
 
-async function addOrganismes (dataset) {
-  enrich.addOrganismes(dataset, await importOrganismes(), '77')
+async function computeAndAddOrganismes (dataset) {
+  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '77')
 }
 
 module.exports = {
-  addOrganismes,
+  computeAndAddOrganismes,
   type
 }
