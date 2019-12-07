@@ -4,9 +4,7 @@ const iconv = require('iconv-lite')
 const getStream = require('get-stream')
 const intoStream = require('into-stream')
 
-const enrich = require('../enrich')
-
-const utils = require('./utils')
+const { processOpeningHours } = require('./utils')
 
 const types = ['mds', 'maison_handicapees']
 
@@ -28,7 +26,7 @@ function processOrganisme (props) {
     pivotLocal: pivotLocal,
     id: props.ID,
     adresses: [processAddress(props)],
-    horaires: utils.processOpeningHours(props.Horaires),
+    horaires: processOpeningHours(props.Horaires),
     telephone: props.Tel,
     zonage: { communes: props.Zonage.split(';') },
     raw: props
@@ -50,7 +48,7 @@ function processAddress (organisme) {
   return address
 }
 
-async function importOrganismes () {
+async function computeOrganismes () {
   const data = await rp({
     uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190130-142932/implantations-territoriales-cd71.csv',
     method: 'GET',
@@ -66,14 +64,10 @@ async function importOrganismes () {
   return rows
     .map(processOrganisme)
     .filter(organisme => organisme.nom)
-    .map(organisme => ({ properties: organisme }))
-}
-
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '71')
+    .map(organisme => ({ type: 'Feature', geometry: null, properties: organisme }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   types
 }

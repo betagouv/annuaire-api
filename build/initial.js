@@ -1,12 +1,10 @@
-const path = require('path')
-
-const xml2js = require('xml2js')
+const { keyBy, flatten } = require('lodash')
 const bluebird = require('bluebird')
 const rp = require('request-promise')
 const decompress = require('decompress')
 
-const enrich = require('./enrich')
-const normalize = require('./normalize')
+const { parseCommune, parseOrganisme } = require('./parse')
+const { expandCommune } = require('./util')
 
 const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v2/all_latest.tar.bz2'
 
@@ -17,98 +15,50 @@ async function downloadFile (url) {
   return data
 }
 
-async function decompressWithLogs (archiveBuffer) {
+async function decompressArchive (archiveBuffer) {
   process.stdout.write(`Decompressing archive, (${archiveBuffer.length} bytes)...`)
   const files = await decompress(archiveBuffer, { strip: 1 })
   process.stdout.write(`\t✓ ${files.length} extracted.\n`)
   return files
 }
 
-function filter (files) {
-  process.stdout.write(`Filtering ${files.length} files...`)
-  const filtered = files.filter(file => file.type === 'file' && file.path.indexOf('.DS_Store') < 0)
-  process.stdout.write(`\t✓ ${filtered.length} remaining.\n`)
-  return filtered
-}
-
-function groupByDepartement (files) {
-  process.stdout.write(`Grouping ${files.length} files by departement...`)
-
-  const grouped = files.reduce((grouped, file) => {
-    const entityPathDetails = path.parse(file.path)
-    const departementPathDetails = path.parse(entityPathDetails.dir)
-    grouped[departementPathDetails.name] = grouped[departementPathDetails.name] || []
-    grouped[departementPathDetails.name].push(file)
-
-    return grouped
-  }, {})
-
-  process.stdout.write('\t✓ Successfull.\n')
-  return Object.keys(grouped).map((dir) => {
-    return {
-      path: dir,
-      files: grouped[dir]
-    }
-  })
-}
-
-async function toJson (file) {
-  const content = await xml2js.parseStringPromise(file.data)
-  const type = content.Organisme ? 'organisme' : 'commune'
-  const normalizeFunction = normalize[type]
-
-  return {
-    path: file.path,
-    type: type,
-    json: normalizeFunction(content)
-  }
-}
-
 async function generateInitialDataset () {
-  const dataset = {
-    communes: {},
-    departements: {},
-    organismes: {},
-    organismesById: {}
-  }
-
   const archive = await downloadFile(SPL_URL)
-  const sourceFiles = filter(await decompressWithLogs(archive))
+  const files = await decompressArchive(archive)
 
-  await bluebird.mapSeries(groupByDepartement(sourceFiles), async departementGroup => {
-    const parsedFiles = await Promise.all(departementGroup.files.map(file => toJson(file)))
-    const departementData = parsedFiles.reduce((content, entityFile) => {
-      content[entityFile.type + 's'].push(entityFile.json)
-      return content
-    }, {
-      communes: [],
-      organismes: []
+  const organismesFiles = files
+    .filter(f => f.path.startsWith('organismes') && f.path.endsWith('.xml'))
+
+  const organismes = await bluebird.map(organismesFiles, async organismeFile => {
+    const organisme = await parseOrganisme(organismeFile.data)
+    organisme.properties.zonage = { communes: [] }
+    return organisme
+  }, { concurrency: 8 })
+
+  console.log(`${organismes.length} organismes trouvés`)
+
+  const organismesIndex = keyBy(organismes, o => o.properties.id)
+
+  const communesFiles = files
+    .filter(f => f.path.startsWith('communes') && f.path.endsWith('.xml'))
+
+  await bluebird.map(communesFiles, async communeFile => {
+    const commune = await parseCommune(communeFile.data)
+    const { codeInsee, organismes } = commune
+
+    flatten(Object.values(organismes)).forEach(idOrganisme => {
+      if (!(idOrganisme in organismesIndex)) {
+        console.log(`Organisme introuvable : ${idOrganisme}`)
+        return
+      }
+
+      organismesIndex[idOrganisme].properties.zonage.communes.push(expandCommune(codeInsee))
     })
-    const departement = {
-      communes: {},
-      organismes: {}
-    }
+  }, { concurrency: 8 })
 
-    departementData.communes.forEach(commune => {
-      dataset.communes[commune.codeInsee] = commune
-      departement.communes[commune.codeInsee] = commune
-    })
-
-    departementData.organismes.forEach(organisme => {
-      const props = organisme.properties
-      dataset.organismesById[organisme.properties.id] = organisme
-
-      enrich.appendOrganisme(departement, props.pivotLocal, organisme)
-      enrich.appendOrganisme(dataset, props.pivotLocal, organisme)
-    })
-
-    dataset.departements[departementGroup.path] = departement
-  })
-
-  return dataset
+  return organismes
 }
 
 module.exports = {
-  generateInitialDataset,
-  toJson
+  generateInitialDataset
 }
