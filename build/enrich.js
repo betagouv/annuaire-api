@@ -1,5 +1,5 @@
 const path = require('path')
-const { readdir } = require('fs').promise
+const { readdir } = require('fs').promises
 
 const { readYaml } = require('./util')
 const validate = require('./validate')
