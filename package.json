@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "git@github.com:betagouv/annuaire-api.git",
   "engines": {
-    "node": "12.x"
+    "node": ">= 10"
   },
   "dependencies": {
     "cors": "^2.8.5",
