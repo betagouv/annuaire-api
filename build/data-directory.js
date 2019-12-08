@@ -11,18 +11,13 @@ async function readAndConvert (filePath) {
   validate(organisme)
   organisme.horaires = organisme.horaires || (organisme['accueil physique'] && organisme['accueil physique'].horaires)
 
-  const geoJson = {
+  return {
     type: 'Feature',
     geometry: {
       type: 'Point',
       coordinates: [null, null]
     },
     properties: organisme
-  }
-
-  return {
-    path: filePath,
-    json: geoJson
   }
 }
 
@@ -37,7 +32,7 @@ async function computeOrganismes () {
 
     await Promise.all(organismesFiles.map(async organismeFile => {
       const organismePath = join(departementPath, organismeFile)
-      const organisme = readAndConvert(organismePath)
+      const organisme = await readAndConvert(organismePath)
       organismes.push(organisme)
     }))
   }))
