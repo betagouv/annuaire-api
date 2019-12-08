@@ -56,6 +56,16 @@ async function generateInitialDataset () {
     })
   }, { concurrency: 8 })
 
+  /* On traite les organismes qui n'ont pas de zonage affecté */
+  const organismesSansZonage = organismes.filter(o => o.properties.zonage.communes.length === 0)
+  if (organismesSansZonage.length > 0) {
+    console.log(`${organismesSansZonage.length} organismes sans commune d’affectation`)
+    console.log('On utilise dans ce cas leur commune-siège')
+    organismesSansZonage.forEach(o => {
+      o.properties.zonage.communes.push(o.properties.codeInsee)
+    })
+  }
+
   return organismes
 }
 
