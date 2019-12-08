@@ -4,6 +4,7 @@ const iconv = require('iconv-lite')
 const getStream = require('get-stream')
 const intoStream = require('into-stream')
 
+const { expandCommune } = require('../util')
 const { processOpeningHours } = require('./utils')
 
 const types = ['mds', 'maison_handicapees']
@@ -28,7 +29,7 @@ function processOrganisme (props) {
     adresses: [processAddress(props)],
     horaires: processOpeningHours(props.Horaires),
     telephone: props.Tel,
-    zonage: { communes: props.Zonage.split(';') },
+    zonage: { communes: props.Zonage.split(';').map(c => expandCommune(c)) },
     raw: props
   }
 }
