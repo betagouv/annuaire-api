@@ -1,6 +1,6 @@
 const { join } = require('path')
 const { generateInitialDataset } = require('./initial')
-const { writeJson } = require('./util')
+const { writeJsonArray } = require('./util')
 
 const additions = [
   'sources/cotes-d-armor',
@@ -28,7 +28,7 @@ async function computeAdditionalOrganismes () {
 async function build () {
   const initialOrganismes = await generateInitialDataset()
   const additionalOrganismes = await computeAdditionalOrganismes()
-  await writeJson(join(__dirname, '..', 'dataset.json'), [...initialOrganismes, ...additionalOrganismes])
+  await writeJsonArray(join(__dirname, '..', 'dataset.json'), [...initialOrganismes, ...additionalOrganismes])
 }
 
 build().catch(err => {

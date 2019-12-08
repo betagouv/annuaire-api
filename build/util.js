@@ -6,8 +6,9 @@ const yaml = require('js-yaml')
 
 const communesIndex = keyBy(communes, 'code')
 
-async function writeJson (filePath, data) {
-  await writeFile(filePath, JSON.stringify(data), { encoding: 'utf-8' })
+async function writeJsonArray (filePath, data) {
+  const str = '[\n' + data.map(d => JSON.stringify(d)).join(',\n') + '\n]\n'
+  await writeFile(filePath, str, { encoding: 'utf-8' })
 }
 
 async function readYaml (filePath) {
@@ -25,4 +26,4 @@ function getCommunes (codeDepartement) {
   return communesDepartement.map(c => expandCommune(c.code))
 }
 
-module.exports = { writeJson, readYaml, expandCommune, getCommunes }
+module.exports = { writeJsonArray, readYaml, expandCommune, getCommunes }
