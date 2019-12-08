@@ -13,10 +13,7 @@ async function readAndConvert (filePath) {
 
   return {
     type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [null, null]
-    },
+    geometry: null,
     properties: organisme
   }
 }
