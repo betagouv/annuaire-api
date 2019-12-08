@@ -4,75 +4,79 @@ const fs = require('fs')
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const { uniq, intersection } = require('lodash')
 
+const { createCommunesIndex, createDepartementsIndex, createPivotsIndex } = require('./indexes')
 const { decorateLegacyResponse } = require('./v1')
+
 const dataset = require('./dataset.json')
+const communesIndex = createCommunesIndex(dataset)
+const departementsIndex = createDepartementsIndex(dataset)
+const pivotsIndex = createPivotsIndex(dataset)
 
 const port = process.env.PORT || 12346
 
-const LAST_MODIFIED = fs.statSync(path.join(__dirname, 'dataset.json'))
-  .mtime.toISOString().slice(0, 10)
-
 const app = express()
 
-function generateGeoJson (pivots, source, operation) {
-  if (!operation) {
-    operation = o => o
-  }
-
-  let organismes = []
-  pivots.forEach(pivot => {
-    organismes = organismes.concat((source[pivot] || []).map(operation))
+app.use((req, res, next) => {
+  res.sendFeatures = features => res.send({
+    type: 'FeatureCollection',
+    features
   })
 
-  return {
-    type: 'FeatureCollection',
-    features: organismes
-  }
-}
+  next()
+})
 
 const mainRouter = express.Router()
-mainRouter.get('/communes/:communeId/:pivot', (req, res) => {
-  const pivots = new Set(req.params.pivot.split('+'))
-  const commune = dataset.communes[req.params.communeId]
 
-  if (!commune) {
-    return res.status(401).json({ message: `communeId ${req.params.communeId} not found` })
+mainRouter.get('/communes/:communeId/:pivot', (req, res) => {
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = communesIndex[req.params.communeId] || []
+
+  if (!candidates) {
+    return res.status(404).json({ message: `communeId ${req.params.communeId} not found` })
   }
 
-  return res.json(generateGeoJson(pivots, commune.organismes, organismeId => dataset.organismesById[organismeId]))
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
+
+  return res.sendFeatures(organismes)
 })
 
 mainRouter.get('/departements/:departementId/:pivot', (req, res) => {
-  const pivots = new Set(req.params.pivot.split('+'))
-  const departement = dataset.departements[req.params.departementId]
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = departementsIndex[req.params.departementId] || []
 
-  if (!departement) {
-    return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
+  if (!candidates) {
+    return res.status(404).json({ message: `departementId ${req.params.departementId} not found` })
   }
 
-  return res.json(generateGeoJson(pivots, departement.organismes))
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
+
+  return res.sendFeatures(organismes)
 })
 
 // Legacy API
 app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
-  const pivots = new Set(req.params.pivot.split('+'))
-  const departement = dataset.departements[req.params.departementId]
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = departementsIndex[req.params.departementId] || []
 
-  if (!departement) {
-    return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
+  if (!candidates) {
+    return res.status(404).json({ message: `departementId ${req.params.departementId} not found` })
   }
 
-  return res.json(decorateLegacyResponse(generateGeoJson(pivots, departement.organismes), LAST_MODIFIED))
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
+
+  return res.send(decorateLegacyResponse({ type: 'FeatureCollection', features: organismes }))
 })
 
 mainRouter.get('/organismes/:pivot', (req, res) => {
-  const pivots = new Set(req.params.pivot.split('+'))
-  return res.json(generateGeoJson(pivots, dataset.organismes))
+  const pivots = uniq(req.params.pivot.split('+'))
+  const organismes = intersection(pivots.map(pivot => pivotsIndex[pivot] || []))
+  return res.sendFeatures(organismes)
 })
 
 mainRouter.get('/', (req, res) => {
-  res.status(401).json({ message: 'There is nothing here, you should check /definitions.yaml.' })
+  res.status(404).json({ message: 'There is nothing here, you should check /definitions.yaml.' })
 })
 
 mainRouter.get('/definitions.yaml', (req, res) => {
