@@ -22,7 +22,7 @@ function expandCommune (codeCommune) {
 }
 
 function getCommunes (codeDepartement) {
-  const communesDepartement = communes.filter(c => c.type === 'commune-actuelle' && c.codeDepartement === codeDepartement)
+  const communesDepartement = communes.filter(c => c.type === 'commune-actuelle' && c.departement === codeDepartement)
   return communesDepartement.map(c => expandCommune(c.code))
 }
 
