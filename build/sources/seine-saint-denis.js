@@ -1,4 +1,3 @@
-const enrich = require('../enrich')
 const rp = require('request-promise')
 const type = 'centre_social'
 
@@ -32,29 +31,19 @@ function processAddress (organisme) {
   return address
 }
 
-function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.nom)
-}
-
-function importOrganismes () {
-  return rp({
+async function computeOrganismes () {
+  const data = await rp({
     uri: 'https://geoportail93.fr/SERV/DATA/?SERVICE=WFS&LAYERS=1360&FORMAT=GEOJSON&COL=ALL&MODE=2&SRID=undefined',
     json: true
-  }).then(d => d.features)
-    .then(d => d.map(processOrganisme))
-    .then(filterOrganismes)
-    .then(d => d.map(props => { return { properties: props } }))
-    .catch(e => {
-      console.error(e)
-      return []
-    })
-}
+  })
 
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '93')
+  return data.features
+    .map(o => processOrganisme(o))
+    .filter(o => o.nom)
+    .map(o => ({ type: 'Feature', geometry: null, properties: o }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   type
 }

@@ -1,98 +1,104 @@
-var express = require('express')
-const cors = require('cors')
 const path = require('path')
-const fs = require('fs')
-const { prepareDataset } = require('./build/main')
+
+const express = require('express')
+const cors = require('cors')
+const morgan = require('morgan')
+const { uniq, intersection } = require('lodash')
+
+const { createCommunesIndex, createDepartementsIndex, createPivotsIndex } = require('./indexes')
 const { decorateLegacyResponse } = require('./v1')
+
+const dataset = require('./dataset.json')
+const communesIndex = createCommunesIndex(dataset)
+const departementsIndex = createDepartementsIndex(dataset)
+const pivotsIndex = createPivotsIndex(dataset)
 
 const port = process.env.PORT || 12346
 
-function serve (dataset) {
-  const app = express()
+const app = express()
 
-  function generateGeoJson (pivots, source, operation) {
-    if (!operation) {
-      operation = o => o
-    }
+app.use((req, res, next) => {
+  res.sendFeatures = features => res.send({
+    type: 'FeatureCollection',
+    features
+  })
 
-    let organismes = []
-    pivots.forEach(pivot => {
-      organismes = organismes.concat((source[pivot] || []).map(operation))
-    })
+  next()
+})
 
-    return {
-      type: 'FeatureCollection',
-      features: organismes
-    }
+const mainRouter = express.Router()
+
+mainRouter.get('/communes/:communeId/:pivot', (req, res) => {
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = communesIndex[req.params.communeId] || []
+
+  if (!candidates) {
+    return res.status(404).json({ message: `communeId ${req.params.communeId} not found` })
   }
 
-  const mainRouter = express.Router()
-  mainRouter.get('/communes/:communeId/:pivot', (req, res) => {
-    const pivots = new Set(req.params.pivot.split('+'))
-    const commune = dataset.communes[req.params.communeId]
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
 
-    if (!commune) {
-      return res.status(401).json({ message: `communeId ${req.params.communeId} not found` })
-    }
+  return res.sendFeatures(organismes)
+})
 
-    return res.json(generateGeoJson(pivots, commune.organismes, organismeId => dataset.organismesById[organismeId]))
-  })
+mainRouter.get('/departements/:departementId/:pivot', (req, res) => {
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = departementsIndex[req.params.departementId] || []
 
-  mainRouter.get('/departements/:departementId/:pivot', (req, res) => {
-    const pivots = new Set(req.params.pivot.split('+'))
-    const departement = dataset.departements[req.params.departementId]
+  if (!candidates) {
+    return res.status(404).json({ message: `departementId ${req.params.departementId} not found` })
+  }
 
-    if (!departement) {
-      return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
-    }
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
 
-    return res.json(generateGeoJson(pivots, departement.organismes))
-  })
+  return res.sendFeatures(organismes)
+})
 
-  // Legacy API
-  app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
-    const pivots = new Set(req.params.pivot.split('+'))
-    const departement = dataset.departements[req.params.departementId]
+// Legacy API
+app.get('/v1/organismes/:departementId/:pivot', (req, res) => {
+  const pivots = uniq(req.params.pivot.split('+'))
+  const candidates = departementsIndex[req.params.departementId] || []
 
-    if (!departement) {
-      return res.status(401).json({ message: `departementId ${req.params.departementId} not found` })
-    }
+  if (!candidates) {
+    return res.status(404).json({ message: `departementId ${req.params.departementId} not found` })
+  }
 
-    const stats = fs.statSync(path.join(__dirname, 'tmp/all_latest.tar.bz2'))
+  const organismes = candidates.filter(f => pivots.includes(f.properties.pivotLocal))
 
-    return res.json(decorateLegacyResponse(generateGeoJson(pivots, departement.organismes), stats.mtime.toISOString().slice(0, 10)))
-  })
+  return res.send(decorateLegacyResponse({ type: 'FeatureCollection', features: organismes }))
+})
 
-  mainRouter.get('/organismes/:pivot', (req, res) => {
-    const pivots = new Set(req.params.pivot.split('+'))
-    return res.json(generateGeoJson(pivots, dataset.organismes))
-  })
+mainRouter.get('/organismes/:pivot', (req, res) => {
+  const pivots = uniq(req.params.pivot.split('+'))
+  const organismes = intersection(pivots.map(pivot => pivotsIndex[pivot] || []))
+  return res.sendFeatures(organismes)
+})
 
-  mainRouter.get('/', (req, res) => {
-    res.status(401).json({ message: 'There is nothing here, you should check /definitions.yaml.' })
-  })
+mainRouter.get('/', (req, res) => {
+  res.status(404).json({ message: 'There is nothing here, you should check /definitions.yaml.' })
+})
 
-  mainRouter.get('/definitions.yaml', (req, res) => {
-    res.type('yaml').send(require('js-yaml').safeDump(require('./specs')))
-  })
+mainRouter.get('/definitions.yaml', (req, res) => {
+  res.type('yaml').send(require('js-yaml').safeDump(require('./specs')))
+})
 
-  mainRouter.use((error, req, res, next) => {
-    console.log(error)
-    res.json({ message: 'error', error: error.message })
-  })
+mainRouter.use((error, req, res, next) => {
+  console.log(error)
+  res.json({ message: 'error', error: error.message })
+})
 
-  app.use(cors())
+app.use(cors({ origin: true }))
 
-  app.use('/v3', mainRouter)
-
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
-  })
-
-  app.listen(port, () => {
-    console.log('API listening on port %d', port)
-  })
+if (process.env.NODE_ENV !== 'production') {
+  app.use(morgan('dev'))
 }
 
-prepareDataset()
-  .then(serve)
+app.use('/v3', mainRouter)
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'))
+})
+
+app.listen(port, () => {
+  console.log('API listening on port %d', port)
+})

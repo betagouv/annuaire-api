@@ -1,4 +1,3 @@
-const enrich = require('../enrich')
 const rp = require('request-promise')
 const type = 'mds'
 
@@ -62,29 +61,19 @@ function processAddress (organisme) {
   return address
 }
 
-function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.nom)
-}
-
-function importOrganismes () {
-  return rp({
+async function computeOrganismes () {
+  const data = await rp({
     uri: 'https://download.data.grandlyon.com/ws/grandlyon/ter_territoire.maison_de_la_metropole/all.json',
     json: true
-  }).then(d => d.values)
-    .then(d => d.map(processOrganisme))
-    .then(filterOrganismes)
-    .then(d => d.map(props => { return { properties: props } }))
-    .catch(e => {
-      console.error(e)
-      return []
-    })
-}
+  })
 
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '69')
+  return data.values
+    .map(o => processOrganisme(o))
+    .filter(o => o.nom)
+    .map(o => ({ type: 'Feature', geometry: null, properties: o }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   type
 }

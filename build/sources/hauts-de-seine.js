@@ -1,6 +1,5 @@
-const enrich = require('../enrich')
 const rp = require('request-promise')
-const utils = require('./utils')
+const { processOpeningHours } = require('./utils')
 const type = 'edas'
 
 function processOrganisme (organisme) {
@@ -13,7 +12,7 @@ function processOrganisme (organisme) {
     pivotLocal: type,
     id: props.id,
     adresses: [processAddress(props)],
-    horaires: utils.processOpeningHours(props.horaires),
+    horaires: processOpeningHours(props.horaires),
     telephone: props.tel.replace(/\./g, ' '),
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
@@ -35,29 +34,19 @@ function processAddress (organisme) {
   return address
 }
 
-function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.horaires.length)
-}
-
-function importOrganismes () {
-  return rp({
+async function computeOrganismes () {
+  const data = await rp({
     uri: 'https://opendata.hauts-de-seine.fr/explore/dataset/espaces-departementaux-dactions-sociales-edas/download/?format=geojson',
     json: true
-  }).then(d => d.features)
-    .then(d => d.map(processOrganisme))
-    .then(filterOrganismes)
-    .then(d => d.map(props => { return { properties: props } }))
-    .catch(e => {
-      console.error(e)
-      return []
-    })
-}
+  })
 
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '92')
+  return data.features
+    .map(f => processOrganisme(f))
+    .filter(o => o.horaires.length)
+    .map(o => ({ type: 'Feature', geometry: null, properties: o }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   type
 }

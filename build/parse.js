@@ -1,3 +1,5 @@
+const xml2js = require('xml2js')
+
 function commune (data) {
   const commune = data.Commune
   const organismes = commune.TypeOrganisme.reduce((accum, organismes) => {
@@ -97,7 +99,17 @@ function organisme (data) {
   }
 }
 
+async function parseOrganisme (data) {
+  const json = await xml2js.parseStringPromise(data)
+  return organisme(json)
+}
+
+async function parseCommune (data) {
+  const json = await xml2js.parseStringPromise(data)
+  return commune(json)
+}
+
 module.exports = {
-  commune,
-  organisme
+  parseOrganisme,
+  parseCommune
 }

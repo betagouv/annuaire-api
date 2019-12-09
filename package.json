@@ -2,44 +2,47 @@
   "name": "annuaire-api",
   "version": "3.0.0",
   "description": "Create basic GeoJSON API - l'annuaire de l’administration",
-  "main": "server.js",
   "author": "Thomas Guillet <guillet.thomas@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:betagouv/annuaire-api.git",
   "engines": {
-    "node": "12.x"
+    "node": ">= 10"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.2",
+    "lodash": "^4.17.15",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@etalab/decoupage-administratif": "^0.6.2",
     "ajv": "^6.5.4",
     "bluebird": "^3.5.0",
-    "cors": "^2.8.5",
+    "chalk": "^3.0.0",
     "csv-parser": "^2.2.0",
     "decompress": "^4.2.0",
-    "express": "^4.16.2",
+    "eslint": "^6.0",
+    "eslint-config-standard": "^14.0",
+    "eslint-plugin-import": "^2.18",
+    "eslint-plugin-node": "^10.0",
+    "eslint-plugin-promise": "^4.0",
+    "eslint-plugin-standard": "^4.0",
     "get-stream": "^5.1.0",
     "iconv-lite": "^0.5.0",
     "into-stream": "^5.1.1",
     "js-yaml": "^3.8.4",
-    "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "xlsx": "^0.14.0",
     "xml2js": "^0.4.22"
   },
-  "devDependencies": {
-    "eslint": "^6.0",
-    "eslint-config-standard": "^14.0",
-    "eslint-plugin-import": "^2.18",
-    "eslint-plugin-node": "^10.0",
-    "eslint-plugin-promise": "^4.0",
-    "eslint-plugin-standard": "^4.0"
-  },
   "scripts": {
     "build": "node build",
     "lint": "eslint \"*.js\" \"**/*.js\"",
-    "test": "npm run mocha && npm run lint",
+    "test": "npm run lint && npm run mocha",
     "mocha": "mocha",
-    "serve": "node server.js"
+    "serve": "node server",
+    "start": "node server"
   }
 }

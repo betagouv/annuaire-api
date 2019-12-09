@@ -1,7 +1,6 @@
 const rp = require('request-promise')
 const XLSX = require('xlsx')
-const enrich = require('../enrich')
-const utils = require('./utils')
+const { processOpeningHours } = require('./utils')
 
 const type = 'mds'
 
@@ -11,7 +10,7 @@ function processOrganisme (props) {
     pivotLocal: type,
     id: props.ID,
     adresses: [processAddress(props)],
-    horaires: utils.processOpeningHours(props.Horaires),
+    horaires: processOpeningHours(props.Horaires),
     telephone: props.Tel,
     zonage: { communes: props.Zonage.split(';') },
     raw: props
@@ -33,24 +32,23 @@ function processAddress (organisme) {
   return address
 }
 
-function importOrganismes () {
-  return rp({
+async function computeOrganismes () {
+  const rawData = await rp({
     uri: 'https://static.data.gouv.fr/resources/maisons-departementales-des-solidarites/20181217-100752/mds-seine-et-marne.xlsx',
     method: 'GET',
     encoding: 'binary'
   })
-    .then(data => XLSX.read(data, { type: 'binary' }))
-    .then(workbook => workbook.Sheets[workbook.SheetNames[0]])
-    .then(XLSX.utils.sheet_to_json)
-    .map(processOrganisme)
-    .map(props => { return { properties: props } })
-}
 
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '77')
+  const workbook = await XLSX.read(rawData, { type: 'binary' })
+  const sheet = workbook.Sheets[workbook.SheetNames[0]]
+  const rows = XLSX.utils.sheet_to_json(sheet)
+
+  return rows
+    .map(r => processOrganisme(r))
+    .map(o => ({ type: 'Feature', geometry: null, properties: o }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   type
 }

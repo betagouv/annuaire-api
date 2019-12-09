@@ -1,6 +1,5 @@
-const enrich = require('../enrich')
 const rp = require('request-promise')
-const utils = require('./utils')
+const { processOpeningHours } = require('./utils')
 const type = 'mds'
 
 function processOrganisme (organisme) {
@@ -14,13 +13,13 @@ function processOrganisme (organisme) {
     pivotLocal: type,
     id: organisme.recordid,
     adresses: [processAddress(props)],
-    horaires: props.horaires ? utils.processOpeningHours(props.horaires) : [],
+    horaires: props.horaires ? processOpeningHours(props.horaires) : [],
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
   }
 
   if (props.telephone) {
-    return Object.assign(normalized, { telephone: props.telephone.replace(/[.-]/g, ' ') })
+    normalized.telephone = props.telephone.replace(/[.-]/g, ' ')
   }
 
   return normalized
@@ -41,29 +40,19 @@ function processAddress (organisme) {
   return address
 }
 
-function filterOrganismes (organismes) {
-  return organismes.filter(organisme => organisme.horaires.length)
-}
-
-function importOrganismes () {
-  return rp({
+async function computeOrganismes () {
+  const data = await rp({
     uri: 'https://data.opendatasoft.com/explore/dataset/site_social@haute-garonne/download/?format=json&timezone=Europe/Berlin',
     json: true
   })
-    .then(d => d.map(processOrganisme))
-    .then(filterOrganismes)
-    .then(d => d.map(props => { return { properties: props } }))
-    .catch(e => {
-      console.error(e)
-      return []
-    })
-}
 
-async function computeAndAddOrganismes (dataset) {
-  enrich.addOrganismesToDataset(dataset, await importOrganismes(), '31')
+  return data
+    .map(o => processOrganisme(o))
+    .filter(o => o.horaires.length)
+    .map(o => ({ type: 'Feature', geometry: null, properties: o }))
 }
 
 module.exports = {
-  computeAndAddOrganismes,
+  computeOrganismes,
   type
 }
