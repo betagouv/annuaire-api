@@ -96,7 +96,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.use('/v3', mainRouter)
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.redirect('https://api.gouv.fr/api/api_etablissements_publics.html')
 })
 
 app.listen(port, () => {
