@@ -86,6 +86,26 @@ const specs = {
         responses: responses
       }
     },
+    '/v3/organismes/{type}': {
+      get: {
+        summary: 'Trouver des organismes (France entière) par type',
+        tags: [
+          'Organismes'
+        ],
+        parameters: [
+          {
+            name: 'type',
+            in: 'path',
+            required: true,
+            type: 'string',
+            default: 'mairie',
+            enum: Object.keys(types),
+            description: description
+          }
+        ],
+        responses: responses
+      }
+    },
     '/v1/organismes/{departement}/{type}': {
       get: {
         summary: 'Trouver des organismes par département et par type',
