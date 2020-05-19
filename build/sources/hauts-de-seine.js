@@ -13,7 +13,7 @@ function processOrganisme (organisme) {
     id: props.id,
     adresses: [processAddress(props)],
     horaires: processOpeningHours(props.horaires),
-    telephone: props.tel.replace(/\./g, ' '),
+    telephone: props.tel && props.tel.replace(/\./g, ' '),
     zonage: { communes: [props.code_insee + ' ' + props.commune] },
     raw: organisme
   }
