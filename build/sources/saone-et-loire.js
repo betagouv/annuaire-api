@@ -51,7 +51,7 @@ function processAddress (organisme) {
 
 async function computeOrganismes () {
   const data = await rp({
-    uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190130-142932/implantations-territoriales-cd71.csv',
+    uri: 'https://static.data.gouv.fr/resources/implantations-territoriales-de-laction-sociale/20190326-123738/implantations-territoriales-cd71.csv',
     method: 'GET',
     encoding: null
   })
