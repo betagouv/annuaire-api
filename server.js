@@ -97,6 +97,8 @@ app.get('/', (req, res) => {
   res.redirect('https://api.gouv.fr/api/api_etablissements_publics.html')
 })
 
+app.use('/admin', express.static('admin'))
+
 app.listen(port, () => {
   console.log('API listening on port %d', port)
 })

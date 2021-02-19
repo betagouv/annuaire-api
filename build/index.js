@@ -13,11 +13,12 @@ const additions = [
   'data-directory'
 ]
 
-async function computeAdditionalOrganismes () {
+async function computeAdditionalOrganismes (specificSource, config) {
   const organismes = []
+  const sources = specificSource ? [specificSource] : additions
 
-  await Promise.all(additions.map(async addition => {
-    const computedOrganismes = await require('./' + addition).computeOrganismes()
+  await Promise.all(sources.map(async addition => {
+    const computedOrganismes = await require('./' + addition).computeOrganismes(config)
     organismes.push(...computedOrganismes)
     console.log(`${addition} : ajout de ${computedOrganismes.length} organismes`)
   }))
@@ -26,9 +27,14 @@ async function computeAdditionalOrganismes () {
 }
 
 async function build () {
-  const initialOrganismes = await generateInitialDataset()
-  const additionalOrganismes = await computeAdditionalOrganismes()
-  await writeJsonArray(join(__dirname, '..', 'dataset.json'), [...initialOrganismes, ...additionalOrganismes])
+  if (process.argv.length > 2) {
+    const organismes = await computeAdditionalOrganismes(process.argv[2], process.argv[3])
+    await writeJsonArray(join(__dirname, '..', 'dataset.json'), organismes)
+  } else {
+    const initialOrganismes = await generateInitialDataset()
+    const additionalOrganismes = await computeAdditionalOrganismes()
+    await writeJsonArray(join(__dirname, '..', 'dataset.json'), [...initialOrganismes, ...additionalOrganismes])
+  }
 }
 
 build().catch(err => {

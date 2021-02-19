@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <!-- Cette page permet l'intégration de Netlify -->
+  <script>
+    const link = document.createElement('a')
+    link.innerText = "Cliquez ici pour aller à l'outil de contribution"
+    link.setAttribute('href', 'admin/' + document.location.hash)
+    document.body.appendChild(link)
+  </script>
+</body>
+</html>
