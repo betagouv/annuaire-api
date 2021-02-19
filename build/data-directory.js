@@ -18,9 +18,9 @@ async function readAndConvert (filePath) {
   }
 }
 
-async function computeOrganismes () {
+async function computeOrganismes (folder) {
   const organismes = []
-  const departementsFolders = await readdir(DATA_DIR)
+  const departementsFolders = folder ? [folder] : await readdir(DATA_DIR)
 
   await Promise.all(departementsFolders.map(async departementFolder => {
     const departementPath = join(DATA_DIR, departementFolder)

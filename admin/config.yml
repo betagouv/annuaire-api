@@ -1,0 +1,78 @@
+locale: fr
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: Création de {{slug}} comme {{collection}}
+    update: Mise à jour de {{slug}} comme {{collection}}
+    delete: Suppression de {{slug}} comme {{collection}}
+    uploadMedia: Nouvelle image {{path}}
+    deleteMedia: Suppression de l'image {{path}}
+
+media_folder: tmp
+public_folder: tmp
+
+# local_backend: true
+publish_mode: editorial_workflow
+
+collections:
+  - name: lieux
+    label: Lieux pour l'Eure-et-Loir
+    label_singular: lieu
+    identifier_field: nom
+    folder: "data/28"
+    create: true
+    delete: true
+    editor:
+      preview: false
+    slug: "{{id}}"
+    extension: yaml
+    fields:
+      - label: Nom du lieux
+        hint: Permanence sociale
+        name: nom
+        widget: string
+      - label: Type du lieu
+        name: pivotLocal
+        widget: string
+      - label: Identifiant du lieu
+        name: id
+        widget: string
+      - label: Téléphone du lieu
+        name: telephone
+        widget: string
+      - name: adresses
+        widget: list
+        collapsed: false
+        fields:
+          - widget: list
+            name: lignes
+            collapsed: false
+            field:
+              name: ligne
+              widget: string
+      - label: Informations sur l'accueil physique
+        name: accueil physique
+        widget: object
+        fields:
+          - name: horaires
+            widget: list
+            collapsed: false
+            minimize_collapsed: true
+            fields:
+              - name: du
+                widget: string
+              - name: au
+                widget: string
+              - label: sur RDV uniquement
+                name: rdv
+                widget: boolean
+              - label: Plage d'heures
+                widget: list
+                name: heures
+                collapsed: false
+                fields:
+                  - name: de
+                    widget: string
+                  - name: a
+                    widget: string

@@ -80,6 +80,8 @@ definitions:
           - ccas
           - cdas
           - mairie_mobile
+          - mds
+          - permanence_sociale
           - sdsei
       adresses:
         type: array
