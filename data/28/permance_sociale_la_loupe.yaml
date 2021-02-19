@@ -22,7 +22,6 @@ accueil physique:
       heures:
         - de: 9h
           a: 12h
-  test: ok
 zonage:
   communes:
     - 28033 Belhomert-Guéhouville
