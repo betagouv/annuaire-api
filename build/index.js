@@ -27,7 +27,7 @@ async function computeAdditionalOrganismes (specificSource, config) {
 }
 
 async function build () {
-  if (process.argv.length>2) {
+  if (process.argv.length > 2) {
     const organismes = await computeAdditionalOrganismes(process.argv[2], process.argv[3])
     await writeJsonArray(join(__dirname, '..', 'dataset.json'), organismes)
   } else {
