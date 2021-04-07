@@ -3,7 +3,7 @@ const { generateInitialDataset } = require('./initial')
 const { writeJsonArray } = require('./util')
 
 const additions = [
-  'sources/cotes-d-armor',
+  // 'sources/cotes-d-armor',
   'sources/haute-garonne',
   'sources/hauts-de-seine',
   'sources/metropole-lyon',
