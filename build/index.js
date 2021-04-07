@@ -5,7 +5,7 @@ const { writeJsonArray } = require('./util')
 const additions = [
   // 'sources/cotes-d-armor',
   'sources/haute-garonne',
-  'sources/hauts-de-seine',
+  // 'sources/hauts-de-seine',
   'sources/metropole-lyon',
   'sources/saone-et-loire',
   'sources/seine-et-marne',
