@@ -34,7 +34,7 @@
     "mocha": "^4.0.1",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "xlsx": "^0.14.0",
+    "xlsx": "^0.17.0",
     "xml2js": "^0.4.22"
   },
   "scripts": {
