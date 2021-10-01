@@ -29,11 +29,11 @@ async function generateInitialDataset () {
   const organismesFiles = files
     .filter(f => f.path.startsWith('organismes') && f.path.endsWith('.xml'))
 
-  const organismes = await bluebird.map(organismesFiles, async organismeFile => {
+  const organismes = await bluebird.mapSeries(organismesFiles, async organismeFile => {
     const organisme = await parseOrganisme(organismeFile.data)
     organisme.properties.zonage = { communes: [] }
     return organisme
-  }, { concurrency: 8 })
+  })
 
   console.log(`${organismes.length} organismes trouvés`)
 
@@ -42,7 +42,7 @@ async function generateInitialDataset () {
   const communesFiles = files
     .filter(f => f.path.startsWith('communes') && f.path.endsWith('.xml'))
 
-  await bluebird.map(communesFiles, async communeFile => {
+  await bluebird.each(communesFiles, async communeFile => {
     const commune = await parseCommune(communeFile.data)
     const { codeInsee, organismes } = commune
 
@@ -54,7 +54,7 @@ async function generateInitialDataset () {
 
       organismesIndex[idOrganisme].properties.zonage.communes.push(expandCommune(codeInsee))
     })
-  }, { concurrency: 8 })
+  })
 
   /* On traite les organismes qui n'ont pas de zonage affecté */
   const organismesSansZonage = organismes.filter(o => o.properties.zonage.communes.length === 0)
