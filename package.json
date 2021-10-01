@@ -15,7 +15,7 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "@etalab/decoupage-administratif": "^0.6.2",
+    "@etalab/decoupage-administratif": "0.9.0-0",
     "ajv": "^6.5.4",
     "bluebird": "^3.5.0",
     "chalk": "^3.0.0",
