@@ -1,7 +1,7 @@
-# Import GeoJSON de Annuaire de l’administration
+# API Annuaire de l’asministration
 
 ## Usage
 
-* `npm ci` pour installer les dépendances
-* `npm run build` pour lancer l'import
-* `npm run serve` pour lancer le serveur
+* `yarn` pour installer les dépendances
+* `yarn build` pour lancer l'import
+* `yarn start` pour lancer le serveur
