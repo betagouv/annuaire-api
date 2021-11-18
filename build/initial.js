@@ -1,6 +1,6 @@
 const { keyBy, flatten } = require('lodash')
 const bluebird = require('bluebird')
-const rp = require('request-promise')
+const got = require('got')
 const decompress = require('decompress')
 
 const { parseCommune, parseOrganisme } = require('./parse')
@@ -10,9 +10,9 @@ const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v2/all_la
 
 async function downloadFile (url) {
   process.stdout.write(`Downloading ${url}...`)
-  const data = await rp({ uri: url, encoding: null })
+  const response = await got(url, {responseType: 'buffer'})
   process.stdout.write('\t✓ Successfull.\n')
-  return data
+  return response.body
 }
 
 async function decompressArchive (archiveBuffer) {
