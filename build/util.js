@@ -1,9 +1,13 @@
 const { writeFile } = require('fs').promises
 
 const { keyBy } = require('lodash')
-const communes = require('@etalab/decoupage-administratif/data/communes.json')
 
-const communesIndex = keyBy(communes, 'code')
+const communes = require('@etalab/decoupage-administratif/data/communes.json')
+const communesActuelles = communes.filter(c => ['commune-actuelle', 'arrondissement-municipal'].includes(c.type))
+const communesAnciennes = communes.filter(c => !['commune-actuelle', 'arrondissement-municipal'].includes(c.type))
+
+const communesActuellesIndex = keyBy(communesActuelles, 'code')
+const communesAnciennesIndex = keyBy(communesAnciennes, 'code')
 
 async function writeJsonArray (filePath, data) {
   const str = '[\n' + data.map(d => JSON.stringify(d)).join(',\n') + '\n]\n'
@@ -11,7 +15,7 @@ async function writeJsonArray (filePath, data) {
 }
 
 function expandCommune (codeCommune) {
-  const commune = communesIndex[codeCommune]
+  const commune = communesActuellesIndex[codeCommune] || communesAnciennesIndex[codeCommune]
   return commune ? `${codeCommune} ${commune.nom}` : `${codeCommune} ???`
 }
 
