@@ -23,12 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@etalab/decoupage-administratif@0.9.0-0":
-  version "0.9.0-0"
-  resolved "https://registry.yarnpkg.com/@etalab/decoupage-administratif/-/decoupage-administratif-0.9.0-0.tgz#cfd86089db66c1fe90c0322fd8ef85148164e856"
-  integrity sha512-TeAq6muzeqqs8/D9Ca+ZFSeGOLGIrod8UGTaM5KxAFRcu5Q7wIQ0cXSwY4NUFlmHT6Y2Ud023QNJFjq9Wy1ANw==
-  dependencies:
-    lodash "^4.17.15"
+"@etalab/decoupage-administratif@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@etalab/decoupage-administratif/-/decoupage-administratif-2.0.0.tgz#24ee640070c47e3c62883873c35450197fa5f78c"
+  integrity sha512-X+pQDnm0Sk8T5KPhT5kU9cLyMKc+LagK8ObYxyzVDoQapjLNZl9/KY2VFr42aw4LEiTnUfqCgNZc9lhHfi6shQ==
 
 "@sindresorhus/is@^4.0.0":
   version "4.2.0"
