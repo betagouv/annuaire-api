@@ -1,4 +1,4 @@
-# API Annuaire de l’asministration
+# API Annuaire de l’administration
 
 ## Usage
 
