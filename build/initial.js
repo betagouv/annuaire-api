@@ -3,14 +3,14 @@ const bluebird = require('bluebird')
 const got = require('got')
 const decompress = require('decompress')
 
-const { parseCommune, parseOrganisme } = require('./parse')
+const { parseCommune, parseOrganismes } = require('./parse')
 const { expandCommune } = require('./util')
 
-const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v2/all_latest.tar.bz2'
+const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v4/all_latest.tar.bz2'
 
 async function downloadFile (url) {
   process.stdout.write(`Downloading ${url}...`)
-  const response = await got(url, {responseType: 'buffer'})
+  const response = await got(url, { responseType: 'buffer' })
   process.stdout.write('\t✓ Successfull.\n')
   return response.body
 }
@@ -26,21 +26,20 @@ async function generateInitialDataset () {
   const archive = await downloadFile(SPL_URL)
   const files = await decompressArchive(archive)
 
-  const organismesFiles = files
-    .filter(f => f.path.startsWith('organismes') && f.path.endsWith('.xml'))
+  const organismesFile = files
+    .find(f => f.path.endsWith('data.gouv_local.json'))
 
-  const organismes = await bluebird.mapSeries(organismesFiles, async organismeFile => {
-    const organisme = await parseOrganisme(organismeFile.data)
+  const organismes = await parseOrganismes(organismesFile.data)
+  organismes.forEach(organisme => {
     organisme.properties.zonage = { communes: [] }
-    return organisme
   })
 
   console.log(`${organismes.length} organismes trouvés`)
 
   const organismesIndex = keyBy(organismes, o => o.properties.id)
 
-  const communesFiles = files
-    .filter(f => f.path.startsWith('communes') && f.path.endsWith('.xml'))
+  const communesArchive = files.find(f => f.path.endsWith('data.gouv_commune.zip'))
+  const communesFiles = await decompressArchive(communesArchive.data)
 
   await bluebird.each(communesFiles, async communeFile => {
     const commune = await parseCommune(communeFile.data)

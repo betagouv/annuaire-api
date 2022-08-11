@@ -1,0 +1,86 @@
+{
+  "service": [ {
+    "plage_ouverture": [
+      {
+        "nom_jour_debut": "Lundi",
+        "nom_jour_fin": "Lundi",
+        "valeur_heure_debut_1": "16:30:00",
+        "valeur_heure_fin_1": "18:30:00",
+        "valeur_heure_debut_2": "",
+        "valeur_heure_fin_2": "",
+        "commentaire": ""
+      },
+      {
+        "nom_jour_debut": "Jeudi",
+        "nom_jour_fin": "Jeudi",
+        "valeur_heure_debut_1": "16:30:00",
+        "valeur_heure_fin_1": "18:30:00",
+        "valeur_heure_debut_2": "",
+        "valeur_heure_fin_2": "",
+        "commentaire": ""
+      }
+    ],
+    "site_internet": [ { "libelle": "", "valeur": "https://www.breux-sur-avre.fr " } ],
+    "copyright": "Direction de l'information légale et administrative (Premier ministre)",
+    "siren": "",
+    "texte_reference": [],
+    "partenaire": "",
+    "telecopie": [],
+    "nom": "Mairie - Breux-sur-Avre",
+    "siret": "",
+    "itm_identifiant": "303063",
+    "sigle": "",
+    "date_modification": "03/12/2021 07:55:01",
+    "adresse_courriel": [ "mairie@breux-sur-avre.fr" ],
+    "service_disponible": "",
+    "organigramme": [],
+    "pivot": [
+      {
+        "type_service_local": "mairie",
+        "code_insee_commune": "27115",
+        "indice_code_pivot": "01"
+      }
+    ],
+    "partenaire_identifiant": "",
+    "ancien_identifiant": [],
+    "id": "0b19da66-336b-4a4d-a56a-1bbf731ec306",
+    "ancien_nom": [],
+    "commentaire_plage_ouverture": "",
+    "annuaire": [],
+    "hierarchie": [],
+    "categorie": "SL",
+    "sve": [],
+    "version_type": "Publiable",
+    "type_repertoire": "",
+    "telephone": [ { "valeur": "02 32 32 50 76", "description": "" } ],
+    "version_etat_modification": "",
+    "date_creation": "18/01/2012 00:00:00",
+    "partenaire_date_modification": "",
+    "mission": "",
+    "formulaire_contact": [],
+    "version_source": "",
+    "type_organisme": "",
+    "code_insee_commune": "27115",
+    "statut_de_diffusion": "true",
+    "adresse": [
+      {
+        "type_adresse": "Adresse",
+        "complement1": "10 ancienne route du Mans",
+        "complement2": "",
+        "numero_voie": "Le Bourg",
+        "service_distribution": "",
+        "code_postal": "27570",
+        "nom_commune": "Breux-sur-Avre",
+        "pays": "",
+        "continent": "",
+        "longitude": "1.081901",
+        "latitude": "48.76231",
+        "accessibilite": "ACC",
+        "note_accessibilite": "rampe d'accès"
+      }
+    ],
+    "information_complementaire": "",
+    "date_diffusion": "",
+    "statut": "active"
+  }]
+}
