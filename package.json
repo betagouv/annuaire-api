@@ -34,6 +34,6 @@
     "test": "npm run lint && npm run mocha",
     "mocha": "mocha",
     "serve": "node server",
-    "start": "node server"
+    "start": "node --max-old-space-size=2048 server"
   }
 }
