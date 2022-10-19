@@ -6,7 +6,7 @@ const decompress = require('decompress')
 const { parseCommune, parseOrganismes } = require('./parse')
 const { expandCommune } = require('./util')
 
-const SPL_URL = 'http://lecomarquage.service-public.fr/donnees_locales_v4/all_latest.tar.bz2'
+const SPL_URL = 'https://lecomarquage.service-public.fr/donnees_locales_v4/all_latest.tar.bz2'
 
 async function downloadFile (url) {
   process.stdout.write(`Downloading ${url}...`)

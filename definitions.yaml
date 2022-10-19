@@ -1,4 +1,4 @@
-$id: 'http://etablissements-publics.api.gouv.fr/v3/definitions.json'
+$id: 'https://etablissements-publics.api.gouv.fr/v3/definitions.json'
 definitions:
   telephone:
     pattern: '^\d{2}( \d{0,2}){4}$'
