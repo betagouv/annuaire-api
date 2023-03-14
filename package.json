@@ -9,7 +9,7 @@
     "node": ">= 16 < 18"
   },
   "dependencies": {
-    "@etalab/decoupage-administratif": "^2.0.0",
+    "@etalab/decoupage-administratif": "^3.0.0",
     "bluebird": "^3.5.0",
     "cors": "^2.8.5",
     "decompress": "^4.2.0",
