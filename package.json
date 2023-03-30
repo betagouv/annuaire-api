@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "git@github.com:betagouv/annuaire-api.git",
   "engines": {
-    "node": ">= 16 < 18"
+    "node": ">= 16"
   },
   "dependencies": {
     "@etalab/decoupage-administratif": "^3.0.0",
