@@ -39,15 +39,22 @@ jobs:
     needs: [build]
     if: github.ref == 'refs/heads/master'
     steps:
+      - name: Fetch a bearer token
+        id: fetch_bearer_token
+        shell: bash
+        run: |
+          echo BEARER_TOKEN=$(curl -H "Accept: application/json" -H "Content-Type: application/json" \
+            -u ":${{ secrets.SCALINGO_BEARER_TOKEN }}" \
+            -X POST https://auth.scalingo.com/v1/tokens/exchange | jq .token) >> $GITHUB_OUTPUT
       - name: Trigger a deployment on scalingo
-          shell: bash
-          run: |
-            curl -H "Accept: application/json" -H "Content-Type: application/json" \
-              -H "Authorization: Bearer ${{ secrets.SCALINGO_BEARER_TOKEN }}" \
-              -X POST https://${{ SCALINGO_API_URL }}/v1/apps/${{ SCALINGO_APP }}/deployments -d \
-              '{
-                "deployment": {
-                  "git_ref": "master",
-                  "source_url": "${{ SOURCE_ARCHIVE }}"
-                }
-              }'
+        shell: bash
+        run: |
+          curl -H "Accept: application/json" -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ steps.fetch_bearer_token.outputs.BEARER_TOKEN }}" \
+            -X POST https://${{ env.SCALINGO_API_URL }}/v1/apps/${{ env.SCALINGO_APP }}/deployments -d \
+            '{
+              "deployment": {
+                "git_ref": "master",
+                "source_url": "${{ env.SOURCE_ARCHIVE }}"
+              }
+            }'
