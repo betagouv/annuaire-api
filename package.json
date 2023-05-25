@@ -29,11 +29,11 @@
     "mocha": "^4.0.1"
   },
   "scripts": {
-    "build": "node build",
+    "build": "node --max-old-space-size=2048 build",
     "lint": "eslint \"*.js\" \"**/*.js\"",
     "test": "npm run lint && npm run mocha",
     "mocha": "mocha",
-    "serve": "node server",
+    "serve": "node --max-old-space-size=2048 server",
     "start": "node --max-old-space-size=2048 server"
   }
 }
