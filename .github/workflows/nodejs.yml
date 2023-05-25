@@ -44,7 +44,7 @@ jobs:
         shell: bash
         run: |
           echo BEARER_TOKEN=$(curl -H "Accept: application/json" -H "Content-Type: application/json" \
-            -u ":${{ secrets.SCALINGO_BEARER_TOKEN }}" \
+            -u ":${{ secrets.SCALINGO_AUTHENTICATION_TOKEN }}" \
             -X POST https://auth.scalingo.com/v1/tokens/exchange | jq .token) >> $GITHUB_OUTPUT
       - name: Trigger a deployment on scalingo
         shell: bash
