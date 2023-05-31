@@ -1,10 +1,18 @@
-name: Node.js CI
+name: Node.js CI / Scalingo CD
 
 on:
   push:
     branches: ["master"]
   pull_request:
     branches: ["master"]
+  schedule:
+    # https://crontab.guru/#0_2_*_*_*
+    - cron: "0 2 * * *"
+
+env:
+  SCALINGO_API_URL: api.osc-fr1.scalingo.com
+  SCALINGO_APP: annuaire-etablissements-publics
+  SOURCE_ARCHIVE: https://github.com/BaseAdresseNationale/annuaire-api/archive/master.tar.gz
 
 jobs:
   build:
@@ -25,3 +33,28 @@ jobs:
       - run: yarn build
       - run: yarn lint
       - run: yarn test
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Fetch a bearer token
+        id: fetch_bearer_token
+        shell: bash
+        run: |
+          echo BEARER_TOKEN=$(curl -H "Accept: application/json" -H "Content-Type: application/json" \
+            -u ":${{ secrets.SCALINGO_AUTHENTICATION_TOKEN }}" \
+            -X POST https://auth.scalingo.com/v1/tokens/exchange | jq .token) >> $GITHUB_OUTPUT
+      - name: Trigger a deployment on scalingo
+        shell: bash
+        run: |
+          curl -H "Accept: application/json" -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ steps.fetch_bearer_token.outputs.BEARER_TOKEN }}" \
+            -X POST https://${{ env.SCALINGO_API_URL }}/v1/apps/${{ env.SCALINGO_APP }}/deployments -d \
+            '{
+              "deployment": {
+                "git_ref": "master",
+                "source_url": "${{ env.SOURCE_ARCHIVE }}"
+              }
+            }'
