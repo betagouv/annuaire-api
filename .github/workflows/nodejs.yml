@@ -8,6 +8,7 @@ on:
   schedule:
     # https://crontab.guru/#0_2_*_*_*
     - cron: "0 2 * * *"
+  workflow_dispatch:
 
 env:
   SCALINGO_API_URL: api.osc-fr1.scalingo.com
